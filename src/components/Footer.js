@@ -7,7 +7,11 @@ const Footer = (props) => {
                     <p> bound to ensue; and equal blame belongs.</p>
                     <h5>Join our community</h5>
                     <ul>
-                        <li> <img src="./image/discord.png" alt="" /><img src="./image/twitter.png" alt="" /> <img src="./image/stashh.png" alt="" /></li>
+                        <li>
+                            <img src="./image/discord.png" alt="" />
+                            <img src="./image/twitter.png" alt="" />
+                            {/*<img src="./image/stashh.png" alt="" />*/}
+                        </li>
                     </ul>
                 </div>
                 <div className="footer-input">

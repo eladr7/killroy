@@ -1253,10 +1253,15 @@ p.paralast {
 
 .popup .content {
 	font-size: 14px;
+	font-family: 'Montserrat', sans-serif;
 	line-height: 120%;
 	letter-spacing: 0.05em;
 	color: #FFFFFF;
 	margin-bottom: 50px;
+}
+
+.mintbox-content {
+	font-size: 18px;
 }
 
 a.barkbehance {
@@ -1284,8 +1289,8 @@ a.bark {
 	box-sizing: border-box;
 	border-radius: 100px;
 	padding: 13px 20px;
-	font-size: 24px;
-	line-height: 150%;
+	font-size: 20px;
+	line-height: 120%;
 	letter-spacing: 0.05em;
 	color: #000000;
 }
@@ -1295,8 +1300,8 @@ a.light {
 	box-sizing: border-box;
 	border-radius: 100px;
 	padding: 13px 20px;
-	font-size: 24px;
-	line-height: 150%;
+	font-size: 20px;
+	line-height: 120%;
 	letter-spacing: 0.05em;
 	color: #FFFFFF;
 }

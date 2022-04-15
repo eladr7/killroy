@@ -6,13 +6,13 @@ const Faq = (props) => {
         <div className="faq-set">
           <button className="accordion">WHEN IS THE MINT?</button>
           <div className="panel">
-            <p>Minting starts at 12:00 pm UTC on April 31st.</p>
+            <p>Part 1 : Minting starts at 12:00 pm UTC on April 21st.</p><p>Part 2 :  Minting starts at 12:00 pm UTC on May 4th.</p>
           </div>
           <button className="accordion">HOW MANY PIECES ARE THERE IN THE COUNCIL OF GYLD NFT COLLECTION?</button>
           <div className="panel">
             <p>The collection contains 4321 unique pieces.</p>
           </div>
-          <button className="accordion">HOW CAN I CONVERT $SCRT TO $LGND USING KEPLR WALLET?</button>
+          <button className="accordion">HOW CAN I CONVERT $SCRT TO $sSCRT USING KEPLR WALLET?</button>
           <div className="panel">
             <p>You can use the guide provided <a href="https://www.patlid.com/posts/guide-how-to-convert-scrt-sscrt-keplr-wallet">here</a>.</p>
           </div>

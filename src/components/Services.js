@@ -2,7 +2,7 @@ const Services = (props) => {
     return(
         <section id="services-background">
             <div className="services-section-main">
-                <div className="services-img"> <img src="./image/councilyeti.png" alt={""} /> </div>
+                <div className="services-img"> <img src="./image/CryptidImage.png" alt={""} /> </div>
                 <div className="services-text">
                     <h3>THE CRYPTIDS</h3>
                     <p>Human civilizations rose and fell throughout the millennia. The Cryptids saw it all.<br />

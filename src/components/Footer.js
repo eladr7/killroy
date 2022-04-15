@@ -3,8 +3,7 @@ const Footer = (props) => {
         <div>
             <div className="footer-main">
                 <div className="footer-text"> <img src="./image/Cryptids.png" alt="" />
-                    <p>they cannot foresee the pain and trouble that are</p>
-                    <p> bound to ensue; and equal blame belongs.</p>
+                    <p>Bringing all legendary creators into the Cosmos. </p><p>The immersive Mint Lab for all significant NFT projects.</p>
                     <h5>Join our community</h5>
                     <ul>
                         <li>

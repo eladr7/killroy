@@ -93,6 +93,14 @@ body {
 	padding: 30px 0;
 }
 
+.hero-background {
+	background-image: linear-gradient(180deg, #011B48 0%, rgba(20, 20, 20, 0.39) 48.44%, #011B48 100%),
+	url(./bgsword.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0;
+}
+
 .hero-section-text h3 {
 	font-size: 40px;
 	line-height: 65px;
@@ -193,10 +201,11 @@ body {
 
 #services-background {
 	background-image: linear-gradient(180deg, #011B48 0%, rgba(20, 20, 20, 0.39) 48.44%, #011B48 100%),
-	url(./services-background.png);
+	url(./bglight.jpeg);
 	width: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: 0;
 }
 
 .services-section-main {
@@ -248,10 +257,11 @@ body {
 /* ROADMAP-start */
 
 #roadmap-background {
-	background: linear-gradient(180deg, #011B48 0%, rgba(20, 20, 20, 0.39) 48.44%, #011B48 100%), url(./roadmap-background.png);
+	background: linear-gradient(180deg, #011B48 0%, rgba(20, 20, 20, 0.70) 48.44%, #011B48 100%), url(./bgtree.jpeg);
 	width: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: 0;
 	margin: auto;
 	padding: 60px 0px;
 }
@@ -613,10 +623,11 @@ body {
 
 /* F.A.Q */
 #accordian-background {
-	background-image: linear-gradient(180deg, #011B48 0%, rgba(20, 20, 20, 0.39) 48.44%, #011B48 100%),url(./header-background-crop.png);
+	background-image: linear-gradient(180deg, #011B48 0%, rgba(20, 20, 20, 0.60) 48.44%, #011B48 100%),url(./bglight.jpeg);
 	width: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;
+	/*background-position: 0;*/
 }
 
 .faq-set {
@@ -711,7 +722,8 @@ button.accordion.active:after {
 
 /* OUR-TEAM */
 #team-footer-background {
-	background-image: linear-gradient(180deg, #011B48 0%, rgba(20, 20, 20, 0.39) 48.44%, #011B48 100%),url(./footer-background.png);
+	background-image: linear-gradient(180deg, #011B48 0%, rgba(20, 20, 20, 0.39) 48.44%, #011B48 100%),url(./bglight.jpeg);
+	background-position: 100% 100%;
 	width: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;

@@ -13,10 +13,11 @@ const Header = (props) => {
                         <li><a href="#roadmap-background"> Roadmap</a></li>
                         <li><a href="#accordian-background">F.A.Q.</a></li>
                         <li><a href="#team-footer-background">Our Team</a></li>
-                        <li><img src="./image/stashh.png" alt="" /></li>
+                        {/*<li><img src="./image/stashh.png" alt="" /></li>*/}
                         <li><img src="./image/discord.png" alt="" /></li>
                         <li><img src="./image/twitter.png" alt="" /></li>
-                        {props.addressContainer} <a className="ctn" href="#popup2" onClick={() => props.getBalance()}>Balance</a>
+                        {props.addressContainer}
+                        {/*<a className="ctn" href="#popup2" onClick={() => props.getBalance()}>Balance</a>*/}
                     </ul>
                 </nav>
                 <div id="hamburger-icon" onClick={(e) => props.toggleMobileMenu(e)} className={props.mobileMenuOpen? 'open' : ''}>
@@ -29,11 +30,12 @@ const Header = (props) => {
                         <li><a href="#accordian-background">F.A.Q.</a></li>
                         <li><a href="#team-footer-background">Our Team</a></li>
                         <div className="social-icons">
-                            <li><img src="./image/stashh.png" alt="" /></li>
+                            {/*<li><img src="./image/stashh.png" alt="" /></li>*/}
                             <li><img src="./image/discord.png" alt="" /></li>
                             <li><img src="./image/twitter.png" alt="" /></li>
                         </div>
-                        <div className="mobile-btn">{props.addressContainer} <a className="ctn" href="#popup2" onClick={() => props.getBalance()}>Balance</a>
+                        <div className="mobile-btn">{props.addressContainer}
+                            {/*<a className="ctn" href="#popup2" onClick={() => props.getBalance()}>Balance</a>*/}
                         </div>
                     </ul>
                 </div>

@@ -40,7 +40,7 @@ const chainInfo = {
 
 function App() {
 
-  const [addressContainer, setAddressContainer] = useState(<a className="ctn" href="#" onClick={() => handleConnect()}>Connect Wallet</a>);
+  const [addressContainer, setAddressContainer] = useState(<a className="ctn" href="#popup2" onClick={() => handleConnectButton()}>Connect Wallet</a>);
   const [sscrtBalance, setSscrtBalance] = useState(0);
   const [sscrtWrapper, setSscrtWrapper] = useState((sscrtBalance / 1000000) + ' $sSCRT');
   const [scrtBalance, setScrtBalance] = useState(0);
@@ -88,10 +88,15 @@ function App() {
     setMobileMenuOpen(!mobileMenuOpen);
   }
 
+  const handleConnectButton = async () => {
+    await handleConnect();
+    await getBalance();
+  }
+
   const handleConnect = async () => {
     let enigmaUtils
     [chainInfo.clientAddress, chainInfo.offlineSigner, enigmaUtils] = await connectWallet(chainInfo);
-    setAddressContainer(<a className="ctn" href="#">{chainInfo.clientAddress.substr(0, 9) + "..." + chainInfo.clientAddress.substr(-3, 3)}</a>)
+    setAddressContainer(<a onClick={() => getBalance()} className="ctn" href="#popup2">{chainInfo.clientAddress.slice(0, 9) + "..." + chainInfo.clientAddress.slice(-3)}</a>)
     chainInfo.client = new SigningCosmWasmClient(
         chainInfo.chainREST,
         chainInfo.clientAddress,

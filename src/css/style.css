@@ -1212,8 +1212,8 @@ p.paralast {
 
 .popup h2 {
 	font-family: 'Montserrat', sans-serif;
-	font-size: 30px;
-	line-height: 150%;
+	font-size: 24px;
+	line-height: 120%;
 	margin-bottom: 25px;
 	letter-spacing: 0.05em;
 	color: #FFFFFF;
@@ -1224,7 +1224,7 @@ p.paralast {
 	top: 20px;
 	right: 30px;
 	transition: all 200ms;
-	font-size: 50px;
+	font-size: 30px;
 	font-weight: bold;
 	text-decoration: none;
 	color: #fff;
@@ -1235,8 +1235,8 @@ p.paralast {
 }
 
 .popup .content {
-	font-size: 18px;
-	line-height: 150%;
+	font-size: 14px;
+	line-height: 120%;
 	letter-spacing: 0.05em;
 	color: #FFFFFF;
 	margin-bottom: 50px;
@@ -1246,8 +1246,8 @@ a.barkbehance {
 	background: #FFFFFF;
 	border-radius: 100px;
 	padding: 13px 50px;
-	font-size: 24px;
-	line-height: 150%;
+	font-size: 18px;
+	line-height: 120%;
 	letter-spacing: 0.05em;
 	color: #0B131F;
 }
@@ -1258,7 +1258,7 @@ a.barkbehance {
 }
 
 .innercontent img {
-	padding: 0 20px 10px 0;
+	padding: 5px 20px 5px 0;
 }
 
 a.bark {

@@ -1,16 +1,17 @@
 const MyCollection = (props) => {
     return(
         <div>
-            <div className="my-collection">
-                <h1>MY COLLECTION</h1>
-                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                    <br/> laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-                    <br/> architecto beatae vitae dicta sunt explicabo. </p>
+            <div>
+                <div className="my-collection">
+                    <h1>MY COLLECTION</h1>
+                    <div style={{marginTop:"3rem"}}><a className={"rarity-rank-button"} href={"#"} target={"_blank"}>Rarity Rank</a></div>
+                </div>
             </div>
+
             {props.nftCollection.map((nft, index) => {
                 return(
-                    <div key={index}>
-                        <section id="header-background">
+                    <div key={index} className={"collection-item-background"}>
+                        <section>
                             <div className="my-collection-yeti"><img src="./image/our-team img 1.png" alt=""/>
                                 <div className="live-my-collection">
                                     <h4>{nft.name} <span>Total Score: 222.22</span></h4>
@@ -18,7 +19,7 @@ const MyCollection = (props) => {
                                 </div>
                             </div>
                         </section>
-                        <div className="tableBg">
+                        <div>
                             <div className="customerTable">
                                 <div className="customerbodyTable">
                                     <div className="customerTablehead">

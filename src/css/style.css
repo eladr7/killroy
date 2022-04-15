@@ -1488,7 +1488,22 @@ header {
 }
 
 .collection-item-background {
+	background: linear-gradient(180deg, #011B48 0%, rgba(20, 20, 20, 0.70) 48.44%, #011B48 100%), url(./bgsword.jpeg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0;
+}
 
+.rarity-rank-button {
+	line-height: 17px;
+	font-size: 16px;
+	padding: 13px 45px;
+	background-image: linear-gradient(180deg, #508AF9 0%, #4F4BCF 100%);
+	border-color: rgba(255,255,255,0.8);
+	border-width: 0px;
+	border-radius: 6px;
+	color: #fff;
+	letter-spacing: 1px;
 }
 
 /*

@@ -16,7 +16,8 @@ const Hero = (props) => {
                 <div className="mintPrice">
                     <div className="priceTitle">
                         <p><span>Mint Price</span>
-                            <br/> 75</p>
+                            <br/>
+                            75 $sSCRT</p>
                     </div>
                     <div className="mint"><a href="#" onClick={() => {props.handleMint()}}>MINT</a></div>
                 </div>

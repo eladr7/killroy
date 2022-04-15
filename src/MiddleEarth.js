@@ -27,6 +27,8 @@ const MiddleEarth = (props) => {
                 <Popups
                     sscrtWrapper={props.sscrtWrapper}
                     scrtWrapper={props.scrtWrapper}
+                    mintVisibleClass={props.mintVisibleClass}
+                    toggleMintVisible={props.toggleMintVisible}
                 />
             </div>
         </div>

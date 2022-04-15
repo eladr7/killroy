@@ -48,6 +48,7 @@ function App() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [nftCollection, setNftCollection] = useState([]);
   const [amounttoBuy, setAmounttoBuy] = useState(1);
+  const [mintVisibleClass, setMintVisibleClass] = useState('');
 
   const priceForEach = 1000000;
 
@@ -244,6 +245,14 @@ function App() {
     return data.whitelist;
   }
 
+  const toggleMintVisible = () => {
+    if (mintVisibleClass === "") {
+      setMintVisibleClass("mint-visible");
+    } else {
+      setMintVisibleClass("");
+    }
+  }
+
   const handleMint = async () => {
 
     const whiteListCheck = await checkWhitelist();
@@ -292,6 +301,7 @@ function App() {
     } catch (e) {
       console.log(`Failed to mint ${e}`);
     }
+    toggleMintVisible();
     return null;
 
   }
@@ -307,6 +317,8 @@ function App() {
           scrtWrapper={scrtWrapper}
           nftCollection={nftCollection}
           handleMint={handleMint}
+          mintVisibleClass={mintVisibleClass}
+          toggleMintVisible={toggleMintVisible}
       />
   );
 }

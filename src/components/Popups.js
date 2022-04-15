@@ -2,10 +2,10 @@ import {Link, NavLink} from "react-router-dom";
 const Popups = (props) => {
     return(
         <section>
-            <div id="popup1" className="overlay">
+            <div id="popup1" className={"overlay-mint " + props.mintVisibleClass}>
                 <div className="popup-width">
                     <div className="popup">
-                        <h2>Mint Successful!</h2> <a className="close" href="#">×</a>
+                        <h2>Mint Successful!</h2> <a className="close" href="#" onClick={() => props.toggleMintVisible()}>×</a>
                         <div className="content"> Congratulations,you’ve successfully minted an NFT!</div>
                         <div className="popupBtn"><a className="bark" href="/mycollection">See my NFT</a> <a className="light"
                                                                                                  href="#">Mint

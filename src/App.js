@@ -17,7 +17,7 @@ const chainInfo = {
   // Testnet Pulsar-2
   chainId: "pulsar-2",
   chainRPC: "https://rpc.pulsar.griptapejs.com",
-  chainREST: "https://api.pulsar.griptapejs.com/cosmos/tx/v1beta1/txs",
+  chainREST: "https://api.pulsar.griptapejs.com",
   randomMintContractAddress: "secret1h2zadahnmk2ltxl8vq54vt8ytkmp4cqsw27sd9",
   snip20ContractAddress: "secret18vd8fpwxzck93qlwghaj6arh4p7c5n8978vsyg",
   nftContract: "secret15nf83dftyrtrlguvzxmk7cdjaryv4fs7x7avpg",

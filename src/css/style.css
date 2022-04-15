@@ -34,7 +34,7 @@ body {
 /* navbar-START */
 
 #header-background {
-	background-image: linear-gradient(180deg, #011B48 0%, rgba(20, 20, 20, 0.39) 48.44%, #011B48 100%),url(./header-background.png);
+	/*background-image: linear-gradient(180deg, #011B48 0%, rgba(20, 20, 20, 0.39) 48.44%, #011B48 100%),url(./header-background.png);*/
 	max-width: 100%;
 	background-repeat: no-repeat;
 	background-size: cover;

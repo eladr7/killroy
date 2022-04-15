@@ -14,8 +14,8 @@ const Header = (props) => {
                         <li><a href="#accordian-background">F.A.Q.</a></li>
                         <li><a href="#team-footer-background">Our Team</a></li>
                         {/*<li><img src="./image/stashh.png" alt="" /></li>*/}
-                        <li><img src="./image/discord.png" alt="" /></li>
-                        <li><img src="./image/twitter.png" alt="" /></li>
+                        <li><a href={"https://discord.gg/w84egv2Enb"} target={"_blank"}><img src="./image/discord.png" alt="" /></a></li>
+                        <li><a href={"https://twitter.com/LegendaoNFT"} target={"_blank"}><img src="./image/twitter.png" alt="" /></a></li>
                         {props.addressContainer}
                         {/*<a className="ctn" href="#popup2" onClick={() => props.getBalance()}>Balance</a>*/}
                     </ul>

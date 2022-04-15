@@ -7,8 +7,8 @@ const Footer = (props) => {
                     <h5>Join our community</h5>
                     <ul>
                         <li>
-                            <img src="./image/discord.png" alt="" />
-                            <img src="./image/twitter.png" alt="" />
+                            <a href={"https://discord.gg/w84egv2Enb"} target={"_blank"}><img src="./image/discord.png" alt="" /></a>
+                            <a href={"https://twitter.com/LegendaoNFT"} target={"_blank"}><img src="./image/twitter.png" alt="" /></a>
                             {/*<img src="./image/stashh.png" alt="" />*/}
                         </li>
                     </ul>

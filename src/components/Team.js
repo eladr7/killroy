@@ -7,12 +7,12 @@ const Team = (props) => {
                 <div className="mobilecol">
                     <div className="live-img-1"> <img src="./image/scrt1.jpeg" alt="" />
                         <div className="live-img-1-content content-absolute show-wide">
-                            <h3>The SCRT Labs Team<span style={{marginLeft: '1rem'}}><a href="#"><img src="./image/Vector (3).png" alt="" /></a> <img src="./image/Vector (4).png" alt="" /></span></h3>
+                            <h3>The SCRT Labs Team<span style={{marginLeft: '1rem'}}><a href="https://discord.gg/EaMnsZztRX" target={"_blank"}><img src="./image/Vector (3).png" alt="" /></a> <a href={"https://twitter.com/scrt_labs"} target={"_blank"}><img src="./image/Vector (4).png" alt="" /></a></span></h3>
                         </div>
                     </div>
                     <div className="live-img-1-2"> <img src="./image/scrt2.jpeg" alt="" />
                         <div className="live-img-1-content content-absolute hide-wide">
-                            <h3>The SCRT Labs Team<span style={{marginLeft: '1rem'}}><img src="./image/Vector (3).png" alt="" /> <img src="./image/Vector (4).png" alt="" /></span></h3>
+                            <h3>The SCRT Labs Team<span style={{marginLeft: '1rem'}}><a href="https://discord.gg/EaMnsZztRX" target={"_blank"}><img src="./image/Vector (3).png" alt="" /></a> <a href={"https://twitter.com/scrt_labs"} target={"_blank"}><img src="./image/Vector (4).png" alt="" /></a></span></h3>
                         </div>
                     </div>
                     {/*<div className="live-img-1-3"> <img src="./image/scrt3.jpeg" alt="" />*/}
@@ -23,13 +23,13 @@ const Team = (props) => {
                 </div>
                 <div className="live-img-3"> <img src="./image/designer.jpeg" alt="" />
                     <div className="live-img-1-content">
-                        <h3>ANS<span><img src="./image/Vector (4).png" alt="" style={{width:'100%'}} /></span></h3>
+                        <h3>ANS<span><a href={"https://twitter.com/CreationSinkGFX"} target={"_blank"}><img src="./image/Vector (4).png" alt="" style={{width:'100%'}} /></a></span></h3>
                         <p className={"team-role"}>Art</p>
                     </div>
                 </div>
                 <div className="live-img-4"> <img src="./image/developer.jpeg" alt="" />
                     <div className="live-img-1-content">
-                        <h3>Kevin<span><img src="./image/Vector (4).png" alt="" style={{width:'100%'}} /></span></h3>
+                        <h3>Kevin<span><a href={"https://twitter.com/KevinAKidd"} target={"_blank"}><img src="./image/Vector (4).png" alt="" style={{width:'100%'}} /></a></span></h3>
                         <p className={"team-role"}>Dev</p>
                     </div>
                 </div>

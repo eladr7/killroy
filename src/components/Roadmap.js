@@ -53,9 +53,8 @@ const Roadmap = () => {
                     <div className="title-six">
                         <h3>100% Stage 6</h3> </div>
                     <div className="content-text-six">
-                        <h3>Meet Your 3D Avatar</h3>
-                        <p>Level Achieved: Legendao OG Status
-                            Anyone who collected a Council of Gyld NFT will be granted OG status.</p>
+                        <h3>Level Achieved: Legendao OG Status</h3>
+                        <p>Anyone who collected a Council of Gyld NFT will be granted OG status.</p>
                         <p> OG status will be displayed on your avatar as a non-transferable, exclusive pair of wings marking you forever as a Legendao OG.</p>
                     </div>
                 </div>

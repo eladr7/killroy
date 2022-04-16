@@ -5,7 +5,7 @@ const Header = (props) => {
         <section id="header-background">
             <header>
                 <div id="brand">
-                    <Link to={"/"} ><img src="./image/Cryptids.png" alt={""} className="logo"/></Link>
+                    <a href={"https://legendao.io"} target={"_blank"}><img src="./image/Cryptids.png" alt={""} className="logo"/></a>
                 </div>
                 <nav>
                     <ul className="nav-list">

@@ -28,7 +28,7 @@ const chainInfo = {
   // chainRPC: "https://rpc-secret.scrtlabs.com/secret-4/rpc",
   // chainREST: "https://api.scrt.network",
   // randomMintContractAddress: "",
-  // snip20ContractAddress: "",
+  // snip20ContractAddress: "secret1k0jntykt7e4g3y88ltc60czgjuqdy4c9e8fzek",
   // nftContract: "",
   //-----//
 
@@ -169,9 +169,6 @@ function App() {
         }
       }
     }
-    const balance = await chainInfo.client.restClient.queryContractSmart(chainInfo.snip20ContractAddress, msg);
-    const account = await chainInfo.client.getAccount(chainInfo.clientAddress);
-    const scrtBal = account.balance[0].amount;
     //fetch api
     const url = "https://min-api.cryptocompare.com/data/price?fsym=SCRT&tsyms=USD";
     let usd = 0
@@ -182,10 +179,17 @@ function App() {
     } catch (error) {
       console.log(error);
     }
+    getSscrtBalance(msg, usd);
+    const account = await chainInfo.client.getAccount(chainInfo.clientAddress);
+    const scrtBal = account.balance[0].amount;
+    setScrtBalance(parseFloat(scrtBal).toFixed(4));
+    setScrtWrapper((parseFloat(scrtBal) / 1000000).toFixed(4) + ' SCRT ($' + ((parseFloat(scrtBal) / 1000000) * usd).toFixed(2) + ')');
+  }
+
+  const getSscrtBalance = async (msg, usd) => {
+    const balance = await chainInfo.client.restClient.queryContractSmart(chainInfo.snip20ContractAddress, msg);
     setSscrtBalance(balance.balance.amount);
     setSscrtWrapper((parseFloat(balance.balance.amount) / 1000000).toFixed(4) + ' sSCRT ($' + ((parseFloat(balance.balance.amount) / 1000000) * usd).toFixed(2) + ')');
-    setScrtBalance(balance.balance.amount);
-    setScrtWrapper((parseFloat(scrtBal) / 1000000).toFixed(4) + ' SCRT ($' + ((parseFloat(scrtBal) / 1000000) * usd).toFixed(2) + ')');
   }
 
   const fetchMyCollection = async () => {

@@ -1250,7 +1250,7 @@ p.paralast {
 
 .popup h2 {
 	font-family: 'Montserrat', sans-serif;
-	font-size: 24px;
+	font-size: 20px;
 	line-height: 120%;
 	margin-bottom: 25px;
 	letter-spacing: 0.05em;
@@ -1262,7 +1262,7 @@ p.paralast {
 	top: 20px;
 	right: 30px;
 	transition: all 200ms;
-	font-size: 30px;
+	font-size: 24px;
 	font-weight: bold;
 	text-decoration: none;
 	color: #fff;
@@ -1289,7 +1289,7 @@ a.barkbehance {
 	background: #FFFFFF;
 	border-radius: 100px;
 	padding: 13px 50px;
-	font-size: 18px;
+	font-size: 16px;
 	line-height: 120%;
 	letter-spacing: 0.05em;
 	color: #0B131F;

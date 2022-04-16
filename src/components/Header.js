@@ -9,10 +9,11 @@ const Header = (props) => {
                 </div>
                 <nav>
                     <ul className="nav-list">
-                        <li><Link smooth to={"/mycollection"}>My Collection</Link></li>
+                        <li><Link to={"/"}>Homepage</Link></li>
+                        <li><Link to={"/mycollection"}>My Collection</Link></li>
                         <li><Link smooth to="/#roadmap-background"> Roadmap</Link></li>
                         <li><Link smooth to="/#accordian-background">F.A.Q.</Link></li>
-                        <li><Link smooth to="/#team-footer-background">Our Team</Link></li>
+                        {/*<li><Link smooth to="/#team-footer-background">Our Team</Link></li>*/}
                         {/*<li><img src="./image/stashh.png" alt="" /></li>*/}
                         <li><a href={"https://discord.gg/w84egv2Enb"} target={"_blank"}><img src="./image/discord.png" alt="" /></a></li>
                         <li><a href={"https://twitter.com/LegendaoNFT"} target={"_blank"}><img src="./image/twitter.png" alt="" /></a></li>
@@ -25,10 +26,11 @@ const Header = (props) => {
                     <div className="bar2"/>
                     <div className="bar3"/>
                     <ul className="mobile-menu">
-                        <li><Link smooth to="/mycollection">My Collection</Link></li>
+                        <li><Link to="/">Homepage</Link></li>
+                        <li><Link to="/mycollection">My Collection</Link></li>
                         <li><Link smooth to="/#roadmap-background"> Roadmap</Link></li>
                         <li><Link smooth to="/#accordian-background">F.A.Q.</Link></li>
-                        <li><Link smooth to="/#team-footer-background">Our Team</Link></li>
+                        {/*<li><Link smooth to="/#team-footer-background">Our Team</Link></li>*/}
                         <div className="social-icons">
                             {/*<li><img src="./image/stashh.png" alt="" /></li>*/}
                             <li><img src="./image/discord.png" alt="" /></li>

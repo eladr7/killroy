@@ -11,6 +11,7 @@
     "react-dom": "^18.0.0",
     "react-loading-skeleton": "^3.1.0",
     "react-router-dom": "^6.3.0",
+    "react-router-hash-link": "^2.4.3",
     "react-scripts": "5.0.1",
     "secretjs": "^0.17.5",
     "sweetalert2": "^11.4.8",

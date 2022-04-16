@@ -12,7 +12,7 @@ const Hero = (props) => {
                 <div className="hero-text-img"><img src="Group 715.png" alt="" />
                     <div className="hero-img-time">
                         <p>Minting is currently only available to whitelist members </p>
-                        <p>Each one can mint up to 4 NFT’s</p>
+                        <p>Each one can mint up to 4 NFTs</p>
                     </div>
                     <div className="mintPrice">
                         <div className="priceTitle">

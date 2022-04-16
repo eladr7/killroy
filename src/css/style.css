@@ -102,9 +102,10 @@ body {
 }
 
 .hero-section-text h3 {
-	font-size: 40px;
+	font-size: 42px;
 	line-height: 65px;
 	margin-bottom: 30px;
+	font-weight: bold;
 	background: linear-gradient(180deg, #5092FF 0%, #4F4BCF 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;

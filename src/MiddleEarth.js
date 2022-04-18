@@ -29,6 +29,9 @@ const MiddleEarth = (props) => {
                     scrtWrapper={props.scrtWrapper}
                     mintVisibleClass={props.mintVisibleClass}
                     toggleMintVisible={props.toggleMintVisible}
+                    handleMint={props.handleMint}
+                    mintCount={props.mintCount}
+                    setMintCount={props.setMintCount}
                 />
             </div>
         </div>

@@ -49,6 +49,7 @@ function App() {
   const [nftCollection, setNftCollection] = useState([]);
   const [amounttoBuy, setAmounttoBuy] = useState(1);
   const [mintVisibleClass, setMintVisibleClass] = useState('');
+  const [mintCount, setMintCount] = useState(1);
 
   const priceForEach = 1000000;
 
@@ -257,7 +258,9 @@ function App() {
     }
   }
 
-  const handleMint = async () => {
+  const handleMint = async (mintCount) => {
+
+    //use mintCount variable to query the contract for "mintCount" number of mints.
 
     const whiteListCheck = await checkWhitelist();
     if (!whiteListCheck) {
@@ -323,6 +326,8 @@ function App() {
           handleMint={handleMint}
           mintVisibleClass={mintVisibleClass}
           toggleMintVisible={toggleMintVisible}
+          mintCount={mintCount}
+          setMintCount={setMintCount}
       />
   );
 }

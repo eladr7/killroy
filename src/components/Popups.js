@@ -5,6 +5,9 @@ const Popups = (props) => {
         let val = e.target.value;
         //change every character except 1,2,3,4 to ""
         val = val.replace(/[^1-4]/g, "");
+        if (val.length > 1) {
+            val = val.substring(0, 1);
+        }
         props.setMintCount(val);
     }
 

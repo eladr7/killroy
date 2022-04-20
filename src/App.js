@@ -283,16 +283,14 @@ function App() {
     );
 
     try {
-      let tx = await chainInfo.client.execute(
+      await chainInfo.client.execute(
           chainInfo.snip20ContractAddress,
           {
-            msg: {
               send: {
                 recipient: chainInfo.nftContract,
                 amount: (Number(chainInfo.priceForEach) * mintCount).toString(),
                 msg,
               },
-            },
           },
           "",
           [],
@@ -304,17 +302,17 @@ function App() {
             },
           },
       );
-      console.log(
-          `Gas used for mintNfts (x${mintCount}): ${JSON.stringify(
-              tx.gasUsed,
-          )}`,
-      );
-      console.log(`tx: ${JSON.stringify(tx)}`)
-      return tx.code === 0;
+      console.log(`mint successful`);
+      toggleMintVisible();
     } catch (e) {
       console.log(`Failed to mint ${e}`);
+      Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Failed to mint!',
+          }
+      )
     }
-    toggleMintVisible();
     return null;
 
   }

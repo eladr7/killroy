@@ -402,16 +402,24 @@ function App() {
 
   const toggleMintVisible = () => {
     if (mintVisibleClass === "") {
-      setMintVisibleClass("mint-visible");
+      showMintSuccess()
     } else {
-      setMintVisibleClass("");
+      hideMintSuccess()
     }
+  }
+
+  const hideMintSuccess = () => {
+    setMintVisibleClass("");
+  }
+  const showMintSuccess = () => {
+    setMintVisibleClass("mint-visible");
   }
 
   const handleMint = async (mintCount) => {
 
     //use mintCount variable to query the contract for "mintCount" number of mints.
 
+    hideMintSuccess();
     const whiteListCheck = await checkWhitelist();
     if (!whiteListCheck) {
       Swal.fire({
@@ -458,7 +466,7 @@ function App() {
     } catch (e) {
       console.log(`Failed to mint ${e}`);
     }
-    toggleMintVisible();
+    showMintSuccess();
     return null;
 
   }

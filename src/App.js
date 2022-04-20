@@ -251,28 +251,40 @@ function App() {
         }
       });
 
-      const tokens = await chainInfo.client.queryContractSmart(
-          chainInfo.randomMintContractAddress,
-          {
-            with_permit: {
-              query: {
-                "tokens": {
-                  "owner": chainInfo.clientAddress,
-                  "limit": 4444
-                }
-              },
-              permit: {
-                params: {
-                  permit_name: "getCollection",
-                  allowed_tokens: [chainInfo.randomMintContractAddress],
-                  chain_id: chainInfo.chainId,
-                  permissions: ["owner"],
+      let tokens = [];
+      try {
+        tokens = await chainInfo.client.queryContractSmart(
+            chainInfo.randomMintContractAddress,
+            {
+              with_permit: {
+                query: {
+                  "tokens": {
+                    "owner": chainInfo.clientAddress,
+                    "limit": 4444
+                  }
                 },
-                signature: chainInfo.permit,
+                permit: {
+                  params: {
+                    permit_name: "getCollection",
+                    allowed_tokens: [chainInfo.randomMintContractAddress],
+                    chain_id: chainInfo.chainId,
+                    permissions: ["owner"],
+                  },
+                  signature: chainInfo.permit,
+                },
               },
-            },
-          }
-      );
+            }
+        );
+      } catch (e) {
+        console.log(e);
+        Swal.fire({
+          title: 'Contract Error',
+          text: e,
+          icon: 'error'
+        })
+        return false;
+      }
+
 
       const allTokens = tokens.token_list.tokens
 

@@ -522,16 +522,24 @@ function App() {
 
   const toggleMintVisible = () => {
     if (mintVisibleClass === "") {
-      setMintVisibleClass("mint-visible");
+      showMintSuccess()
     } else {
-      setMintVisibleClass("");
+      hideMintSuccess()
     }
+  }
+
+  const hideMintSuccess = () => {
+    setMintVisibleClass("");
+  }
+  const showMintSuccess = () => {
+    setMintVisibleClass("mint-visible");
   }
 
   const handleMint = async (mintCount) => {
 
     //use mintCount variable to query the contract for "mintCount" number of mints.
 
+    hideMintSuccess();
     const whiteListCheck = await checkWhitelist();
     console.log(`is whitelisted: ${whiteListCheck}`);
     if (!whiteListCheck) {
@@ -615,6 +623,7 @@ function App() {
         )
       }
     }
+    showMintSuccess();
     return null;
 
   }

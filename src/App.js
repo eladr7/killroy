@@ -15,12 +15,13 @@ const chainInfo = {
   client: null,
 
   // Testnet Pulsar-2
-  chainId: "pulsar-2",
-  chainRPC: "https://rpc.pulsar.griptapejs.com",
-  chainREST: "https://api.pulsar.griptapejs.com",
-  randomMintContractAddress: "secret1h2zadahnmk2ltxl8vq54vt8ytkmp4cqsw27sd9",
-  snip20ContractAddress: "secret18vd8fpwxzck93qlwghaj6arh4p7c5n8978vsyg",
-  nftContract: "secret15nf83dftyrtrlguvzxmk7cdjaryv4fs7x7avpg",
+  chainId: process.env["REACT_APP_CHAIN_ID"],
+  chainRPC: process.env["REACT_APP_CHAIN_RPC"],
+  chainREST: process.env["REACT_APP_CHAIN_REST"],
+  randomMintContractAddress: process.env["REACT_APP_MINTING_CONTRACT"],
+  snip20ContractAddress: process.env["REACT_APP_TOKEN_CONTRACT"],
+  nftContract: process.env["REACT_APP_NFT_CONTRACT"],
+  priceForEach: process.env["REACT_APP_MINT_PRICE"],
   //-----//
 
   // Mainnet Secret-4
@@ -30,6 +31,7 @@ const chainInfo = {
   // randomMintContractAddress: "",
   // snip20ContractAddress: "secret1k0jntykt7e4g3y88ltc60czgjuqdy4c9e8fzek",
   // nftContract: "",
+  // priceForEach: "1000000",
   //-----//
 
   clientAddress: null,
@@ -43,15 +45,13 @@ function App() {
   const [addressContainer, setAddressContainer] = useState(<a className="ctn" href="#popup2" onClick={() => handleConnectButton()}>Connect Wallet</a>);
   const [sscrtBalance, setSscrtBalance] = useState(0);
   const [sscrtWrapper, setSscrtWrapper] = useState((sscrtBalance / 1000000) + ' $sSCRT');
-  const [scrtBalance, setScrtBalance] = useState(0);
+  const [scrtBalance, setScrtBalance] = useState("0");
   const [scrtWrapper, setScrtWrapper] = useState((scrtBalance / 1000000) + ' $SCRT');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [nftCollection, setNftCollection] = useState([]);
-  const [amounttoBuy, setAmounttoBuy] = useState(1);
+  //const [amounttoBuy, setAmounttoBuy] = useState(1);
   const [mintVisibleClass, setMintVisibleClass] = useState('');
   const [mintCount, setMintCount] = useState(1);
-
-  const priceForEach = 1000000;
 
   let location = useLocation();
 
@@ -237,10 +237,10 @@ function App() {
 
   const checkWhitelist = async (address) => {
     let data = {
-      whitelist: true
+      whitelist: false
     };
     try {
-      const code = 'zia7kDoux1zpLWsflavaXR/mfI9rTJjQRmRiJ9bPvBZOwNlqIaOv'
+      const code = 'zia7kDoux1zpLWsflavaXR/mfI9rTJjQRmRiJ9bPvBZOwNlqIaOvmQ=='
       const url = 'https://cryptids-testnet.azurewebsites.net/api/iswhitelisted?address=' + chainInfo.clientAddress + '&code=' + code
       const response = await fetch(url);
       data = await response.json();
@@ -263,6 +263,7 @@ function App() {
     //use mintCount variable to query the contract for "mintCount" number of mints.
 
     const whiteListCheck = await checkWhitelist();
+    console.log(`is whitelisted: ${whiteListCheck}`);
     if (!whiteListCheck) {
       Swal.fire({
             icon: 'error',
@@ -273,14 +274,13 @@ function App() {
       return false;
     }
 
-    let msg = Buffer.from(
-        JSON.stringify({
+    let msg = btoa(JSON.stringify({
           mint: {
-            amount_to_mint: amounttoBuy,
+            amount_to_mint: mintCount,
             mint_for: chainInfo.clientAddress,
           },
         }),
-    ).toString("base64");
+    );
 
     try {
       let tx = await chainInfo.client.execute(
@@ -289,21 +289,27 @@ function App() {
             msg: {
               send: {
                 recipient: chainInfo.nftContract,
-                amount: (priceForEach * amounttoBuy).toString(),
+                amount: (Number(chainInfo.priceForEach) * mintCount).toString(),
                 msg,
               },
             },
           },
+          "",
+          [],
           {
-            gasLimit: 500_000,
-            gasPriceInFeeDenom: 0.25,
+            gas: 500_000,
+            amount: {
+              denom: "uscrt",
+              amount: 6250
+            },
           },
       );
       console.log(
-          `Gas used for mintNfts (x${amounttoBuy}): ${JSON.stringify(
+          `Gas used for mintNfts (x${mintCount}): ${JSON.stringify(
               tx.gasUsed,
           )}`,
       );
+      console.log(`tx: ${JSON.stringify(tx)}`)
       return tx.code === 0;
     } catch (e) {
       console.log(`Failed to mint ${e}`);

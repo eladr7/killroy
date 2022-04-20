@@ -5,7 +5,7 @@ const Header = (props) => {
         <section id="header-background">
             <header>
                 <div id="brand">
-                    <a href={"https://legendao.io"} target={"_blank"}><img src="./image/Cryptids.png" alt={""} className="logo"/></a>
+                    <a href={"https://legendao.io"} rel="noreferrer" target={"_blank"}><img src="./image/Cryptids.png" alt={""} className="logo"/></a>
                 </div>
                 <nav>
                     <ul className="nav-list">
@@ -15,8 +15,8 @@ const Header = (props) => {
                         <li><Link smooth to="/#accordian-background">F.A.Q.</Link></li>
                         {/*<li><Link smooth to="/#team-footer-background">Our Team</Link></li>*/}
                         {/*<li><img src="./image/stashh.png" alt="" /></li>*/}
-                        <li><a href={"https://discord.gg/w84egv2Enb"} target={"_blank"}><img src="./image/discord.png" alt="" /></a></li>
-                        <li><a href={"https://twitter.com/LegendaoNFT"} target={"_blank"}><img src="./image/twitter.png" alt="" /></a></li>
+                        <li><a href={"https://discord.gg/w84egv2Enb"} rel="noreferrer" target={"_blank"}><img src="./image/discord.png" alt="" /></a></li>
+                        <li><a href={"https://twitter.com/LegendaoNFT"} rel="noreferrer" target={"_blank"}><img src="./image/twitter.png" alt="" /></a></li>
                         {props.addressContainer}
                         {/*<a className="ctn" href="#popup2" onClick={() => props.getBalance()}>Balance</a>*/}
                     </ul>

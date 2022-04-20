@@ -8,7 +8,7 @@ const Hero = (props) => {
                         missions:
                         to connect creators and collectors on the Secret Network, creating financial opportunity,
                         community, and the chance to go to the moon for all who know the secret.
-                    </p> <a href={"https://discord.gg/w84egv2Enb"} target={"_blank"}>Get Whitelist</a></div>
+                    </p> <a href={"https://discord.gg/w84egv2Enb"} rel="noreferrer" target={"_blank"}>Get Whitelist</a></div>
                 <div className="hero-text-img"><img src="Group 715.png" alt="" />
                     <div className="hero-img-time">
                         <p><span style={{fontWeight:'800'}}>Whitelist minting is now open</span><br/><span style={{fontSize:'18px'}}>(public minting starts at 12 pm UTC)</span></p><br/>

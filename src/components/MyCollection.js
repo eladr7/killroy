@@ -12,10 +12,10 @@ const MyCollection = (props) => {
                 return(
                     <div key={index} className={"collection-item-background"}>
                         <section>
-                            <div className="my-collection-yeti"><img src="./image/our-team img 1.png" alt=""/>
+                            <div className="my-collection-yeti"><img src={nft.nft_dossier.public_metadata.extension.image} alt=""/>
                                 <div className="live-my-collection">
-                                    <h4>{nft.name} <span>Total Score: 222.22</span></h4>
-                                    <p>{nft.id} <span>Rank: 225</span></p>
+                                    <h4>{nft.nft_dossier.public_metadata.extension.name} <span>Total Score: {nft.totals.total.toFixed(0)}</span></h4>
+                                    <p>#{nft.token_id} <span>Rank: {nft.totals.rank}</span></p>
                                 </div>
                             </div>
                         </section>
@@ -38,132 +38,24 @@ const MyCollection = (props) => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="customerTablerow">
-                                        <div style={{flexGrow: 3}}>
-                                            <p className="paraText">Background</p>
-                                        </div>
-                                        <div style={{flexGrow: '3.5'}}>
-                                            <p className="paraText">{nft.background}</p>
-                                        </div>
-                                        <div style={{flexGrow: 1}}>
-                                            <p className="paraText">68.36</p>
-                                        </div>
-                                        <div style={{flexGrow: 3}}>
-                                            <p className="paralast">22.5%</p>
-                                        </div>
-                                    </div>
-                                    <div className="customerTablerow">
-                                        <div style={{flexGrow: 3}}>
-                                            <p className="paraText">Background</p>
-                                        </div>
-                                        <div style={{flexGrow: '3.5'}}>
-                                            <p className="paraText">{nft.background}</p>
-                                        </div>
-                                        <div style={{flexGrow: 1}}>
-                                            <p className="paraText">68.36</p>
-                                        </div>
-                                        <div style={{flexGrow: 3}}>
-                                            <p className="paralast">22.5%</p>
-                                        </div>
-                                    </div>
-                                    <div className="customerTablerow">
-                                        <div style={{flexGrow: 3}}>
-                                            <p className="paraText">Background</p>
-                                        </div>
-                                        <div style={{flexGrow: '3.5'}}>
-                                            <p className="paraText">{nft.background}</p>
-                                        </div>
-                                        <div style={{flexGrow: 1}}>
-                                            <p className="paraText">68.36</p>
-                                        </div>
-                                        <div style={{flexGrow: 3}}>
-                                            <p className="paralast">22.5%</p>
-                                        </div>
-                                    </div>
-                                    <div className="customerTablerow">
-                                        <div style={{flexGrow: 3}}>
-                                            <p className="paraText">Background</p>
-                                        </div>
-                                        <div style={{flexGrow: '3.5'}}>
-                                            <p className="paraText">{nft.background}</p>
-                                        </div>
-                                        <div style={{flexGrow: 1}}>
-                                            <p className="paraText">68.36</p>
-                                        </div>
-                                        <div style={{flexGrow: 3}}>
-                                            <p className="paralast">22.5%</p>
-                                        </div>
-                                    </div>
-                                    <div className="customerTablerow">
-                                        <div style={{flexGrow: 3}}>
-                                            <p className="paraText">Background</p>
-                                        </div>
-                                        <div style={{flexGrow: '3.5'}}>
-                                            <p className="paraText">{nft.background}</p>
-                                        </div>
-                                        <div style={{flexGrow: 1}}>
-                                            <p className="paraText">68.36</p>
-                                        </div>
-                                        <div style={{flexGrow: 3}}>
-                                            <p className="paralast">22.5%</p>
-                                        </div>
-                                    </div>
-                                    <div className="customerTablerow">
-                                        <div style={{flexGrow: 3}}>
-                                            <p className="paraText">Background</p>
-                                        </div>
-                                        <div style={{flexGrow: '3.5'}}>
-                                            <p className="paraText">{nft.background}</p>
-                                        </div>
-                                        <div style={{flexGrow: 1}}>
-                                            <p className="paraText">68.36</p>
-                                        </div>
-                                        <div style={{flexGrow: 3}}>
-                                            <p className="paralast">22.5%</p>
-                                        </div>
-                                    </div>
-                                    <div className="customerTablerow">
-                                        <div style={{flexGrow: 3}}>
-                                            <p className="paraText">Background</p>
-                                        </div>
-                                        <div style={{flexGrow: '3.5'}}>
-                                            <p className="paraText">{nft.background}</p>
-                                        </div>
-                                        <div style={{flexGrow: 1}}>
-                                            <p className="paraText">68.36</p>
-                                        </div>
-                                        <div style={{flexGrow: 3}}>
-                                            <p className="paralast">22.5%</p>
-                                        </div>
-                                    </div>
-                                    <div className="customerTablerow">
-                                        <div style={{flexGrow: 3}}>
-                                            <p className="paraText">Background</p>
-                                        </div>
-                                        <div style={{flexGrow: '3.5'}}>
-                                            <p className="paraText">{nft.background}</p>
-                                        </div>
-                                        <div style={{flexGrow: 1}}>
-                                            <p className="paraText">68.36</p>
-                                        </div>
-                                        <div style={{flexGrow: 3}}>
-                                            <p className="paralast">22.5%</p>
-                                        </div>
-                                    </div>
-                                    <div className="customerTablerow">
-                                        <div style={{flexGrow: 3}}>
-                                            <p className="paraText">Background</p>
-                                        </div>
-                                        <div style={{flexGrow: '3.5'}}>
-                                            <p className="paraText">{nft.background}</p>
-                                        </div>
-                                        <div style={{flexGrow: 1}}>
-                                            <p className="paraText">68.36</p>
-                                        </div>
-                                        <div style={{flexGrow: 3}}>
-                                            <p className="paralast">22.5%</p>
-                                        </div>
-                                    </div>
+                                    {nft.scores.map((attr) => {
+                                        return (
+                                            <div className="customerTablerow" key={`${nft.token_id}${attr.type}`}>
+                                                <div style={{flexGrow: 3}}>
+                                                    <p className="paraText">{attr.type}</p>
+                                                </div>
+                                                <div style={{flexGrow: '3.5'}}>
+                                                    <p className="paraText">{attr.value}</p>
+                                                </div>
+                                                <div style={{flexGrow: 1}}>
+                                                    <p className="paraText">{attr.score.toFixed(2)}</p>
+                                                </div>
+                                                <div style={{flexGrow: 3}}>
+                                                    <p className="paralast">{(attr.percentage * 100).toFixed(2)}%</p>
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             </div>
                         </div>

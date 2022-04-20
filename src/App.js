@@ -235,7 +235,7 @@ function App() {
     setNftCollection(nftData);
   }
 
-  const checkWhitelist = async (address) => {
+  const checkWhitelist = async () => {
     let data = {
       whitelist: false
     };
@@ -305,13 +305,26 @@ function App() {
       console.log(`mint successful`);
       toggleMintVisible();
     } catch (e) {
-      console.log(`Failed to mint ${e}`);
-      Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Failed to mint!',
-          }
-      )
+      console.log(`Failed to mint ${e.message}`);
+
+      if (e?.message.contains('insufficient funds')) {
+        Swal.fire({
+              icon: 'error',
+              title: 'Failed to mint',
+              text: 'Insufficient sSCRT balance',
+            }
+        )
+      }
+      else if (e?.message.contains('request rejected')) {
+      }
+      else {
+        Swal.fire({
+              icon: 'error',
+              title: 'Failed',
+              text: 'Please try again',
+            }
+        )
+      }
     }
     return null;
 

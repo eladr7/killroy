@@ -10,7 +10,7 @@ import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import {useLocation} from "react-router-dom";
 import Swal from "sweetalert2";
-import {getAllNftDetails} from "./components/snip721";
+//import {getAllNftDetails} from "./components/snip721";
 
 const chainInfo = {
   client: null,

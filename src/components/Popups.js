@@ -29,7 +29,7 @@ const Popups = (props) => {
                     <div className="popup">
                         <h2>Mint Successful!</h2> <a className="close" href="#" onClick={() => props.toggleMintVisible()}>×</a>
                         <div className="content mintbox-content"> Congratulations! You’ve successfully minted an NFT!</div>
-                        <div className="popupBtn"><a className="bark" href="/mycollection">See my NFT</a> <a className="light"
+                        <div className="popupBtn"><Link className="bark" to="/mycollection">See my NFT</Link> <a onClick={() => props.handleMint(1)} className="light"
                                                                                                  href="#">Mint
                             Again</a></div>
                     </div>

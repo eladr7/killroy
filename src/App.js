@@ -195,44 +195,182 @@ function App() {
 
   const fetchMyCollection = async () => {
     //mock nft data
-    //Data should be fetched from the contract and saved into the nftData array
-    const nftData = [
-      {
-        name: "NFT 1",
-        id: "#4352",
-        background: "white",
-        lhand: "none"
-      },
-      {
-        name: "NFT 2",
-        id: "#2548",
-        background: "green",
-        lhand: "Sword"
-      },
-      {
-        name: "NFT 3",
-        id: "#2548",
-        background: "yellow",
-        lhand: "Axe"
-      }
-    ]
+    if (!window.keplr) {
+      Swal.fire({
+        title: 'Missing Keplr',
+        text: 'Please install Keplr extension',
+        icon: 'warning'
+      })
+      return false;
+    } else {
 
-    for (let i = 0; i < nftData.length; i++) {
-      let data = {
-        attributes: []
+      if (chainInfo.clientAddress === null) {
+        alert("Wallet error!")
       }
-      try {
-        //construct the URL according to the attributes
-        let code = "p5CbBJPQfYHjNq/PxjAEAsebbVjOgP2h2qkk8zQyvd1KDxhLynQgeg=="
-        let url = "https://cryptids-testnet.azurewebsites.net/api/attributestatistics?background=" + nftData[i].background + "&lhand=" + nftData[i].lhand + "&code=" + code
-        const response = await fetch(url);
-        data = await response.json();
-      } catch (error) {
-        console.log(error);
+
+      if (chainInfo.permit === null || chainInfo.permit === undefined) {
+
+        const { signature } = await window.keplr.signAmino(
+            chainInfo.chainId,
+            chainInfo.clientAddress,
+            {
+              chain_id: chainInfo.chainId,
+              account_number: "0", // Must be 0
+              sequence: "0", // Must be 0
+              fee: {
+                amount: [{ denom: "uscrt", amount: "0" }], // Must be 0 uscrt
+                gas: "1", // Must be 1
+              },
+              msgs: [
+                {
+                  type: "query_permit", // Must be "query_permit"
+                  value: {
+                    permit_name: "getCollection",
+                    allowed_tokens: [chainInfo.randomMintContractAddress],
+                    permissions: ["owner"],
+                  },
+                },
+              ],
+              memo: "", // Must be empty
+            },
+            {
+              preferNoSetFee: true, // Fee must be 0, so hide it from the user
+              preferNoSetMemo: true, // Memo must be empty, so hide it from the user
+            }
+        );
+        chainInfo.permit = signature;
+      } else {
+        const signature = chainInfo.permit;
       }
-      nftData[i].scores = data.attributes; //save scores as another object to use in the list
+
+      //setModalContent(() => (<div className="dog-loader-test">Checking your dogs...</div>))
+      Swal.fire({
+        title: 'Checking...',
+        didOpen: () => {
+          Swal.showLoading()
+        }
+      });
+
+      const tokens = await chainInfo.client.queryContractSmart(
+          chainInfo.randomMintContractAddress,
+          {
+            with_permit: {
+              query: {
+                "tokens": {
+                  "owner": chainInfo.clientAddress,
+                  "limit": 4444
+                }
+              },
+              permit: {
+                params: {
+                  permit_name: "getCollection",
+                  allowed_tokens: [chainInfo.randomMintContractAddress],
+                  chain_id: chainInfo.chainId,
+                  permissions: ["owner"],
+                },
+                signature: chainInfo.permit,
+              },
+            },
+          }
+      );
+
+      const allTokens = tokens.token_list.tokens
+
+      if (allTokens.length < 1) {
+        Swal.fire({
+          title: 'You have no NFTs yet!',
+          didOpen: () => {
+            Swal.hideLoading()
+          }
+        });
+        return false
+      }
+      Swal.fire({
+        title: 'Acquiring...',
+        didOpen: () => {
+          Swal.showLoading()
+        }
+      });
+
+      let myTokens = []
+
+      for (let i = 0; i < allTokens.length; i++) {
+        // for (let i = 0; i < 2; i++) {
+        console.log(allTokens[i])
+        const msg = {
+          with_permit: {
+            query: {
+              "nft_dossier": {
+                "token_id": allTokens[i]
+              }
+            },
+            permit: {
+              params: {
+                permit_name: "getCollection",
+                allowed_tokens: [chainInfo.randomMintContractAddress],
+                chain_id: chainInfo.chainId,
+                permissions: ["owner"],
+              },
+              signature: chainInfo.permit,
+            }
+          }
+        }
+
+        let singleToken = await chainInfo.client.restClient.queryContractSmart(chainInfo.randomMintContractAddress, msg);
+        // console.log(dog)
+        singleToken['token_id'] = allTokens[i]
+        myTokens.push(singleToken)
+      }
+      if (myTokens.length > 0) {
+        console.log(myTokens)
+        Swal.close();
+        // //DUMMY DATA
+        // const nftData = [
+        //   {
+        //     name: "NFT 1",
+        //     id: "#4352",
+        //     background: "white",
+        //     lhand: "none"
+        //   },
+        //   {
+        //     name: "NFT 2",
+        //     id: "#2548",
+        //     background: "green",
+        //     lhand: "Sword"
+        //   },
+        //   {
+        //     name: "NFT 3",
+        //     id: "#2548",
+        //     background: "yellow",
+        //     lhand: "Axe"
+        //   }
+        // ]
+
+        for (let i = 0; i < myTokens.length; i++) {
+          let data = {
+            attributes: []
+          }
+          try {
+            //construct the URL according to the attributes
+            let code = "p5CbBJPQfYHjNq/PxjAEAsebbVjOgP2h2qkk8zQyvd1KDxhLynQgeg=="
+            let url = "https://cryptids-testnet.azurewebsites.net/api/attributestatistics?background=" + myTokens[i].nft_dossier.public_metadata.extension.attributes[0].value + "&lhand=" + myTokens[i].nft_dossier.public_metadata.extension.attributes[0].value + "&code=" + code
+            const response = await fetch(url);
+            data = await response.json();
+          } catch (error) {
+            console.log(error);
+          }
+          myTokens[i].scores = data.attributes; //save scores as another object to use in the list
+        }
+        setNftCollection(myTokens);
+      } else {
+        Swal.fire({
+          title: 'You have no NFTs yet!',
+          didOpen: () => {
+            Swal.hideLoading()
+          }
+        });
+      }
     }
-    setNftCollection(nftData);
   }
 
   const checkWhitelist = async (address) => {

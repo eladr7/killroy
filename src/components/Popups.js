@@ -4,7 +4,7 @@ const Popups = (props) => {
     const handleSetMintCount = (e) => {
         let val = e.target.value;
         //change every character except 1,2,3,4 to ""
-        val = val.replace(/[^1-4]/g, "");
+        val = val.replace(/[^1-9]/g, "");
         if (val.length > 1) {
             val = val.substring(0, 1);
         }
@@ -12,11 +12,11 @@ const Popups = (props) => {
     }
 
     const setMaxMintCount = () => {
-        props.setMintCount(4);
+        props.setMintCount(9);
     }
 
     const fireMint = () => {
-        if (props.mintCount < 1 || props.mintCount > 4) {
+        if (props.mintCount < 1 || props.mintCount > 9) {
             return false;
         }
         props.handleMint(props.mintCount);

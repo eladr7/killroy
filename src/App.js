@@ -726,12 +726,12 @@ function App() {
         )
       }
       else {
-        Swal.fire({
-              icon: 'error',
-              title: 'Failed',
-              text: 'Please try again',
-            }
-        )
+        // Swal.fire({
+        //       icon: 'error',
+        //       title: 'Failed',
+        //       text: 'Please try again',
+        //     }
+        // )
       }
     }
     return null;

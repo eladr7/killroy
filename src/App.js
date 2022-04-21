@@ -606,8 +606,7 @@ function App() {
       whitelist: false
     };
     try {
-      const code = 'zia7kDoux1zpLWsflavaXR/mfI9rTJjQRmRiJ9bPvBZOwNlqIaOvmQ=='
-      const url = 'https://cryptids-testnet.azurewebsites.net/api/iswhitelisted?address=' + chainInfo.clientAddress + '&code=' + code
+      const url = `${chainInfo.backendService}/iswhitelisted?address=${chainInfo.clientAddress}`;
       const response = await fetch(url);
       data = await response.json();
     } catch (error) {

@@ -414,18 +414,18 @@ function App() {
             attributes: []
           }
           try {
-            // todo: remove this when working with real data
-            myTokens[i].nft_dossier.public_metadata.extension.attributes = [{
-              trait_type: "Background",
-              value: "Night"
-            },{
-              trait_type: "Bottom Hand",
-              value: "Hammer"
-            },{
-              trait_type: "Head",
-              value: "Ram Horns White"
-            }];
-            myTokens[i].nft_dossier.public_metadata.extension.description = "Bull Bigfoot #1";
+            // // todo: remove this when working with real data
+            // myTokens[i].nft_dossier.public_metadata.extension.attributes = [{
+            //   trait_type: "Background",
+            //   value: "Night"
+            // },{
+            //   trait_type: "Bottom Hand",
+            //   value: "Hammer"
+            // },{
+            //   trait_type: "Head",
+            //   value: "Ram Horns White"
+            // }];
+            // myTokens[i].nft_dossier.public_metadata.extension.description = "Bull Bigfoot #1";
 
             let attrs = myTokens[i].nft_dossier.public_metadata.extension.attributes.map(
                 (attr) => {
@@ -688,6 +688,14 @@ function App() {
               icon: 'error',
               title: 'Failed to mint',
               text: 'Insufficient sSCRT balance',
+            }
+        )
+      }
+      if (e.message.includes("timed out waiting for tx")) {
+        Swal.fire({
+              icon: 'warning',
+              title: 'Timed out',
+              text: 'Timed out waiting for response, however transaction may have been successful. Check My Collection for more details',
             }
         )
       }

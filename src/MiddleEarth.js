@@ -21,7 +21,7 @@ const MiddleEarth = (props) => {
                 />
                 <Routes>
                     <Route strict path="/" element={<Homepage handleMint={props.handleMint}/>} />
-                    <Route path="/mycollection" element={<MyCollection nftCollection={props.nftCollection}/>} />
+                    <Route path="/mycollection" element={<MyCollection nftCollection={props.nftCollection} backendService ={props.chainInfo.backendService} />} />
                 </Routes>
                 <Footer />
                 <Popups

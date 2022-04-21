@@ -3,13 +3,14 @@ import './App.css';
 import './css/style.css';
 import './css/responsive.css';
 import {useEffect, useState} from "react";
-import connectWallet from "./ConnectWallet";
+import connectWallet, {sleep} from "./ConnectWallet";
 import { SigningCosmWasmClient } from "secretjs";
 import MiddleEarth from "./MiddleEarth";
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import {useLocation} from "react-router-dom";
 import Swal from "sweetalert2";
+import {getFromLS, setToLS} from "./storage";
 //import {getAllNftDetails} from "./components/snip721";
 
 const chainInfo = {
@@ -195,6 +196,9 @@ function App() {
   }
 
   const fetchMyCollection = async () => {
+    // hack to hide the mint popup
+    hideMintSuccess();
+
     //mock nft data
     if (!window.keplr) {
       Swal.fire({
@@ -206,11 +210,26 @@ function App() {
     } else {
 
       if (chainInfo.clientAddress === null) {
-        alert("Wallet error!")
+        const accounts = await window.getOfflineSigner(chainInfo.chainId).getAccounts();
+        chainInfo.clientAddress = accounts[0].address;
       }
 
-      if (chainInfo.permit === null || chainInfo.permit === undefined) {
+      console.log(`permit for address: ${chainInfo.clientAddress}`);
 
+      let permit = undefined;
+      try {
+        permit = getFromLS(`${chainInfo.clientAddress}${chainInfo.nftContract}`);
+      } catch (_e) {
+        // do nothing
+      }
+
+      console.log(`permit: ${JSON.stringify(permit)}`);
+
+      while (!chainInfo.client) {
+        await sleep(50);
+      }
+
+      if (!permit) {
         const { signature } = await window.keplr.signAmino(
             chainInfo.chainId,
             chainInfo.clientAddress,
@@ -239,9 +258,8 @@ function App() {
               preferNoSetMemo: true, // Memo must be empty, so hide it from the user
             }
         );
-        chainInfo.permit = signature;
-      } else {
-        const signature = chainInfo.permit;
+        permit = signature;
+        setToLS(`${chainInfo.clientAddress}${chainInfo.nftContract}`, permit);
       }
 
       //setModalContent(() => (<div className="dog-loader-test">Checking your dogs...</div>))
@@ -271,7 +289,7 @@ function App() {
                     chain_id: chainInfo.chainId,
                     permissions: ["owner"],
                   },
-                  signature: chainInfo.permit,
+                  signature: permit,
                 },
               },
             }
@@ -279,7 +297,7 @@ function App() {
       } catch (e) {
         console.log(e);
         Swal.fire({
-          title: 'Contract Error',
+          title: 'Error Signing Permit',
           text: e,
           icon: 'error'
         })
@@ -324,7 +342,7 @@ function App() {
                 chain_id: chainInfo.chainId,
                 permissions: ["owner"],
               },
-              signature: chainInfo.permit,
+              signature: permit,
             }
           }
         }
@@ -572,7 +590,7 @@ function App() {
           "",
           [],
           {
-            gas: 50_000 + (Number(mintCount) * 50_000),
+            gas: 80_000 + (Number(mintCount) * 80_000),
             amount: {
               denom: "uscrt",
               amount: 6250
@@ -581,7 +599,7 @@ function App() {
       );
       //console.log(`resp: ${JSON.stringify(tx)}`);
       console.log(`mint successful`);
-      toggleMintVisible();
+      showMintSuccess();
     } catch (e) {
       console.log(`Failed to mint: ${e}`);
 
@@ -622,9 +640,7 @@ function App() {
         )
       }
     }
-    showMintSuccess();
     return null;
-
   }
 
   return (

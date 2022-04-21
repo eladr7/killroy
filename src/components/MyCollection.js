@@ -43,17 +43,17 @@ const MyCollection = (props) => {
                                     {nft.scores.map((attr) => {
                                         return (
                                             <div className="customerTablerow" key={`${nft.token_id}${attr.type}`}>
-                                                <div style={{flexGrow: 3}}>
+                                                <div className="justDiv" style={{flexGrow: 3}}>
                                                     <p className="paraText">{attr.type}</p>
                                                 </div>
-                                                <div style={{flexGrow: '3.5'}}>
+                                                <div className="justDiv" style={{flexGrow: '3.5'}}>
                                                     <p className="paraText">{attr.value}</p>
                                                 </div>
-                                                <div style={{flexGrow: 1}}>
+                                                <div className="justDiv" style={{flexGrow: 1}}>
                                                     <p className="paraText">{attr.score.toFixed(2)}</p>
                                                 </div>
-                                                <div style={{flexGrow: 3}}>
-                                                    <p className="paralast">{(attr.percentage * 100).toFixed(2)}%</p>
+                                                <div className="justDivLast" style={{flexGrow: 3}}>
+                                                    <p className="paraText">{(attr.percentage * 100).toFixed(2)}%</p>
                                                 </div>
                                             </div>
                                         );

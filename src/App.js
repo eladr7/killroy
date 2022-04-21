@@ -2,7 +2,6 @@ import './css/reset.css';
 import './App.css';
 import './css/style.css';
 import './css/responsive.css';
-import './css/sweetalert-theme.css';
 
 import {useEffect, useState} from "react";
 import connectWallet, {sleep} from "./ConnectWallet";
@@ -11,12 +10,12 @@ import MiddleEarth from "./MiddleEarth";
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import {useLocation} from "react-router-dom";
+
 import Swal from "sweetalert2";
+import './css/sweetalert-theme.css';
 
 import {getFromLS, setToLS} from "./storage";
 //import {getAllNftDetails} from "./components/snip721";
-
-
 
 const chainInfo = {
   client: null,

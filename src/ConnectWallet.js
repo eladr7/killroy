@@ -1,12 +1,12 @@
 import Swal from "sweetalert2";
 
+export const sleep = (ms) => new Promise((accept) => setTimeout(accept, ms));
+
 const connectWallet = async (props) => {
 
     const chainId = props.chainId;
     const chainRPC = props.chainRPC;
     const chainREST = props.chainREST;
-
-    const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
     // while (
     //     !window.keplr ||

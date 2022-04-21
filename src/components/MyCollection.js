@@ -1,5 +1,6 @@
 const MyCollection = (props) => {
     const imgBaseUrl = props.backendService + "/ipfstoimage?uri=";
+
     return(
         <div>
             <div>

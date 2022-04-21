@@ -207,7 +207,11 @@ function App() {
     } else {
 
       if (chainInfo.clientAddress === null) {
-        alert("Wallet error!")
+        //wait for chainInfo.clientAddress
+        setTimeout(() => {
+          fetchMyCollection();
+        }, 1000);
+        return false;
       }
 
       if (chainInfo.permit === null || chainInfo.permit === undefined) {

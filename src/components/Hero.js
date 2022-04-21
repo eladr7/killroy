@@ -11,8 +11,8 @@ const Hero = (props) => {
                     </p> <a href={"https://discord.gg/w84egv2Enb"} rel="noreferrer" target={"_blank"}>Get Whitelist</a></div>
                 <div className="hero-text-img"><img src="Group 715.png" alt="" />
                     <div className="hero-img-time">
-                        <p><span style={{fontWeight:'800'}}>Whitelist minting is now open</span><br/><span style={{fontSize:'18px'}}>(public minting starts at 12 pm UTC)</span></p><br/>
-                        <p><span style={{fontSize:'18px'}}>WL Mint limitation - up to 4 NFTs</span></p>
+                        <p><span style={{fontWeight:'800'}}>Whitelist minting is now open!</span><br/><span style={{fontSize:'16px'}}>(public minting 22nd of April @ 00:00 UTC)</span></p><br/>
+                        <p><span style={{fontSize:'16px'}}>If whitelisted you may mint up to 4 NFTs</span></p>
                     </div>
                     <div className="mintPrice">
                         <div className="priceTitle">

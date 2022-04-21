@@ -42,6 +42,26 @@ const chainInfo = {
   offlineSigner: null,
 }
 
+const traitTypeFormat = (description, trait) => {
+  if (trait !== "Background") {
+    const lowerDesc = description.toLowerCase();
+    let type;
+    if (lowerDesc.includes("bull")) {
+        type = "bull_";
+    } else if (lowerDesc.includes("female")){
+        type = "female_";
+    } else if (lowerDesc.includes("male")) {
+        type = "male_"
+    }
+
+    let formatted = type + trait.toLowerCase().replace(/ /g, '_');
+
+    return formatted;
+  } else {
+    return trait.toLowerCase();
+  }
+};
+
 function App() {
 
   const [addressContainer, setAddressContainer] = useState(<a className="ctn" href="#popup2" onClick={() => handleConnectButton()}>Connect Wallet</a>);
@@ -343,20 +363,31 @@ function App() {
             attributes: []
           }
           try {
+            // todo: remove this when working with real data
+            myTokens[i].nft_dossier.public_metadata.extension.attributes = [{
+              trait_type: "Background",
+              value: "Night"
+            },{
+              trait_type: "Bottom Hand",
+              value: "Hammer"
+            },{
+              trait_type: "Head",
+              value: "Ram Horns White"
+            }];
+            myTokens[i].nft_dossier.public_metadata.extension.description = "Bull Bigfoot #1";
 
             let attrs = myTokens[i].nft_dossier.public_metadata.extension.attributes.map(
                 (attr) => {
                   if (attr?.trait_type && attr?.value) {
-                    return `${attr.trait_type}=${attr.value}`;
+                    const traitType = traitTypeFormat(myTokens[i].nft_dossier.public_metadata.extension.description, attr.trait_type);
+
+                    return `${traitType}=${attr.value}`;
                   }
                 }
             ).reduce((previousValue, currentValue) => `${previousValue}&${currentValue}`);
 
-            // todo: remove this when working with real data
-            attrs="background=Night&bull_bottom_hand=Hammer&bull_head=Ram Horns White"
-
             //construct the URL according to the attributes
-            let url = `${chainInfo.backendService}/attributestatistics?${attrs}`
+            let url = `${chainInfo.backendService}/attributestatistics?${attrs}`;
 
             const response = await fetch(url);
             data = await response.json();

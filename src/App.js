@@ -210,29 +210,55 @@ function App() {
     // }
 
     let viewingKey;
+    let usd = 0;
+    //fetch api
+    const url = "https://min-api.cryptocompare.com/data/price?fsym=SCRT&tsyms=USD";
+
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+      usd = data.USD;
+    } catch (error) {
+      console.log(`error fetching price: ${error}`);
+    }
 
     let tries = 0;
     while (true) {
       tries += 1;
-      try {
-        viewingKey = await window.keplr.getSecret20ViewingKey(chainInfo.chainId, chainInfo.clientAddress);
-      } catch (error) {}
-      if (viewingKey || tries === 3) {
-        break;
+      if (window?.keplr) {
+        try {
+          //console.log(`trying to get viewing key`);
+          viewingKey = await window.keplr.getSecret20ViewingKey(chainInfo.chainId, chainInfo.snip20ContractAddress);
+        } catch (error) {}
+        if (viewingKey || tries === 3) {
+          break;
+        }
       }
       await sleep(100);
     }
 
+    //console.log(`Got viewing key: ${viewingKey}`);
+
     if (viewingKey) {
       const msg = {
-        query: {
-          balance: {
-            address: chainInfo.clientAddress,
-            key: viewingKey
-          }
+        balance: {
+          address: chainInfo.clientAddress,
+          key: viewingKey
         }
       }
       getSscrtBalance(msg, usd);
+    } else {
+      setSscrtWrapper(
+          <span style={{
+            cursor: "pointer",
+            borderRadius: "10px",
+            padding: "0 0.6em 0 0.3em",
+            border: "solid",
+      }} onClick={async () => {
+        if (window?.keplr) {
+          await window.keplr.suggestToken(chainInfo.chainId, chainInfo.snip20ContractAddress);
+        }
+      }}>Add sSCRT to Keplr</span>);
     }
 
 
@@ -254,16 +280,7 @@ function App() {
     //     }
     //   }
     // }
-    //fetch api
-    const url = "https://min-api.cryptocompare.com/data/price?fsym=SCRT&tsyms=USD";
-    let usd = 0
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      usd = data.USD;
-    } catch (error) {
-      console.log(error);
-    }
+
     const account = await chainInfo.client.getAccount(chainInfo.clientAddress);
     const scrtBal = account.balance[0].amount;
     setScrtBalance(parseFloat(scrtBal).toFixed(4));

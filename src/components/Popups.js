@@ -59,7 +59,7 @@ const Popups = (props) => {
                         <div className="content mintbox-content" style={{marginBottom:'1rem'}}>How many NFTs do you want to mint?</div>
                         <div>
                             <input type="text" onChange={(e) => handleSetMintCount(e)} value={props.mintCount} className={"form-control"} style={{width:'6rem', height:'1rem', paddingRight:'5px', fontSize:'14px'}}/><a className={"light"} onClick={() => setMaxMintCount()} style={{padding:'2px 5px', fontSize:'12px', cursor:'pointer', marginLeft:'0.5rem'}}>Max</a>
-                            {/*<div className="content mintbox-content" style={{marginBottom:'2rem', marginTop:'0.4rem', marginLeft:'0.2rem'}}>(You may only mint a maximum of 9 at one time)</div>*/}
+                            <div className="content mintbox-content" style={{marginBottom:'2rem', marginTop:'0.4rem', marginLeft:'0.2rem'}}>(Max 9 at once)</div>
                         </div>
                         <div className="popupBtn"><a onClick={() => fireMint()} className="light" href="#">Mint</a></div>
                     </div>

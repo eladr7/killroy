@@ -2,6 +2,8 @@ import './css/reset.css';
 import './App.css';
 import './css/style.css';
 import './css/responsive.css';
+import './css/sweetalert-theme.css';
+
 import {useEffect, useState} from "react";
 import connectWallet, {sleep} from "./ConnectWallet";
 import { SigningCosmWasmClient } from "secretjs";
@@ -10,8 +12,11 @@ import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import {useLocation} from "react-router-dom";
 import Swal from "sweetalert2";
+
 import {getFromLS, setToLS} from "./storage";
 //import {getAllNftDetails} from "./components/snip721";
+
+
 
 const chainInfo = {
   client: null,
@@ -214,7 +219,7 @@ function App() {
         chainInfo.clientAddress = accounts[0].address;
       }
 
-      console.log(`permit for address: ${chainInfo.clientAddress}`);
+      // console.log(`permit for address: ${chainInfo.clientAddress}`);
 
       let permit = undefined;
       try {
@@ -223,7 +228,7 @@ function App() {
         // do nothing
       }
 
-      console.log(`permit: ${JSON.stringify(permit)}`);
+      // console.log(`permit: ${JSON.stringify(permit)}`);
 
       while (!chainInfo.client) {
         await sleep(50);
@@ -326,8 +331,6 @@ function App() {
       let myTokens = []
 
       for (let i = 0; i < allTokens.length; i++) {
-        // for (let i = 0; i < 2; i++) {
-        // console.log(allTokens[i])
         const msg = {
           with_permit: {
             query: {
@@ -371,7 +374,7 @@ function App() {
             ).reduce((previousValue, currentValue) => `${previousValue}&${currentValue}`);
 
             // todo: remove this when working with real data
-            attrs="background=Night&bull_bottom_hand=Hammer&bull_head=Ram Horns White"
+            attrs="background=Night&Character=Bull Bigfoot&Bottom Hand=Orc Sword&Top Hand=Mace"
 
             //construct the URL according to the attributes
             let url = `${chainInfo.backendService}/attributestatistics?${attrs}`

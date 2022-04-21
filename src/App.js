@@ -381,29 +381,37 @@ function App() {
       let myTokens = []
 
       for (let i = 0; i < allTokens.length; i++) {
-        const msg = {
-          with_permit: {
-            query: {
-              "nft_dossier": {
-                "token_id": allTokens[i]
-              }
-            },
-            permit: {
-              params: {
-                permit_name: "gyld",
-                allowed_tokens: [chainInfo.nftContract],
-                chain_id: chainInfo.chainId,
-                permissions: ["balance", "owner"],
+
+        let tokenFromCache = getFromLS(`${chainInfo.nftContract}-${allTokens[i]}`);
+
+        if (!tokenFromCache) {
+          const msg = {
+            with_permit: {
+              query: {
+                "nft_dossier": {
+                  "token_id": allTokens[i]
+                }
               },
-              signature: permit,
+              permit: {
+                params: {
+                  permit_name: "gyld",
+                  allowed_tokens: [chainInfo.nftContract],
+                  chain_id: chainInfo.chainId,
+                  permissions: ["balance", "owner"],
+                },
+                signature: permit,
+              }
             }
           }
-        }
 
-        let singleToken = await chainInfo.client.restClient.queryContractSmart(chainInfo.nftContract, msg);
-        // console.log(dog)
-        singleToken['token_id'] = allTokens[i];
-        myTokens.push(singleToken);
+          let singleToken = await chainInfo.client.restClient.queryContractSmart(chainInfo.nftContract, msg);
+          // console.log(dog)
+          singleToken['token_id'] = allTokens[i];
+          setToLS(`${chainInfo.nftContract}-${allTokens[i]}`, singleToken);
+          myTokens.push(singleToken);
+        } else {
+          myTokens.push(tokenFromCache);
+        }
       }
       if (myTokens.length > 0) {
         // console.log(`tokens: ${JSON.stringify(myTokens)}`)

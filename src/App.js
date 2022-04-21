@@ -5,14 +5,14 @@ import './css/responsive.css';
 
 import {useEffect, useState} from "react";
 import connectWallet, {sleep} from "./ConnectWallet";
-import { SigningCosmWasmClient } from "secretjs";
+import {SigningCosmWasmClient} from "secretjs";
 import MiddleEarth from "./MiddleEarth";
 import Skeleton from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import {useLocation} from "react-router-dom";
 
-import Swal from "sweetalert2";
 import './css/sweetalert-theme.css';
+import Swal from "sweetalert2";
 
 import {getFromLS, setToLS} from "./storage";
 //import {getAllNftDetails} from "./components/snip721";
@@ -59,12 +59,33 @@ const traitTypeFormat = (description, trait) => {
         type = "male_"
     }
 
-    let formatted = type + trait.toLowerCase().replace(/ /g, '_');
-
-    return formatted;
+    return type + trait.toLowerCase().replace(/ /g, '_');
   } else {
     return trait.toLowerCase();
   }
+};
+
+function capitalizeWords(arr) {
+  return arr.map(element => {
+    return element.charAt(0).toUpperCase() + element.substring(1).toLowerCase();
+  });
+}
+
+let traitTypeToDisplay = (trait) => {
+  if (trait === "background") {
+    return "Background";
+  }
+
+  trait = trait.split('_');
+
+  if (trait[0] === ("bull") || trait[0] ===("male") || trait[0] === ("female")) {
+    trait.shift();
+  }
+
+  const capitalized = capitalizeWords(trait);
+
+  return capitalized.join(' ');
+
 };
 
 function App() {
@@ -155,7 +176,7 @@ function App() {
         highlightColor={'#4F4BCF'}
         baseColor={'#5089F9'}
     />);
-    if (localStorage.getItem('permit') === null || localStorage.getItem('permit') === undefined) {
+    if (getFromLS(`balancePermit-${chainInfo.clientAddress}${chainInfo.chainId}`)) {
       const { signature } = await window.keplr.signAmino(
           chainInfo.chainId,
           chainInfo.clientAddress,
@@ -185,7 +206,7 @@ function App() {
           }
       );
       chainInfo.balancePermit = signature;
-      localStorage.setItem("permit", signature);
+      setToLS(`balancePermit-${chainInfo.clientAddress}${chainInfo.chainId}`, signature);
     }
 
     const msg = {
@@ -202,7 +223,7 @@ function App() {
             chain_id: chainInfo.chainId,
             permissions: ["balance", "owner"],
           },
-          signature: localStorage.getItem('permit'),
+          signature: getFromLS(`balancePermit-${chainInfo.clientAddress}${chainInfo.chainId}`),
         }
       }
     }
@@ -416,8 +437,6 @@ function App() {
                 }
             ).reduce((previousValue, currentValue) => `${previousValue}&${currentValue}`);
 
-            // todo: remove this when working with real data
-            // attrs="background=Night&Character=Bull Bigfoot&Bottom Hand=Orc Sword&Top Hand=Mace"
 
             //construct the URL according to the attributes
             let url = `${chainInfo.backendService}/attributestatistics?${attrs}`;
@@ -427,6 +446,19 @@ function App() {
           } catch (error) {
             console.log(error);
           }
+
+          // reformat types (ugh)
+          data.attributes = data.attributes.map(
+              attr => {
+                return {
+                  score: attr.score,
+                  percentage: attr.percentage,
+                  type: traitTypeToDisplay(attr.type),
+                  value: attr.value
+                }
+              }
+          );
+
           myTokens[i].scores = data.attributes; //save scores as another object to use in the list
 
           try {
@@ -435,6 +467,7 @@ function App() {
 
             const response = await fetch(url);
             data = await response.json();
+
           } catch (error) {
             console.log(error);
           }

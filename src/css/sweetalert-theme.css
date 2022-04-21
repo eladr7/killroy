@@ -3,32 +3,6 @@
 * Released under the MIT License.
 */
 
-@-webkit-keyframes opacity-show {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-@keyframes opacity-show {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-@-webkit-keyframes opacity-hide {
-    100% {
-        opacity: 0;
-    }
-}
-@keyframes opacity-hide {
-    100% {
-        opacity: 0;
-    }
-}
 .swal2-popup.swal2-toast {
     box-sizing: border-box;
     grid-column: 1/4 !important;
@@ -36,7 +10,7 @@
     grid-template-columns: 1fr 99fr 1fr;
     padding: 1em;
     overflow-y: hidden;
-    background: rgba(54, 70, 93, 0.99);
+    background: #19191a;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.075), 0 1px 2px rgba(0, 0, 0, 0.075), 1px 2px 4px rgba(0, 0, 0, 0.075), 1px 3px 8px rgba(0, 0, 0, 0.075), 2px 4px 16px rgba(0, 0, 0, 0.075);
     pointer-events: all;
 }
@@ -214,7 +188,7 @@
     -webkit-overflow-scrolling: touch;
 }
 .swal2-container.swal2-backdrop-show, .swal2-container.swal2-noanimation {
-    background: rgba(54, 70, 93, 0.99);
+    background: rgba(25, 25, 26, 0.75);
 }
 .swal2-container.swal2-backdrop-hide {
     background: transparent !important;
@@ -296,7 +270,7 @@
     padding: 0 0 1.25em;
     border: none;
     border-radius: 5px;
-    background: transparent;
+    background: #19191a;
     color: #545454;
     font-family: inherit;
     font-size: 1rem;
@@ -313,7 +287,7 @@
     max-width: 100%;
     margin: 0;
     padding: 0.8em 1em 0;
-    color: #fff;
+    color: #e1e1e1;
     font-size: 1.875em;
     font-weight: 600;
     text-align: center;
@@ -401,7 +375,7 @@
     box-shadow: 0 0 0 3px rgba(110, 120, 129, 0.5);
 }
 .swal2-styled.swal2-default-outline:focus {
-    box-shadow: 0 0 0 1px rgba(54, 70, 93, 0.99), 0 0 0 3px rgba(122, 145, 178, 0.99);
+    box-shadow: 0 0 0 1px #19191a, 0 0 0 3px rgba(138, 176, 213, 0.5);
 }
 .swal2-styled:focus {
     outline: none;
@@ -414,8 +388,8 @@
     justify-content: center;
     margin: 1em 0 0;
     padding: 1em 1em 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    color: #fff;
+    border-top: 1px solid #555;
+    color: #bbbbbb;
     font-size: 1em;
 }
 
@@ -433,7 +407,7 @@
 .swal2-timer-progress-bar {
     width: 100%;
     height: 0.25em;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(225, 225, 225, 0.6);
 }
 
 .swal2-image {
@@ -442,7 +416,6 @@
 }
 
 .swal2-close {
-    position: fixed;
     z-index: 2;
     align-items: center;
     justify-content: center;
@@ -457,10 +430,10 @@
     border: none;
     border-radius: 5px;
     background: transparent;
-    color: #fff;
+    color: #ccc;
     font-family: serif;
     font-family: monospace;
-    font-size: 3em;
+    font-size: 2.5em;
     cursor: pointer;
     justify-self: end;
 }
@@ -483,7 +456,7 @@
     margin: 1em 1.6em 0.3em;
     padding: 0;
     overflow: auto;
-    color: #fff;
+    color: #e1e1e1;
     font-size: 1.125em;
     font-weight: normal;
     line-height: normal;
@@ -509,9 +482,9 @@
     transition: border-color 0.1s, box-shadow 0.1s;
     border: 1px solid #d9d9d9;
     border-radius: 0.1875em;
-    background: rgba(73, 94, 125, 0.99);
+    background: #323234;
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06), 0 0 0 3px transparent;
-    color: #fff;
+    color: #e1e1e1;
     font-size: 1.125em;
 }
 .swal2-input.swal2-inputerror,
@@ -541,14 +514,14 @@
 
 .swal2-range {
     margin: 1em 2em 3px;
-    background: transparent;
+    background: #19191a;
 }
 .swal2-range input {
     width: 80%;
 }
 .swal2-range output {
     width: 20%;
-    color: #fff;
+    color: #e1e1e1;
     font-weight: 600;
     text-align: center;
 }
@@ -569,7 +542,7 @@
     width: 75%;
     margin-right: auto;
     margin-left: auto;
-    background: rgba(73, 94, 125, 0.99);
+    background: #323234;
     font-size: 1.125em;
 }
 
@@ -582,8 +555,8 @@
     min-width: 50%;
     max-width: 100%;
     padding: 0.375em 0.625em;
-    background: rgba(73, 94, 125, 0.99);
-    color: #fff;
+    background: #323234;
+    color: #e1e1e1;
     font-size: 1.125em;
 }
 
@@ -591,8 +564,8 @@
 .swal2-checkbox {
     align-items: center;
     justify-content: center;
-    background: transparent;
-    color: #fff;
+    background: #19191a;
+    color: #e1e1e1;
 }
 .swal2-radio label,
 .swal2-checkbox label {
@@ -617,8 +590,8 @@
     margin: 1em 0 0;
     padding: 0.625em;
     overflow: hidden;
-    background: transparent;
-    color: #fff;
+    background: #323234;
+    color: #e1e1e1;
     font-size: 1em;
     font-weight: 300;
 }
@@ -835,11 +808,11 @@
     background: #2778c4;
 }
 .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step {
-    background: rgba(122, 145, 178, 0.99);
+    background: #58585b;
     color: #fff;
 }
 .swal2-progress-steps .swal2-progress-step.swal2-active-progress-step ~ .swal2-progress-step-line {
-    background: rgba(122, 145, 178, 0.99);
+    background: #58585b;
 }
 .swal2-progress-steps .swal2-progress-step-line {
     z-index: 10;
@@ -855,13 +828,13 @@
 }
 
 .swal2-show {
-    -webkit-animation: opacity-show 0.3s;
-    animation: opacity-show 0.3s;
+    -webkit-animation: swal2-show 0.3s;
+    animation: swal2-show 0.3s;
 }
 
 .swal2-hide {
-    -webkit-animation: opacity-hide 0.1s;
-    animation: opacity-hide 0.1s;
+    -webkit-animation: swal2-hide 0.15s forwards;
+    animation: swal2-hide 0.15s forwards;
 }
 
 .swal2-noanimation {
@@ -1350,7 +1323,7 @@ body.swal2-no-backdrop .swal2-container .swal2-popup {
     pointer-events: all;
 }
 body.swal2-no-backdrop .swal2-container .swal2-modal {
-    box-shadow: 0 0 10px rgba(54, 70, 93, 0.99);
+    box-shadow: 0 0 10px rgba(25, 25, 26, 0.75);
 }
 @media print {
     body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {

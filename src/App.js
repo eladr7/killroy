@@ -78,6 +78,15 @@ function App() {
         }
       });
     }
+    window.addEventListener('click', ({ target }) => {
+      const isClosest = target.closest('.popup');
+
+      if (!isClosest) {
+        if (document.getElementById('popup1').classList.contains('mint-visible')) {
+          document.getElementById('popup1').classList.remove('mint-visible');
+        }
+      }
+    });
 
     const connect = async () => {
       await handleConnect();
@@ -122,7 +131,7 @@ function App() {
         highlightColor={'#4F4BCF'}
         baseColor={'#5089F9'}
     />);
-    if (chainInfo.balancePermit === null || chainInfo.balancePermit === undefined) {
+    if (localStorage.getItem('permit') === null || localStorage.getItem('permit') === undefined) {
       const { signature } = await window.keplr.signAmino(
           chainInfo.chainId,
           chainInfo.clientAddress,
@@ -138,9 +147,9 @@ function App() {
               {
                 type: "query_permit", // Must be "query_permit"
                 value: {
-                  permit_name: "balancePermit",
+                  permit_name: "gyld",
                   allowed_tokens: [chainInfo.snip20ContractAddress],
-                  permissions: ["balance"],
+                  permissions: ["balance", "owner"],
                 },
               },
             ],
@@ -152,6 +161,7 @@ function App() {
           }
       );
       chainInfo.balancePermit = signature;
+      localStorage.setItem("permit", signature);
     }
 
     const msg = {
@@ -163,12 +173,12 @@ function App() {
         },
         permit: {
           params: {
-            permit_name: "balancePermit",
+            permit_name: "gyld",
             allowed_tokens: [chainInfo.snip20ContractAddress],
             chain_id: chainInfo.chainId,
-            permissions: ["balance"],
+            permissions: ["balance", "owner"],
           },
-          signature: chainInfo.balancePermit,
+          signature: localStorage.getItem('permit'),
         }
       }
     }
@@ -214,7 +224,7 @@ function App() {
         return false;
       }
 
-      if (chainInfo.permit === null || chainInfo.permit === undefined) {
+      if (localStorage.getItem('permit') === null || localStorage.getItem('permit') === undefined) {
 
         const { signature } = await window.keplr.signAmino(
             chainInfo.chainId,
@@ -231,9 +241,9 @@ function App() {
                 {
                   type: "query_permit", // Must be "query_permit"
                   value: {
-                    permit_name: "getCollection",
+                    permit_name: "gyld",
                     allowed_tokens: [chainInfo.nftContract],
-                    permissions: ["owner"],
+                    permissions: ["balance", "owner"],
                   },
                 },
               ],
@@ -244,9 +254,7 @@ function App() {
               preferNoSetMemo: true, // Memo must be empty, so hide it from the user
             }
         );
-        chainInfo.permit = signature;
-      } else {
-        const signature = chainInfo.permit;
+        localStorage.setItem('permit', signature);
       }
 
       //setModalContent(() => (<div className="dog-loader-test">Checking your dogs...</div>))
@@ -271,12 +279,12 @@ function App() {
                 },
                 permit: {
                   params: {
-                    permit_name: "getCollection",
+                    permit_name: "gyld",
                     allowed_tokens: [chainInfo.nftContract],
                     chain_id: chainInfo.chainId,
-                    permissions: ["owner"],
+                    permissions: ["balance", "owner"],
                   },
-                  signature: chainInfo.permit,
+                  signature: localStorage.getItem('permit')
                 },
               },
             }
@@ -324,12 +332,12 @@ function App() {
             },
             permit: {
               params: {
-                permit_name: "getCollection",
+                permit_name: "gyld",
                 allowed_tokens: [chainInfo.nftContract],
                 chain_id: chainInfo.chainId,
-                permissions: ["owner"],
+                permissions: ["balance", "owner"],
               },
-              signature: chainInfo.permit,
+              signature: localStorage.getItem('permit')
             }
           }
         }
@@ -619,12 +627,12 @@ function App() {
         )
       }
       else {
-        Swal.fire({
+        /*Swal.fire({
               icon: 'error',
               title: 'Failed',
               text: 'Please try again',
             }
-        )
+        )*/
       }
     }
     showMintSuccess();

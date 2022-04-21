@@ -176,68 +176,111 @@ function App() {
         highlightColor={'#4F4BCF'}
         baseColor={'#5089F9'}
     />);
-    if (getFromLS(`balancePermit-${chainInfo.clientAddress}${chainInfo.chainId}`)) {
-      const { signature } = await window.keplr.signAmino(
-          chainInfo.chainId,
-          chainInfo.clientAddress,
-          {
-            chain_id: chainInfo.chainId,
-            account_number: "0", // Must be 0
-            sequence: "0", // Must be 0
-            fee: {
-              amount: [{ denom: "uscrt", amount: "0" }], // Must be 0 uscrt
-              gas: "1", // Must be 1
-            },
-            msgs: [
-              {
-                type: "query_permit", // Must be "query_permit"
-                value: {
-                  permit_name: "gyld",
-                  allowed_tokens: [chainInfo.snip20ContractAddress],
-                  permissions: ["balance", "owner"],
-                },
-              },
-            ],
-            memo: "", // Must be empty
-          },
-          {
-            preferNoSetFee: true, // Fee must be 0, so hide it from the user
-            preferNoSetMemo: true, // Memo must be empty, so hide it from the user
-          }
-      );
-      chainInfo.balancePermit = signature;
-      setToLS(`balancePermit-${chainInfo.clientAddress}${chainInfo.chainId}`, signature);
-    }
+    // if (getFromLS(`balancePermit-${chainInfo.clientAddress}${chainInfo.chainId}`)) {
+    //   const { signature } = await window.keplr.signAmino(
+    //       chainInfo.chainId,
+    //       chainInfo.clientAddress,
+    //       {
+    //         chain_id: chainInfo.chainId,
+    //         account_number: "0", // Must be 0
+    //         sequence: "0", // Must be 0
+    //         fee: {
+    //           amount: [{ denom: "uscrt", amount: "0" }], // Must be 0 uscrt
+    //           gas: "1", // Must be 1
+    //         },
+    //         msgs: [
+    //           {
+    //             type: "query_permit", // Must be "query_permit"
+    //             value: {
+    //               permit_name: "gyld",
+    //               allowed_tokens: [chainInfo.snip20ContractAddress],
+    //               permissions: ["balance", "owner"],
+    //             },
+    //           },
+    //         ],
+    //         memo: "", // Must be empty
+    //       },
+    //       {
+    //         preferNoSetFee: true, // Fee must be 0, so hide it from the user
+    //         preferNoSetMemo: true, // Memo must be empty, so hide it from the user
+    //       }
+    //   );
+    //   chainInfo.balancePermit = signature;
+    //   setToLS(`balancePermit-${chainInfo.clientAddress}${chainInfo.chainId}`, signature);
+    // }
 
-    const msg = {
-      with_permit: {
-        query: {
-          balance: {
-            address: chainInfo.clientAddress
-          }
-        },
-        permit: {
-          params: {
-            permit_name: "gyld",
-            allowed_tokens: [chainInfo.snip20ContractAddress],
-            chain_id: chainInfo.chainId,
-            permissions: ["balance", "owner"],
-          },
-          signature: getFromLS(`balancePermit-${chainInfo.clientAddress}${chainInfo.chainId}`),
-        }
-      }
-    }
+    let viewingKey;
+    let usd = 0;
     //fetch api
     const url = "https://min-api.cryptocompare.com/data/price?fsym=SCRT&tsyms=USD";
-    let usd = 0
+
     try {
       const response = await fetch(url);
       const data = await response.json();
       usd = data.USD;
     } catch (error) {
-      console.log(error);
+      console.log(`error fetching price: ${error}`);
     }
-    getSscrtBalance(msg, usd);
+
+    let tries = 0;
+    while (true) {
+      tries += 1;
+      if (window?.keplr) {
+        try {
+          //console.log(`trying to get viewing key`);
+          viewingKey = await window.keplr.getSecret20ViewingKey(chainInfo.chainId, chainInfo.snip20ContractAddress);
+        } catch (error) {}
+        if (viewingKey || tries === 3) {
+          break;
+        }
+      }
+      await sleep(100);
+    }
+
+    //console.log(`Got viewing key: ${viewingKey}`);
+
+    if (viewingKey) {
+      const msg = {
+        balance: {
+          address: chainInfo.clientAddress,
+          key: viewingKey
+        }
+      }
+      getSscrtBalance(msg, usd);
+    } else {
+      setSscrtWrapper(
+          <span style={{
+            cursor: "pointer",
+            borderRadius: "10px",
+            padding: "0 0.6em 0 0.3em",
+            border: "solid",
+      }} onClick={async () => {
+        if (window?.keplr) {
+          await window.keplr.suggestToken(chainInfo.chainId, chainInfo.snip20ContractAddress);
+        }
+      }}>Add sSCRT to Keplr</span>);
+    }
+
+
+    // const msg = {
+    //   with_permit: {
+    //     query: {
+    //       balance: {
+    //         address: chainInfo.clientAddress
+    //       }
+    //     },
+    //     permit: {
+    //       params: {
+    //         permit_name: "gyld",
+    //         allowed_tokens: [chainInfo.snip20ContractAddress],
+    //         chain_id: chainInfo.chainId,
+    //         permissions: ["balance", "owner"],
+    //       },
+    //       signature: getFromLS(`balancePermit-${chainInfo.clientAddress}${chainInfo.chainId}`),
+    //     }
+    //   }
+    // }
+
     const account = await chainInfo.client.getAccount(chainInfo.clientAddress);
     const scrtBal = account.balance[0].amount;
     setScrtBalance(parseFloat(scrtBal).toFixed(4));
@@ -610,17 +653,18 @@ function App() {
 //   }
 
   const checkWhitelist = async () => {
-    let data = {
-      whitelist: false
-    };
-    try {
-      const url = `${chainInfo.backendService}/iswhitelisted?address=${chainInfo.clientAddress}`;
-      const response = await fetch(url);
-      data = await response.json();
-    } catch (error) {
-      console.log(error);
-    }
-    return data.whitelist;
+    return true;
+    // let data = {
+    //   whitelist: false
+    // };
+    // try {
+    //   const url = `${chainInfo.backendService}/iswhitelisted?address=${chainInfo.clientAddress}`;
+    //   const response = await fetch(url);
+    //   data = await response.json();
+    // } catch (error) {
+    //   console.log(error);
+    // }
+    // return data.whitelist;
   }
 
   const toggleMintVisible = () => {
@@ -643,17 +687,17 @@ function App() {
     //use mintCount variable to query the contract for "mintCount" number of mints.
 
     hideMintSuccess();
-    const whiteListCheck = await checkWhitelist();
-    console.log(`is whitelisted: ${whiteListCheck}`);
-    if (!whiteListCheck) {
-      Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'You are not whitelisted!',
-          }
-      )
-      return false;
-    }
+    // const whiteListCheck = await checkWhitelist();
+    // console.log(`is whitelisted: ${whiteListCheck}`);
+    // if (!whiteListCheck) {
+    //   Swal.fire({
+    //         icon: 'error',
+    //         title: 'Oops...',
+    //         text: 'You are not whitelisted!',
+    //       }
+    //   )
+    //   return false;
+    // }
 
     let msg = btoa(JSON.stringify({
           mint: {

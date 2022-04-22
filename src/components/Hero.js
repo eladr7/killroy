@@ -12,7 +12,7 @@ const Hero = (props) => {
                 <div className="hero-text-img"><img src="Group 715.png" alt="" />
                     <div className="hero-img-time">
                         <p><span style={{fontWeight:'800'}}>Public minting is now open!</span></p>
-                        <p><span style={{fontSize:'18px'}}>Remaining : {props.totalMints} (out of 2321)</span></p>
+                        {/* <p><span style={{fontSize:'18px'}}>Remaining : {props.totalMints} (out of 2321)</span></p> */}
                     </div>
                     <div className="mintPrice">
                         <div className="priceTitle">

@@ -11,7 +11,7 @@ const Hero = (props) => {
                     </p> <a href={"https://discord.gg/w84egv2Enb"} rel="noreferrer" target={"_blank"}>Get Whitelist</a></div>
                 <div className="hero-text-img"><img src="Group 715.png" alt="" />
                     <div className="hero-img-time">
-                        <p><span style={{fontWeight:'800'}}>Minting is now open!</span></p>
+                        <p><span style={{fontWeight:'800'}}>Public minting is now open!</span></p>
                     </div>
                     <div className="mintPrice">
                         <div className="priceTitle">

@@ -113,16 +113,16 @@ function App() {
     console.log(totalMints)
   }, [totalMints])
 
-  useEffect(() => {
-    if (chainInfo.client) {
-      const countMsg = {
-        remaining: {}
-      };
-      chainInfo.client.queryContractSmart(chainInfo.randomMintContractAddress, countMsg).then(async (result) => {
-        handleSetCounter(result.remaining);
-      });
-    }
-  }, [chainInfo.client]);
+  // useEffect(() => {
+  //   if (chainInfo.client) {
+  //     const countMsg = {
+  //       remaining: {}
+  //     };
+  //     chainInfo.client.queryContractSmart(chainInfo.randomMintContractAddress, countMsg).then(async (result) => {
+  //       handleSetCounter(result.remaining);
+  //     });
+  //   }
+  // }, [chainInfo.client]);
 
   useEffect(() => {
     if (location.pathname === '/mycollection') {

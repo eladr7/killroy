@@ -110,7 +110,7 @@ function App() {
     onSnapshot(collection(db, 'legendao'), async (snapshot) => {
       setTotalMints(snapshot.docs[0].data().mintCount);
     })
-    console.log(totalMints)
+    // console.log(totalMints)
   }, [totalMints])
 
   // useEffect(() => {

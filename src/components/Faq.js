@@ -6,8 +6,8 @@ const Faq = (props) => {
         <div className="faq-set">
           <button className="accordion">WHEN IS THE MINT?</button>
           <div className="panel">
-            <p> Part 1 : Minting starts at 12:00 pm UTC on April 21st. (2321 available NFTs, 60% for WL)</p><p>
-              Part 2 : Minting starts at 12:00 pm UTC on May 4th. (2000 available NFTs, 60% for WL)</p>
+            <p> Season 1 : Minting starts at 12:00 pm UTC on April 21st. (2321 available NFTs, 60% for WL)</p><p>
+              Season 2 : Details about the next stage will be revealed in the near future </p>
           </div>
           <button className="accordion">HOW MANY PIECES ARE THERE IN THE COUNCIL OF GYLD NFT COLLECTION?</button>
           <div className="panel">

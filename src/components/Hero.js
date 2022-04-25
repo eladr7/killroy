@@ -11,18 +11,18 @@ const Hero = (props) => {
                     </p>
                 </div>
                 <div className="hero-text-img"><img src="Group 715.png" alt="" />
-                    <div className="hero-img-time">
-                        <p><span style={{fontWeight:'800'}}>Public minting is now open!</span></p>
-                         <p><span style={{fontSize:'18px'}}>Remaining : {props.totalMints}</span></p>
-                    </div>
                     <div className="mintPrice">
-                        <div className="priceTitle">
+                        {/* <div className="priceTitle">
                             <p><span>Mint Price</span>
                                 <br/>
                                 100 $sSCRT</p>
-                        </div>
+                        </div> */}
                         {/*<div className="mint"><a href="#" onClick={() => {props.handleMint()}}>MINT</a></div>*/}
-                        <div className="mint"><a href="#popup3">MINT</a></div>
+                        <div className="mint"><a>SOLD OUT</a></div>
+                    </div>
+                    <div className="hero-img-time">
+                        <p><span style={{fontWeight:'800'}}>See you in the LegenDAO Universe!</span></p>
+                         {/* <p><span style={{fontSize:'18px'}}>Remaining : {props.totalMints}</span></p> */}
                     </div>
                 </div>
             </div>

@@ -1,12 +1,13 @@
 export const getFromLS = (key) => {
-    const value = window.localStorage.getItem(key);
+  debugger;
+  const value = window.localStorage.getItem(key);
 
-    if (value) {
-        return JSON.parse(value);
-    }
-}
+  if (value) {
+    return JSON.parse(value);
+  }
+};
 
 export const setToLS = (key, value) => {
-    window.localStorage.setItem(key, JSON.stringify(value));
-}
-
+  debugger;
+  window.localStorage.setItem(key, JSON.stringify(value));
+};

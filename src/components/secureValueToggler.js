@@ -2,25 +2,41 @@ import React, { useState } from "react";
 
 function SecureValueToggler(props) {
   const [show, setShow] = useState(false);
-  const toggleShow = () => {
-    debugger;
-    setShow(!show);
-  };
-  debugger;
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-evenly",
-      }}
-    >
-      <button onClick={toggleShow}>Show/Hide</button>
-      <div style={{ display: show ? "block" : "none" }}>
-        {props.secureValue}
-      </div>
-    </div>
+    <table>
+      <tr
+        style={{
+          background: "rgb(94 20 20)",
+        }}
+      >
+        <td
+          style={{
+            marginLeft: "35%",
+            border: "2px solid",
+            borderRadius: "25px",
+          }}
+        >
+          <button
+            style={{ background: "none", width: "100%" }}
+            onClick={() => {
+              setShow(!show);
+            }}
+          >
+            {show ? "Hide" : "Show"}
+          </button>
+        </td>
+        <td
+          style={{
+            marginLeft: "2%",
+            border: "2px solid",
+            borderRadius: "25px",
+          }}
+        >
+          {show ? props.secureValue : ""}
+        </td>
+      </tr>
+    </table>
   );
 }
 

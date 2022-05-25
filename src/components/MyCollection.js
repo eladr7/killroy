@@ -28,31 +28,6 @@ const MyCollection = (props) => {
                   }
                   alt=""
                 />
-                <div className="live-my-collection">
-                  <h4>
-                    {nft.nft_dossier.public_metadata.extension.name}{" "}
-                    <span>Total Score: {nft.totals.total.toFixed(0)}</span>
-                  </h4>
-                  <p>
-                    #{nft.token_id} <span>Rank: {nft.totals.rank}</span>
-                  </p>
-                </div>
-              </div>
-            </section>
-            <section>
-              <div className="my-collection-yeti">
-                <div className="live-my-collection">
-                  <h4>
-                    <span>
-                      Entrance mnemonic:{" "}
-                      {
-                        <SecureValueToggler
-                          secureValue={nft.entranceMnemonic}
-                        />
-                      }
-                    </span>
-                  </h4>
-                </div>
               </div>
             </section>
             <div>
@@ -61,42 +36,15 @@ const MyCollection = (props) => {
                   <div className="customerTablehead">
                     <div className="customerTableheadInner">
                       <div style={{ flexGrow: 3 }}>
-                        <p className="headText">Trait</p>
-                      </div>
-                      <div style={{ flexGrow: 4 }}>
-                        <p className="headTextcenter">Value</p>
-                      </div>
-                      <div style={{ flexGrow: 4 }}>
-                        <p className="headTextcenter">Score</p>
-                      </div>
-                      <div style={{ flexGrow: 2 }}>
-                        <p className="headTextlast">Percentage</p>
+                        <p className="headText">Entrance passphrase</p>
                       </div>
                     </div>
                   </div>
-                  {nft.scores.map((attr) => {
-                    return (
-                      <div
-                        className="customerTablerow"
-                        key={`${nft.token_id}${attr.type}`}
-                      >
-                        <div className="justDiv" style={{ flexGrow: 3 }}>
-                          <p className="paraText">{attr.type}</p>
-                        </div>
-                        <div className="justDiv" style={{ flexGrow: "3.5" }}>
-                          <p className="paraText">{attr.value}</p>
-                        </div>
-                        <div className="justDiv" style={{ flexGrow: 1 }}>
-                          <p className="paraText">{attr.score.toFixed(2)}</p>
-                        </div>
-                        <div className="justDivLast" style={{ flexGrow: 3 }}>
-                          <p className="paraText">
-                            {(attr.percentage * 100).toFixed(2)}%
-                          </p>
-                        </div>
-                      </div>
-                    );
-                  })}
+                  <div className="customerTablerow">
+                    <div style={{ flexGrow: 3 }}>
+                      <SecureValueToggler secureValue={nft.entranceMnemonic} />
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

@@ -18,7 +18,7 @@ function SecureValueToggler(props) {
           }}
         >
           <button
-            style={{ background: "none", width: "100%" }}
+            style={{ background: "none", width: "100%", border: "none" }}
             onClick={() => {
               setShow(!show);
             }}

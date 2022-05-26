@@ -4,7 +4,7 @@ const Hero = (props) => {
     <div className={"hero-background"}>
       <div className="hero-section-main">
         <div className="hero-section-text">
-          <h1>Kevin Smith</h1>
+          <h1>KEVIN SMITH</h1>
           <h3>KillROY WAS HERE</h3>
           <p>
             Directed by Smith from a script by Smith and Andy McElfresh,
@@ -21,7 +21,13 @@ const Hero = (props) => {
               <div style={{ display: "flex" }}>
                 <div className="priceTitle">
                   <p>
-                    <div style={{ marginBottom: "-11%", fontSize: "1.2em" }}>
+                    <div
+                      style={{
+                        marginBottom: "-5%",
+                        fontSize: "1.2em",
+                        letterSpacing: "0.1em",
+                      }}
+                    >
                       Mint Price:
                     </div>
                     <br />

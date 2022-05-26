@@ -90,6 +90,7 @@ body {
     padding: 11px 23px;
     line-height: 16px;
     font-size: 16px;
+    z-index: 1;
 }
 
 /* Header start */
@@ -299,6 +300,13 @@ opacity: 0.7;
 
 .services-img img {
     max-width: 600px;
+    width: 500px;
+    height: 500px;
+    border: #dde3e4;
+    border-width: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    background: linear-gradient(180deg, #0a0101 0%, #8e0a0a 100%);
 }
 
 .services-img {
@@ -307,15 +315,17 @@ opacity: 0.7;
 
 .services-text {
     padding: 0 0 0 128px;
+    margin-top: 1%;
 }
 
 .services-text h3 {
     font-size: 40px;
     line-height: 65px;
     margin-bottom: 30px;
-    background: linear-gradient(180deg, #5092ff 0%, #4f4bcf 100%);
+    background: linear-gradient(180deg, #DE0000 0%, #6B0000 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-family: 'Montserrat';
 }
 
 .services-text p {
@@ -323,19 +333,23 @@ opacity: 0.7;
     line-height: 36px;
     font-family: "Montserrat", sans-serif;
     color: #ffffff;
-    margin-bottom: 35px;
+    margin-bottom: 13%;
 }
 
 .services-text a {
     line-height: 17px;
     font-size: 16px;
     padding: 13px 70px;
-    background-image: linear-gradient(180deg, #508af9 0%, #4f4bcf 100%);
-    border-color: rgba(255, 255, 255, 0.8);
-    border-width: 0px;
-    border-radius: 6px;
-    color: #fff;
+    background-image: linear-gradient(180deg, #DE0000 0%, #6B0000 100%);
+    /* background: linear-gradient(180deg,rgba(222, 0, 0, 1) 0%,rgba(107, 0, 0, 1) 100%); */
+    border: 2px solid rgba(255, 255, 255, 1);
+    border-radius: 7.73px;
+    color: rgba(255, 255, 255, 1);
     margin-top: 30px;
+    font-size: 22px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+  margin-left: 5%;
 }
 
 /* ROADMAP-start */

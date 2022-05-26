@@ -175,6 +175,7 @@ body {
     width: 509px;
     padding: 40px;
     text-align: center;
+    margin-left: 15%;
 }
 
 .kevin-smith-img-bg {
@@ -318,16 +319,6 @@ opacity: 0.7;
     margin-top: 1%;
 }
 
-.services-text h3 {
-    font-size: 40px;
-    line-height: 65px;
-    margin-bottom: 30px;
-    background: linear-gradient(180deg, #DE0000 0%, #6B0000 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-family: 'Montserrat';
-}
-
 .services-text p {
     font-size: 20px;
     line-height: 36px;
@@ -374,7 +365,7 @@ opacity: 0.7;
     background-image: url(./roadmap-side.png);
     background-repeat: no-repeat;
     position: relative;
-    height: 71em;
+    height: 64em;
     margin: auto;
     max-width: 375px;
     background-position: center;
@@ -394,19 +385,19 @@ opacity: 0.7;
     top: -15px;
     left: -102px;
     font-family: "Montserrat", sans-serif;
-    color: #31d7fc;
+    color: #ffffff;
+    font-weight: bolder;
 }
 
 .title::after {
     content: "";
     width: 14px;
     height: 14px;
-    background: #fff;
     color: #fff;
     position: absolute;
     right: -21px;
     top: 10px;
-    background: #31d7fc;
+    background: #FF0000;
     border-radius: 50%;
     z-index: 1111;
 }
@@ -414,8 +405,10 @@ opacity: 0.7;
 .content-text {
     margin: 0px 0 0 0;
     position: absolute;
-    top: 61px;
-    left: 82px;
+    top: 45px;
+    /* left: 82px; */
+    margin-right: 38%;
+    margin-left: -88%;
 }
 
 .content-text h3 {
@@ -432,6 +425,9 @@ opacity: 0.7;
     font-weight: 400;
     font-size: 14px;
     line-height: 22px;
+    text-align: justify; /* For Edge */
+    -moz-text-align-last: right; /* For Firefox prior 58.0 */
+    text-align-last: right;
 }
 
 .main-content-two {
@@ -442,12 +438,13 @@ opacity: 0.7;
 
 .title-two {
     position: absolute;
-    top: 263px;
-    left: -214px;
+    top: 285px;
+    left: -206px;
     font-family: "Montserrat", sans-serif;
     font-size: 30px;
     line-height: 32px;
-    color: #ff53cf;
+    color: #ffffff;
+    font-weight: bolder;
 }
 
 .title-two::after {
@@ -457,9 +454,9 @@ opacity: 0.7;
     background: #fff;
     color: #fff;
     position: absolute;
-    right: -21px;
+    right: -31px;
     top: 10px;
-    background: #ff53cf;
+    background: #FF0000;
     border-radius: 50%;
     z-index: 1111;
 }
@@ -488,6 +485,7 @@ opacity: 0.7;
     font-size: 14px;
     line-height: 22px;
     padding-right: 21px;
+    margin-top: 7%;
 }
 
 .main-content-three {
@@ -499,35 +497,35 @@ opacity: 0.7;
 .title-three {
     margin: 0 0 40px;
     position: absolute;
-    top: 464px;
+    top: 520px;
     font-family: "Montserrat", sans-serif;
     font-size: 30px;
     line-height: 32px;
-    color: #9969ff;
+    color: #ffffff;
+    font-weight: bolder;
     bottom: 0;
-    right: -28px;
+    right: -10px;
 }
 
 .title-three::before {
     content: "";
     width: 14px;
     height: 14px;
-    background: #fff;
     color: #fff;
     position: absolute;
     /* right: 23px; */
     top: 6px;
-    background: #9969ff;
+    background: #FF0000;
     border-radius: 50%;
     z-index: 1111;
-    left: -22px;
+    left: -30px;
     bottom: 0;
 }
 
 .content-text-three {
     margin: 0px 0 0 0;
     position: absolute;
-    top: 394px;
+    top: 435px;
     left: -125px;
     text-align: right;
     width: 450px;
@@ -563,12 +561,13 @@ opacity: 0.7;
     line-height: 35px;
     margin: 0 0 40px;
     position: absolute;
-    top: 640px;
-    left: -219px;
+    top: 720px;
+    left: -203px;
     font-family: "Montserrat", sans-serif;
     font-size: 30px;
     line-height: 32px;
-    color: #ff4f4f;
+    color: #ffffff;
+    font-weight: bolder;
 }
 
 .title-four::after {
@@ -576,7 +575,7 @@ opacity: 0.7;
     width: 14px;
     height: 14px;
     position: absolute;
-    right: -21px;
+    right: -30px;
     top: 12px;
     background: #ff4f4f;
     border-radius: 50%;
@@ -586,7 +585,7 @@ opacity: 0.7;
 .content-text-four {
     margin: 0px 0 0 0;
     position: absolute;
-    top: 591px;
+    top: 640px;
     left: 75px;
     text-align: left;
     max-width: 463px;
@@ -620,11 +619,12 @@ opacity: 0.7;
     font-size: 30px;
     line-height: 35px;
     position: absolute;
-    top: 840px;
+    top: 930px;
     font-family: "Montserrat", sans-serif;
-    color: rgba(51, 243, 70, 1);
+    color: #ffffff;
+    font-weight: bolder;
     bottom: 0;
-    right: -27px;
+    right: -23px;
 }
 
 .title-five::before {
@@ -633,17 +633,17 @@ opacity: 0.7;
     height: 14px;
     position: absolute;
     top: 10px;
-    background: rgba(51, 243, 70, 1);
+    background: #ff4f4f;
     border-radius: 50%;
     z-index: 1111;
-    left: -22px;
+    left: -30px;
     bottom: 0;
 }
 
 .content-text-five {
     margin: 0px 0 0 0;
     position: absolute;
-    top: 807px;
+    top: 875px;
     left: -112px;
     text-align: right;
     right: 239px;
@@ -666,6 +666,7 @@ opacity: 0.7;
     font-size: 14px;
     line-height: 22px;
     padding-right: 21px;
+    margin-top: -7%;
 }
 
 .main-content-six {
@@ -681,7 +682,8 @@ opacity: 0.7;
     top: 1018px;
     left: -233px;
     font-family: "Montserrat", sans-serif;
-    color: rgba(51, 128, 243, 1);
+    color: #ffffff;
+    font-weight: bolder;
 }
 
 .title-six::after {
@@ -860,6 +862,16 @@ button.accordion.active:after {
     padding-top: 100px;
     padding-bottom: 54px;
     margin-top: 20px;
+}
+
+.h3-title {
+    font-size: 40px;
+    line-height: 65px;
+    margin-bottom: 30px;
+    background: linear-gradient(180deg, #DE0000 0%, #6B0000 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: 'Montserrat';
 }
 
 .live {

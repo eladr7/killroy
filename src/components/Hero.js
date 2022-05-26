@@ -4,49 +4,70 @@ const Hero = (props) => {
     <div className={"hero-background"}>
       <div className="hero-section-main">
         <div className="hero-section-text">
-          <h3>The Council of Gyld</h3>
+          <h1>Kevin Smith</h1>
+          <h3>KillROY WAS HERE</h3>
           <p>
-            The Council of Gyld is the vehicle through which the Cryptids will
-            achieve their eternal missions: to connect creators and collectors
-            on the Secret Network, creating financial opportunity, community,
-            and the chance to go to the moon for all who know the secret.
+            Directed by Smith from a script by Smith and Andy McElfresh,
+            “KillRoy Was Here” is a throwback anthology horror film featuring a
+            creature that kills evil adults at the behest of victimized kids.
+            The movie itself, exclusive content from the film, behind-the-scenes
+            footage, and a commentary track will be launched as a 5,555-piece
+            generative art NFT collection on Legendao, Secret Network’s primary
+            NFT minting platform.
           </p>
-        </div>
-        <div className="hero-text-img">
-          <img src="Group 715.png" alt="" />
-          <div className="mintPrice">
-            <div className="priceTitle">
-              <p>
-                <span>Mint Price</span>
-                <br />
-                100 $sSCRT
-              </p>
-            </div>
-            <div className="mint">
-              <a
-                href="#"
-                onClick={() => {
-                  props.handleMint();
-                }}
-              >
-                MINT
-              </a>
-            </div>
-            {/* <div className="mint">
+
+          <div className="hero-text-img">
+            <div className="mintPrice">
+              <div style={{ display: "flex" }}>
+                <div className="priceTitle">
+                  <p>
+                    <div style={{ marginBottom: "-11%", fontSize: "1.2em" }}>
+                      Mint Price:
+                    </div>
+                    <br />
+                    <span style={{ fontSize: "1.5em" }}>75 $sSCRT</span>
+                  </p>
+                </div>
+                <div className="mint">
+                  <a
+                    href="#"
+                    onClick={() => {
+                      props.handleMint();
+                    }}
+                  >
+                    MINT
+                  </a>
+                </div>
+              </div>
+              {/* <div className="mint">
               <a>SOLD OUT</a>
             </div> */}
+            </div>
+            <div className="hero-img-time">
+              <p>
+                <span style={{ fontSize: "18px" }}>
+                  Remaining : {props.totalMints}
+                </span>
+              </p>
+            </div>
           </div>
-          <div className="hero-img-time">
-            <p>
-              <span style={{ fontWeight: "800" }}>
-                See you in the LegenDAO Universe!
-              </span>
-            </p>
-            <p>
-              <span style={{ fontSize: "18px" }}>
-                Remaining : {props.totalMints}
-              </span>
-            </p>
+        </div>
+        <div
+          style={{
+            width: "972px",
+            height: "872px",
+            position: "relative",
+            marginTop: "9%",
+          }}
+        >
+          <div className="kevin-smith-img-bg"></div>
+          <div className="kevin-smith-img-wrapper">
+            <img
+              className="kevin-smith-img"
+              src="kevin_smith.png"
+              alt=""
+              style={{ width: "378px", height: "535px" }}
+            />
           </div>
         </div>
       </div>

@@ -4,9 +4,9 @@ const Footer = (props) => {
       <div className="footer-main">
         <div className="footer-text">
           {" "}
-          <img src="./image/Cryptids.png" alt="" />
-          <p>Bringing all legendary creators into the Cosmos. </p>
-          <p>The immersive Mint Lab for all significant NFT projects.</p>
+          <img src="./image/legendao.png" alt="" />
+          <p>they cannot foresee the pain and trouble that are</p>
+          <p>bound to ensue; and equal blame belongs.</p>
           <h5>Join our community</h5>
           <ul>
             <li>
@@ -24,7 +24,9 @@ const Footer = (props) => {
               >
                 <img src="./image/twitter.png" alt="" />
               </a>
-              {/*<img src="./image/stashh.png" alt="" />*/}
+              <a href={"https://stashh.io/"} rel="noreferrer" target={"_blank"}>
+                <img src="./image/stashh.png" alt="" />
+              </a>
             </li>
           </ul>
         </div>
@@ -53,7 +55,7 @@ const Footer = (props) => {
         </div>
         <div className="footer-input">
           {" "}
-          <img src="./image/footer logo.png" alt="" />{" "}
+          {/* <img src="./image/footer logo.png" alt="" />{" "} */}
         </div>
       </div>
     </div>

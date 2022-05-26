@@ -1,7 +1,7 @@
 const Hero = (props) => {
   debugger;
   return (
-    <div className={"hero-background"}>
+    <div className={"hero-background"} style={{ overflowX: "hidden" }}>
       <div className="hero-section-main">
         <div className="hero-section-text">
           <h1>KEVIN SMITH</h1>

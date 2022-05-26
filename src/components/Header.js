@@ -36,7 +36,7 @@ const Header = (props) => {
             {/*<li><Link smooth to="/#team-footer-background">Our Team</Link></li>*/}
             {/*<li><img src="./image/stashh.png" alt="" /></li>*/}
             <li>
-              <a href={""} rel="noreferrer" target={"_blank"}>
+              <a href={"https://stashh.io/"} rel="noreferrer" target={"_blank"}>
                 <img src="./image/ruby.svg" alt="" />
               </a>
             </li>

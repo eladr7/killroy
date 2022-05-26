@@ -10,7 +10,7 @@ const Header = (props) => {
               src="./image/Legendao_logo.svg"
               alt={""}
               className="logo"
-              width="45%"
+              width="100%"
               height="auto"
             />
           </a>
@@ -36,12 +36,17 @@ const Header = (props) => {
             {/*<li><Link smooth to="/#team-footer-background">Our Team</Link></li>*/}
             {/*<li><img src="./image/stashh.png" alt="" /></li>*/}
             <li>
+              <a href={""} rel="noreferrer" target={"_blank"}>
+                <img src="./image/ruby.svg" alt="" />
+              </a>
+            </li>
+            <li>
               <a
                 href={"https://discord.gg/w84egv2Enb"}
                 rel="noreferrer"
                 target={"_blank"}
               >
-                <img src="./image/Discordd.svg" alt="" />
+                <img src="./image/DiscordRed.svg" alt="" />
               </a>
             </li>
             <li>
@@ -50,7 +55,7 @@ const Header = (props) => {
                 rel="noreferrer"
                 target={"_blank"}
               >
-                <img src="./image/Twitterr.svg" alt="" />
+                <img src="./image/TwitterRed.svg" alt="" />
               </a>
             </li>
             {props.addressContainer}

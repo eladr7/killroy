@@ -2,7 +2,7 @@ const Faq = (props) => {
   return (
     <section id="accordian-background">
       <div className="OUR-TEAM">
-        <h3>F.A.Q</h3>{" "}
+        <h3 className="h3-title">F.A.Q</h3>{" "}
       </div>
       <div className="faq-set">
         <button className="accordion">WHEN IS THE MINT?</button>

@@ -732,7 +732,7 @@ opacity: 0.7;
     background-image: linear-gradient(
             180deg,
             #1b0505 0%,
-            rgba(125, 1, 1, 0.6) 48.44%,
+            rgba(103, 3, 3, 0.782) 80.44%,
             #1d040e 100%
         ),
         url(./bglight.jpeg);
@@ -763,7 +763,7 @@ opacity: 0.7;
     margin: 31px 0 0px;
     line-height: 22px;
     font-weight: 400;
-    background: rgba(1, 27, 72, 0.56);
+    background: rgba(0, 0, 0, 0.56);
     border: 1px solid #5e5e5e;
     box-sizing: border-box;
     border-radius: 5px;
@@ -772,7 +772,7 @@ opacity: 0.7;
 
 .active,
 .accordion:hover {
-    background: linear-gradient(180deg, #5089f9 100%, #4f4bcf 0%);
+    /* background: linear-gradient(180deg, #5089f9 100%, #4f4bcf 0%); */
     color: #ffffff;
     border: unset;
     border-radius: 8px 8px 0 0;
@@ -794,7 +794,7 @@ opacity: 0.7;
 
 .panel {
     display: none;
-    background: linear-gradient(180deg, #5089f9 0%, #4f4bcf 100%);
+    background: linear-gradient(180deg, #000000 0%, #6B0000 100%);
     overflow: hidden;
     margin: 0;
     width: 932px;
@@ -860,8 +860,8 @@ button.accordion.active:after {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     padding-top: 100px;
-    padding-bottom: 54px;
-    margin-top: 20px;
+    padding-bottom: 24px;
+    margin-top: 30px;
 }
 
 .h3-title {
@@ -872,6 +872,7 @@ button.accordion.active:after {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: 'Montserrat';
+    font-weight: 1000;
 }
 
 .live {

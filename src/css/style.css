@@ -41,6 +41,15 @@ body {
 #header-background {
     /*background-image: linear-gradient(180deg, #011B48 0%, rgba(20, 20, 20, 0.39) 48.44%, #011B48 100%),url(./header-background.png);*/
     max-width: 100%;
+        /* background: linear-gradient(180deg, #1d0707 0%, #540b0b 100%); */
+    /* background: linear-gradient(rgba(107,0,0,1), rgba(150,1,1,1)); */
+    /* background: transparent; */
+    background-image: linear-gradient(
+        180deg,
+        rgba(20, 20, 20, 0.2) 48.44%,
+        #070000 80%
+    ),url(./bgsword.jpeg);
+    opacity: 0.5;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -106,9 +115,8 @@ body {
 .hero-background {
     background-image: linear-gradient(
             180deg,
-            #480101 0%,
             rgba(20, 20, 20, 0.2) 48.44%,
-            #480101 100%
+            #480101 140%
         ),
         url(./bgsword.jpeg);
     background-repeat: no-repeat;

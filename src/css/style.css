@@ -39,11 +39,7 @@ body {
 /* navbar-START */
 
 #header-background {
-    /*background-image: linear-gradient(180deg, #011B48 0%, rgba(20, 20, 20, 0.39) 48.44%, #011B48 100%),url(./header-background.png);*/
     max-width: 100%;
-        /* background: linear-gradient(180deg, #1d0707 0%, #540b0b 100%); */
-    /* background: linear-gradient(rgba(107,0,0,1), rgba(150,1,1,1)); */
-    /* background: transparent; */
     background-image: linear-gradient(
         180deg,
         rgba(20, 20, 20, 0.2) 48.44%,
@@ -873,7 +869,7 @@ button.accordion.active:after {
     margin-top: 30px;
 }
 
-.h3-title {
+.grim-title {
     font-size: 40px;
     line-height: 65px;
     margin-bottom: 30px;
@@ -1125,26 +1121,71 @@ input.form-control {
 .my-collection {
     text-align: center;
     padding: 100px 15px 30px;
-    background: linear-gradient(
+    /* background: linear-gradient(
         180deg,
-        #011b48 0%,
+        #480101 0%,
         rgba(20, 20, 20, 0.39) 48.44%,
-        #011b48 100%
-    );
+        #480101 100%
+    ); */
+    background: transparent;
+
 }
 
 .my-collection h1 {
     font-style: normal;
-    font-weight: 600;
     font-size: 92px;
     line-height: 112px;
     text-transform: uppercase;
-    background: linear-gradient(180deg, #5092ff 0%, #4f4bcf 100%);
+    background: white;
+    /* background: linear-gradient(180deg, #DE0000 0%, #6B0000 100%); */
     text-fill-color: transparent;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    font-family: 'Sedan SC', sans-serif;
+    font-weight: 1000;
+
     margin-bottom: 15px;
+}
+
+.passphrase-box {
+    height: 100px;
+    margin-bottom: 4%;
+}
+
+.passphrase-lock {
+    margin-left: -1.5%;
+    margin-top: 6.5%;
+    z-index: 4;
+    position: absolute;
+}
+
+.passphrase-text {
+    z-index: 1;
+    margin-top: -3%;
+    margin-left: -16.5%;
+
+    width: 500px;
+    height: 130px;
+    font-family: 'Radley';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 42px;
+    line-height: 150%;
+    letter-spacing: 0.08em;
+    
+    color: #FFFFFF;
+    border-radius: 4px;
+
+    border: none;
+    position: absolute;
+    border-radius: 10px;
+    background: linear-gradient(
+        180deg,
+        #480101 0%,
+        rgba(10, 0, 0, 0.39) 48.44%,
+        #480101 100%
+    );
 }
 
 .my-collection p {
@@ -1162,6 +1203,7 @@ input.form-control {
     background: transparent;
     text-align: center;
     margin: 0px auto;
+    position: relative;
 }
 
 .live-my-collection {
@@ -1678,13 +1720,17 @@ header {
 }
 
 .collection-item-background {
-    background: linear-gradient(
+    background: url(./bgsword.jpeg);
+
+    /* background: linear-gradient(
             180deg,
-            #011b48 0%,
+            #350b0b 0%,
             rgba(20, 20, 20, 0.7) 48.44%,
-            #011b48 100%
+            #2f0303 100%
         ),
-        url(./bgsword.jpeg);
+        url(./bgsword.jpeg); */
+    /* background: linear-gradient(180deg, #DE0000 0%, #4E0000 100%); */
+
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0;

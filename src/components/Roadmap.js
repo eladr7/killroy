@@ -2,7 +2,7 @@ const Roadmap = () => {
   return (
     <section id="roadmap-background">
       <div className="OUR-TEAM">
-        <h3 className="h3-title">ROADMAP</h3>{" "}
+        <h3 className="grim-title">ROADMAP</h3>{" "}
       </div>
       <div className="background-zig-zag">
         <div className="main-content">

@@ -4,39 +4,30 @@ function SecureValueToggler(props) {
   const [show, setShow] = useState(false);
 
   return (
-    <table>
-      <tr
-        style={{
-          background: "rgb(94 20 20)",
-        }}
-      >
-        <td
-          style={{
-            marginLeft: "35%",
-            border: "2px solid",
-            borderRadius: "25px",
-          }}
-        >
-          <button
-            style={{ background: "none", width: "100%", border: "none" }}
+    <div className="passphrase-box">
+      <div style={{ width: "100%", height: "100%" }}>
+        {!show && (
+          <img
+            style={{ width: "40px", height: "40px" }}
+            className="passphrase-lock"
+            src="./image/lock.png"
+            alt={""}
             onClick={() => {
               setShow(!show);
             }}
-          >
-            {show ? "Hide" : "Show"}
-          </button>
-        </td>
-        <td
-          style={{
-            marginLeft: "2%",
-            border: "2px solid",
-            borderRadius: "25px",
-          }}
-        >
-          {show ? props.secureValue : ""}
-        </td>
-      </tr>
-    </table>
+          />
+        )}
+      </div>
+      <button
+        style={{ filter: `${!show ? "blur(5px)" : ""}` }}
+        className="passphrase-text"
+        onClick={() => {
+          setShow(!show);
+        }}
+      >
+        {props.secureValue}
+      </button>
+    </div>
   );
 }
 

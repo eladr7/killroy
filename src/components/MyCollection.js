@@ -4,21 +4,16 @@ const MyCollection = (props) => {
   const imgBaseUrl = props.backendService + "/ipfstoimage?uri=";
 
   return (
-    <div>
+    <div className={"collection-item-background"}>
       <div>
         <div className="my-collection">
-          <h1>MY COLLECTION</h1>
-          <div style={{ marginTop: "3rem" }}>
-            <a className={"rarity-rank-button"} href={"#"} target={"_blank"}>
-              Rarity Rank
-            </a>
-          </div>
+          <h1 className="grim-title">MY COLLECTION</h1>
         </div>
       </div>
 
       {props.nftCollection.map((nft, index) => {
         return (
-          <div key={index} className={"collection-item-background"}>
+          <div key={index}>
             <section>
               <div className="my-collection-yeti">
                 <img
@@ -28,26 +23,9 @@ const MyCollection = (props) => {
                   }
                   alt=""
                 />
+                <SecureValueToggler secureValue={nft.entranceMnemonic} />
               </div>
             </section>
-            <div>
-              <div className="customerTable">
-                <div className="customerbodyTable">
-                  <div className="customerTablehead">
-                    <div className="customerTableheadInner">
-                      <div style={{ flexGrow: 3 }}>
-                        <p className="headText">Entrance passphrase</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="customerTablerow">
-                    <div style={{ flexGrow: 3 }}>
-                      <SecureValueToggler secureValue={nft.entranceMnemonic} />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         );
       })}

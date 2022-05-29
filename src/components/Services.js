@@ -7,7 +7,7 @@ const Services = (props) => {
           <img src="./image/killroy.png" alt={""} />{" "}
         </div>
         <div className="services-text">
-          <h3 className="h3-title" style={{ fontWeight: "1000" }}>
+          <h3 className="grim-title" style={{ fontWeight: "1000" }}>
             KILLROY
           </h3>
           <p>

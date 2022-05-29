@@ -111,10 +111,8 @@ function App() {
   const [totalMints, setTotalMints] = useState(0);
 
   let location = useLocation();
-  debugger;
   useEffect(() => {
     onSnapshot(collection(db, "remaining-mints"), async (snapshot) => {
-      debugger;
       if (snapshot.docs.length > 0) {
         setTotalMints(snapshot.docs[0].data().remaining);
       }
@@ -137,7 +135,6 @@ function App() {
 
   useEffect(() => {
     if (location.pathname === "/mycollection") {
-      debugger;
       fetchMyCollection();
     }
   }, [location.pathname]);
@@ -183,7 +180,6 @@ function App() {
       "remaining-mints",
       "austin-remaining-mints"
     );
-    debugger;
     await updateDoc(remaining_mints_db, {
       remaining: count,
     });
@@ -388,7 +384,6 @@ function App() {
         text: "Please install Keplr extension",
         icon: "warning",
       });
-      debugger;
       return false;
     } else {
       if (chainInfo.clientAddress === null) {
@@ -396,7 +391,6 @@ function App() {
           .getOfflineSigner(chainInfo.chainId)
           .getAccounts();
         chainInfo.clientAddress = accounts[0].address;
-        debugger;
       }
 
       // console.log(`permit for address: ${chainInfo.clientAddress}`);
@@ -415,7 +409,6 @@ function App() {
       while (!chainInfo.client) {
         await sleep(50);
       }
-      debugger;
       if (!permit) {
         const { signature } = await window.keplr.signAmino(
           chainInfo.chainId,
@@ -446,10 +439,8 @@ function App() {
           }
         );
         permit = signature;
-        debugger;
         setToLS(`${chainInfo.clientAddress}${chainInfo.nftContract}`, permit);
       }
-      debugger;
       //setModalContent(() => (<div className="dog-loader-test">Checking your dogs...</div>))
       Swal.fire({
         title: "Checking...",
@@ -460,7 +451,6 @@ function App() {
 
       let tokens = [];
       try {
-        debugger;
         tokens = await chainInfo.client.queryContractSmart(
           chainInfo.nftContract,
           {
@@ -483,7 +473,6 @@ function App() {
             },
           }
         );
-        debugger;
       } catch (e) {
         console.log(e);
         Swal.fire({
@@ -493,7 +482,6 @@ function App() {
         });
         return false;
       }
-      debugger;
       const allTokens = tokens.token_list.tokens;
 
       if (allTokens.length < 1) {
@@ -538,7 +526,6 @@ function App() {
               },
             },
           };
-          debugger;
           let singleToken =
             await chainInfo.client.restClient.queryContractSmart(
               chainInfo.nftContract,
@@ -552,7 +539,6 @@ function App() {
           myTokens.push(tokenFromCache);
         }
       }
-      debugger;
       if (myTokens.length > 0) {
         // console.log(`tokens: ${JSON.stringify(myTokens)}`)
         Swal.close();
@@ -593,7 +579,6 @@ function App() {
                 (previousValue, currentValue) =>
                   `${previousValue}&${currentValue}`
               );
-            debugger;
             //construct the URL according to the attributes
             let url = `${chainInfo.backendService}/attributestatistics?${attrs}`;
 
@@ -818,7 +803,6 @@ function App() {
     );
 
     try {
-      debugger;
       let tx = await chainInfo.client.execute(
         chainInfo.snip20ContractAddress,
         {
@@ -845,7 +829,6 @@ function App() {
       console.log(`Failed to mint: ${e}`);
 
       //let eText = e.toString();
-      debugger;
       if (e.message.includes("insufficient funds")) {
         Swal.fire({
           icon: "error",
@@ -888,7 +871,6 @@ function App() {
       chainInfo.randomMintContractAddress,
       countMsg
     );
-    debugger;
     await handleSetCounter(resultCount.remaining);
     return null;
   };

@@ -1,5 +1,4 @@
 export const getFromLS = (key) => {
-  debugger;
   const value = window.localStorage.getItem(key);
 
   if (value) {
@@ -8,6 +7,5 @@ export const getFromLS = (key) => {
 };
 
 export const setToLS = (key, value) => {
-  debugger;
   window.localStorage.setItem(key, JSON.stringify(value));
 };

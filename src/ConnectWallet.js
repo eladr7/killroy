@@ -3,10 +3,6 @@ import Swal from "sweetalert2";
 export const sleep = (ms) => new Promise((accept) => setTimeout(accept, ms));
 
 const connectWallet = async (props) => {
-  const chainId = "pulsar-2";
-  const chainRPC = "http://rpc.pulsar.griptapejs.com:26657";
-  const chainREST = "http://rpc.pulsar.griptapejs.com:1317";
-
   while (
     !window.keplr ||
     !window.getEnigmaUtils ||
@@ -22,13 +18,11 @@ const connectWallet = async (props) => {
       icon: "warning",
     });
   } else {
-    const CHAIN_ID = "pulsar-2";
-    debugger;
     window.keplr.experimentalSuggestChain({
-      rpc: "http://rpc.pulsar.griptapejs.com:26657",
-      rest: "http://rpc.pulsar.griptapejs.com:1317",
-      chainId: CHAIN_ID,
-      chainName: "pulsar-2",
+      rpc: props.chainRPC,
+      rest: props.chainREST,
+      chainId: props.chainId,
+      chainName: props.chainId,
       stakeCurrency: {
         coinDenom: "SCRT",
         coinMinimalDenom: "uscrt",
@@ -65,10 +59,10 @@ const connectWallet = async (props) => {
       gasPriceStep: { low: 0.1, average: 0.25, high: 0.3 },
       features: ["secretwasm"],
     });
-    await window.keplr.enable(chainId);
+    await window.keplr.enable(props.chainId);
 
-    const offlineSigner = window.getOfflineSigner(chainId);
-    const enigmaUtils = window.getEnigmaUtils(chainId);
+    const offlineSigner = window.getOfflineSigner(props.chainId);
+    const enigmaUtils = window.getEnigmaUtils(props.chainId);
 
     const accounts = await offlineSigner.getAccounts();
 

@@ -386,14 +386,14 @@ opacity: 0.7;
     font-size: 30px;
     line-height: 32px;
     position: absolute;
-    top: -15px;
+    top: 98px;
     left: -102px;
     font-family: "Montserrat", sans-serif;
     color: #ffffff;
     font-weight: bolder;
 }
 
-.title::after {
+/* .title::after {
     content: "";
     width: 14px;
     height: 14px;
@@ -404,23 +404,26 @@ opacity: 0.7;
     background: #FF0000;
     border-radius: 50%;
     z-index: 1111;
-}
+} */
 
 .content-text {
     margin: 0px 0 0 0;
     position: absolute;
-    top: 45px;
+    top: 145px;
     /* left: 82px; */
     margin-right: 38%;
     margin-left: -88%;
+    /* text-align: left; */
 }
 
 .content-text h3 {
     font-family: "Montserrat", sans-serif;
-    font-size: 22px;
+    /* font-size: 22px; */
     line-height: 26px;
-    color: #31d7fc;
+    color: #FFFFFF;
     padding-bottom: 9px;
+    font-weight: 700;
+    font-size: 14px;
 }
 
 .content-text p {
@@ -430,8 +433,8 @@ opacity: 0.7;
     font-size: 14px;
     line-height: 22px;
     text-align: justify; /* For Edge */
-    -moz-text-align-last: right; /* For Firefox prior 58.0 */
-    text-align-last: right;
+    -moz-text-align-last: left; /* For Firefox prior 58.0 */
+    text-align-last: left;
 }
 
 .main-content-two {
@@ -442,7 +445,7 @@ opacity: 0.7;
 
 .title-two {
     position: absolute;
-    top: 285px;
+    top: 392px;
     left: -206px;
     font-family: "Montserrat", sans-serif;
     font-size: 30px;
@@ -451,7 +454,7 @@ opacity: 0.7;
     font-weight: bolder;
 }
 
-.title-two::after {
+/* .title-two::after {
     content: "";
     width: 14px;
     height: 14px;
@@ -463,12 +466,12 @@ opacity: 0.7;
     background: #FF0000;
     border-radius: 50%;
     z-index: 1111;
-}
+} */
 
 .content-text-two {
     margin: 0px 0 0 0;
     position: absolute;
-    top: 212px;
+    top: 350px;
     left: 83px;
     text-align: left;
 }
@@ -479,7 +482,9 @@ opacity: 0.7;
     line-height: 26px;
     /* color: #31D7FC; */
     padding-bottom: 9px;
-    color: #ff53cf;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 14px;
 }
 
 .content-text-two p {
@@ -489,7 +494,7 @@ opacity: 0.7;
     font-size: 14px;
     line-height: 22px;
     padding-right: 21px;
-    margin-top: 7%;
+    /* margin-top: 1%; */
 }
 
 .main-content-three {
@@ -501,7 +506,7 @@ opacity: 0.7;
 .title-three {
     margin: 0 0 40px;
     position: absolute;
-    top: 520px;
+    top: 593px;
     font-family: "Montserrat", sans-serif;
     font-size: 30px;
     line-height: 32px;
@@ -511,27 +516,14 @@ opacity: 0.7;
     right: -10px;
 }
 
-.title-three::before {
-    content: "";
-    width: 14px;
-    height: 14px;
-    color: #fff;
-    position: absolute;
-    /* right: 23px; */
-    top: 6px;
-    background: #FF0000;
-    border-radius: 50%;
-    z-index: 1111;
-    left: -30px;
-    bottom: 0;
-}
+
 
 .content-text-three {
     margin: 0px 0 0 0;
     position: absolute;
-    top: 435px;
-    left: -125px;
-    text-align: right;
+    top: 575px;
+    left: -35px;
+    text-align: left;
     width: 450px;
 }
 
@@ -540,9 +532,12 @@ opacity: 0.7;
     font-size: 22px;
     line-height: 26px;
     padding-bottom: 9px;
-    color: #9969ff;
+    /* color: #9969ff; */
     padding-right: 24px;
     padding-top: 7px;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 14px;
 }
 
 .content-text-three p {
@@ -565,8 +560,8 @@ opacity: 0.7;
     line-height: 35px;
     margin: 0 0 40px;
     position: absolute;
-    top: 720px;
-    left: -203px;
+    top: 790px;
+    left: -213px;
     font-family: "Montserrat", sans-serif;
     font-size: 30px;
     line-height: 32px;
@@ -574,23 +569,11 @@ opacity: 0.7;
     font-weight: bolder;
 }
 
-.title-four::after {
-    content: "";
-    width: 14px;
-    height: 14px;
-    position: absolute;
-    right: -30px;
-    top: 12px;
-    background: #ff4f4f;
-    border-radius: 50%;
-    z-index: 1111;
-}
-
 .content-text-four {
     margin: 0px 0 0 0;
     position: absolute;
-    top: 640px;
-    left: 75px;
+    top: 735px;
+    left: 80px;
     text-align: left;
     max-width: 463px;
 }
@@ -600,7 +583,9 @@ opacity: 0.7;
     font-size: 22px;
     line-height: 26px;
     padding-bottom: 9px;
-    color: #ff4f4f;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 14px;
 }
 
 .content-text-four p {

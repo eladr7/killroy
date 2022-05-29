@@ -1,7 +1,6 @@
 import Header from "./components/Header";
 import Services from "./components/Services";
 import Roadmap from "./components/Roadmap";
-import Faq from "./components/Faq";
 import Team from "./components/Team";
 import Footer from "./components/Footer";
 import Popups from "./components/Popups";
@@ -42,7 +41,7 @@ const MiddleEarth = (props) => {
             }
           />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
         <Popups
           sscrtWrapper={props.sscrtWrapper}
           scrtWrapper={props.scrtWrapper}
@@ -61,10 +60,9 @@ const Homepage = (props) => {
   return (
     <div>
       <Hero handleMint={props.handleMint} totalMints={props.totalMints} />
-      <Services />
       <Roadmap />
-      <Faq />
       <Team />
+      <Footer bgClass="footer-bg" />
     </div>
   );
 };

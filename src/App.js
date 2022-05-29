@@ -219,16 +219,16 @@ function App() {
       <Skeleton
         width={150}
         height={30}
-        highlightColor={"#4F4BCF"}
-        baseColor={"#5089F9"}
+        highlightColor={"#1d040e"}
+        baseColor={"#f95050"}
       />
     );
     setScrtWrapper(
       <Skeleton
         width={150}
         height={30}
-        highlightColor={"#4F4BCF"}
-        baseColor={"#5089F9"}
+        highlightColor={"#1d040e"}
+        baseColor={"#f95050"}
       />
     );
     // if (getFromLS(`balancePermit-${chainInfo.clientAddress}${chainInfo.chainId}`)) {

@@ -1,12 +1,12 @@
 const Footer = (props) => {
   return (
-    <div className="footer-bg">
+    <div className={props.bgClass}>
       <div className="footer-main">
         <div className="footer-text">
           {" "}
           <img src="./image/legendao.png" alt="" />
-          <p>they cannot foresee the pain and trouble that are</p>
-          <p>bound to ensue; and equal blame belongs.</p>
+          <p>Bringing all legendary creators into the Cosmos.</p>
+          <p>The immersive Mint Lab for all significant NFT projects.</p>
           <h5>Join our community</h5>
           <ul>
             <li>
@@ -48,7 +48,7 @@ const Footer = (props) => {
         </div>
       </div>
       {/* FOOTER-LAST */}
-      <div className="empty-line"> </div>
+      {/* <div className="empty-line"> </div> */}
       <div className="footer-main-last">
         <div className="footer-text-1">
           <h4> Copyright 2022, SCRT Labs</h4>{" "}

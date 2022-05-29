@@ -40,14 +40,18 @@ body {
 
 #header-background {
     max-width: 100%;
-    background-image: linear-gradient(
+    /* background-image: linear-gradient(
         180deg,
         rgba(20, 20, 20, 0.2) 48.44%,
         #070000 80%
-    ),url(./bgsword.jpeg);
-    opacity: 0.5;
+    ),url(./bgsword.jpeg); */
+    /* opacity: 0.5; */
     background-repeat: no-repeat;
     background-size: cover;
+    position: absolute;
+    left: 20%;
+    z-index: 10;
+    top: -0.5%
 }
 
 .navbar {
@@ -106,18 +110,20 @@ body {
     max-width: 1232px;
     margin: auto;
     padding: 30px 0;
+
 }
 
 .hero-background {
-    background-image: linear-gradient(
-            180deg,
-            rgba(20, 20, 20, 0.2) 48.44%,
-            #480101 140%
-        ),
+    background-image: 
         url(./bgsword.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0;
+    padding-top: 5%;
+}
+
+.hero-section-text {
+    z-index: 20;
 }
 
 .hero-section-text h1 {
@@ -157,9 +163,9 @@ body {
     font-size: 20px;
     font-weight: 400;
     line-height: 36px;
-    padding-bottom: 35px;
+    /* padding-bottom: 35px; */
     color: #ffffff;
-    padding: 0 40px 35px 0;
+    padding: 0 40px 0 0;
 }
 
 .hero-section-text a {
@@ -179,18 +185,19 @@ body {
     width: 509px;
     padding: 40px;
     text-align: center;
-    margin-left: 15%;
+    margin-left: -5%;
+    margin-top: 3%;
 }
 
 .kevin-smith-img-bg {
     border-radius:500px;
     filter: blur(150px);
 	background-color:rgba(0, 0, 0, 1);
-    width: 972px;
-    height: 872px;
+    width: 1400px;
+    height: 1200px;
 
     position: absolute;
-    top: -20%;
+    top: -34%;
     
     left: -135%;
 }
@@ -206,59 +213,53 @@ body {
 }
 
 .kevin-smith-img-wrapper {
-    z-index: 10;
+    z-index: 2;
 }
 
 .kevin-smith-img {
 border-radius: 50px;
-z-index:2;
+z-index:1;
 opacity: 0.7;
 }
 
 .hero-img-time {
     text-align: center;
     /* padding: 25px 0 10px; */
-}
-
-.hero-img-time p {
     display: inline-block;
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1.2em;
     line-height: 29px;
     text-align: left;
     letter-spacing: 0.05em;
     color: #ffffff;
+    margin-top: 20%;
 }
 
 .mintPrice {
-    display: inline-block;
-    align-items: center;
-    justify-content: space-between;
+    /* display: inline-block; */
+    /* align-items: center;
+    justify-content: space-between; */
 }
 
-.priceTitle p {
+.priceTitle div {
     font-weight: 400;
     font-size: 20px;
-    line-height: 29px;
+    /* line-height: 29px; */
     text-align: center;
     /*letter-spacing: 0.05em;*/
     color: #ffffff;
 }
 
-.priceTitle p span {
-    font-size: 20px;
-}
-
 .mint {
     text-align: center;
-    margin: 33px 0 0;
+    /* margin: 33px 40px 0; */
 }
 
 .mint a {
     line-height: 17px;
     font-family: Montserrat, sans-serif;
-    font-size: 22px;
+    /* font-size: 22px; */
     font-weight: bold;
     box-sizing: border-box;
     border-radius: 7.73px;
@@ -281,24 +282,26 @@ opacity: 0.7;
 /* services-section */
 
 #services-background {
-    background-image: linear-gradient(
+    /* background-image: linear-gradient(
             180deg,
             #1b0505 0%,
             rgba(255, 0, 0, 0.39) 48.44%,
             #1d040e 100%
         ),
-        url(./bglight.jpeg);
+        url(./bglight.jpeg); */
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0;
+    margin-top: -10%;
+    margin-bottom: 5%;
 }
 
 .services-section-main {
     display: flex;
     justify-content: space-between;
     align-content: center;
-    padding-top: 83px;
+    /* padding-top: 83px; */
     margin: auto;
     max-width: 1230px;
 }
@@ -328,7 +331,6 @@ opacity: 0.7;
     line-height: 36px;
     font-family: "Montserrat", sans-serif;
     color: #ffffff;
-    margin-bottom: 13%;
 }
 
 .services-text a {
@@ -352,17 +354,17 @@ opacity: 0.7;
 #roadmap-background {
     background: linear-gradient(
             180deg,
-            #1b0505 0%,
-            rgba(51, 9, 9, 0.7) 48.44%,
-            #1d040e 100%
-        ),
-        url(./bgtree.jpeg);
+            #000000 0%,
+            rgb(0, 0, 0) 48.44%,
+            #000000 100%
+        );
     width: 100%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0;
     margin: auto;
     padding: 60px 0px;
+    z-index: 1;
 }
 
 .background-zig-zag {
@@ -572,7 +574,7 @@ opacity: 0.7;
 .content-text-four {
     margin: 0px 0 0 0;
     position: absolute;
-    top: 735px;
+    top: 755px;
     left: 80px;
     text-align: left;
     max-width: 463px;
@@ -720,17 +722,20 @@ opacity: 0.7;
 #accordian-background {
     background-image: linear-gradient(
             180deg,
-            #1b0505 0%,
-            rgba(103, 3, 3, 0.782) 80.44%,
-            #1d040e 100%
+            #000000 20%,
+            rgba(83, 74, 74, 0.263) 40.44%,
+            #000000 100%
         ),
-        url(./bglight.jpeg);
-    width: 100%;
+        url(./bgtree.jpeg);
+    /* width: 100%; */
     background-repeat: no-repeat;
     background-size: cover;
     margin-bottom: -3%;
     margin-top: -3%;
+    padding-bottom: 10%;
     /*background-position: 0;*/
+    background-position-y: -220px;
+    z-index: 10;
 }
 
 .faq-set {
@@ -829,16 +834,16 @@ button.accordion.active:after {
 #team-footer-background {
     background-image: linear-gradient(
             180deg,
-            #1d040e 0%,
-            rgba(110, 3, 3, 0.682) 48.44%,
+            #030001 0%,
+            rgba(110, 3, 3, 0.682) 100.44%,
             #090101 100%
-        ),
-        url(./bglight.jpeg);
-    background-position: 100% 100%;
+        );
+    /* background-position: 100% 100%; */
     width: 100%;
     height: 400px;
     background-repeat: no-repeat;
     background-size: cover;
+    margin-top: -5%;
 }
 
 .OUR-TEAM {
@@ -1013,13 +1018,26 @@ button.accordion.active:after {
     background-image: linear-gradient(
             180deg,
             #310303 0%,
-            rgba(20, 20, 20, 0.2) 48.44%,
-            #480101 100%
+            rgba(20, 20, 20, 0.2) 18.44%,
+            #070101 93%
         ),
         url(./bgsword.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0;
+}
+
+.footer-bg-my-collection {
+    /* background-image: linear-gradient(
+            180deg,
+            #310303 0%,
+            rgba(20, 20, 20, 0.2) 18.44%,
+            #070101 93%
+        ),
+        url(./bgsword.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover; */
+    /* background-position: 0; */
 }
 
 .footer-input {
@@ -1028,6 +1046,7 @@ button.accordion.active:after {
 
 .footer-text img {
     padding: 10px 25px 30px 0px;
+    margin-top: 10%;
 }
 
 .footer-img {
@@ -1088,6 +1107,7 @@ input.form-control {
     /* padding-left: 8%; */
     max-width: 1230px;
     margin: auto;
+    padding-bottom: 1%;
 }
 
 .footer-text-1 {
@@ -1096,6 +1116,8 @@ input.form-control {
     font-weight: 400;
     font-family: "Roboto", sans-serif;
     color: #808080;
+    margin: auto;
+  width: 20%;
 }
 /* ====================================================================== */
 /* ====================================================================== */
@@ -1189,6 +1211,22 @@ input.form-control {
     text-align: center;
     margin: 0px auto;
     position: relative;
+}
+
+.no-nfts {
+    font-family: 'Roboto';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+/* or 120% */
+
+text-align: center;
+
+color: #FFFFFF;
+/* margin-bottom: 20%; */
+margin-top: 5%;
+height: 400px;
 }
 
 .live-my-collection {
@@ -1560,6 +1598,7 @@ header {
     font-size: 18px;
     display: flex;
     align-items: center;
+    margin-left: -24%;
 }
 
 #brand a {
@@ -1705,8 +1744,13 @@ header {
 }
 
 .collection-item-background {
-    background: url(./bgsword.jpeg);
-
+    background: linear-gradient(
+        180deg,
+        #370707 -15%,
+        rgba(20, 20, 20, 0) 48.44%,
+        #2f0303 200%
+    ), url(./bgsword.jpeg);
+/* width: 100%; */
     /* background: linear-gradient(
             180deg,
             #350b0b 0%,
@@ -1718,7 +1762,24 @@ header {
 
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 0;
+    /* width: 1519px; */
+    width: 100%;
+
+    /* background-position: 0; */
+    /* background-position:center; */
+    padding-top: 4%;
+    /* max-width: 80%; */
+ /* max-height: 100%; */
+ /* object-fit: fill */
+/* 
+    background: linear-gradient(
+        180deg,
+        #000000 0%,
+        rgb(0, 0, 0) 48.44%,
+        #000000 100%
+    ); */
+
+/* padding: 60px 0px; */
 }
 
 .rarity-rank-button {

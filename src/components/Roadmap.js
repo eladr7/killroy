@@ -1,3 +1,5 @@
+import Faq from "./Faq";
+
 const Roadmap = () => {
   return (
     <section id="roadmap-background">
@@ -11,10 +13,11 @@ const Roadmap = () => {
           </div>
           <div className="content-text">
             <h3>The Premiere Drop</h3>
-            <p>The KillRoy Was Here Premiere NFT Bundle is made available to</p>
             <p>
-              the public and to whitelist/Council of Gyld holders on June 2nd,
-              2022.
+              The KillRoy Was Here Premiere NFT Bundle is made available to the
+            </p>
+            <p>
+              public and to whitelist/Council of Gyld holders on June 2nd, 2022.
             </p>
           </div>
         </div>
@@ -48,15 +51,14 @@ const Roadmap = () => {
           <div className="content-text-four">
             <h3>The Legendary NFTs Drop</h3>
             <p>
-              The final evolution of the KillRoy PFP. Burning four KillRoy Was
-              Here PFPs guarantees a Legendary Golden KillRoy, which will reward
-              a significant amount of $LGND. This will grant a collector a
-              certain amount of $LGND as a free airdrop. The higher the rank is
-              of the Golden KillRoy you receive, the higher the reward.
+              Burning four KillRoy Was Here PFPs guarantees a Legendary Golden
+              KillRoy, awarding a collector a free $LGND airdrop. The higher
+              rank ed the Golden KillRoy you receive, the higher the reward.
             </p>
           </div>
         </div>
       </div>
+      <Faq />
     </section>
   );
 };

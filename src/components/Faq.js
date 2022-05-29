@@ -9,90 +9,69 @@ const Faq = (props) => {
         <div className="panel">
           <p>
             {" "}
-            Season 1 : Minting starts at 12:00 pm UTC on April 21st. (2321
-            available NFTs, 60% for WL)
+            The KillRoy Was Here Premiere NFT Bundle opens for mint on June 2nd.
+            Mint here.
           </p>
-          <p>
-            Season 2 : Details about the next stage will be revealed in the near
-            future{" "}
-          </p>
+          <p>The KillRoy Was Here NFT opens for mint in early July.</p>
         </div>
         <button className="accordion">
-          HOW MANY PIECES ARE THERE IN THE COUNCIL OF GYLD NFT COLLECTION?
-        </button>
-        <div className="panel">
-          <p>The collection contains 1000 unique pieces.</p>
-        </div>
-        <button className="accordion">
-          HOW CAN I CONVERT $SCRT TO $sSCRT USING KEPLR WALLET?
+          HOW MANY PIECES ARE BEING SOLD IN THE KILLROY PREMIERE NFT BUNDLE?
         </button>
         <div className="panel">
           <p>
-            You can use the guide provided{" "}
+            The Premiere collection contains only 300 unique pieces. Mint here.
+          </p>
+        </div>
+        <button className="accordion">
+          HOW CAN I CONVERT MY PREMIERE NFT TO THE KILLROY WAS HERE NFT?
+        </button>
+        <div className="panel">
+          <p>
+            If you bought the Premiere NFT, the KillRoy Was Here NFT will be
+            sent to you when the collection launch in July.
+          </p>
+        </div>
+        <button className="accordion">
+          HOW MANY PIECES ARE THERE IN THE KILLROY NFT COLLECTION?
+        </button>
+        <div className="panel">
+          <p>
+            KillRoy Was Here contains 5,555 1/1 generative comic art pieces.
+          </p>
+        </div>
+        <button className="accordion">
+          WHAT IS THE PRICE OF THE PREMIERE NFT?
+        </button>
+        <div className="panel">
+          <p>$285 in sSCRT for public (no Whitelist) -5% off</p>
+          <p>$210 in sSCRT for Whitelisted -30% off</p>
+        </div>
+        <button className="accordion">
+          WHAT CAN I DO WITH MY KILLROY NFT?
+        </button>
+        <div className="panel">
+          <p>
+            Read more about the benefits and perks of a KillRoy Was Here NFT
             <a
               target={"_blank"}
-              href="https://www.patlid.com/posts/guide-how-to-convert-scrt-sscrt-keplr-wallet"
+              href="https://medium.com/legendao/make-a-killing-the-killroy-was-here-nft-for-creators-9fdc72ba5921"
             >
               here
             </a>
             .
           </p>
         </div>
-        <button className="accordion">
-          WHAT CAN I DO WITH MY COUNCIL OF GYLD NFT?{" "}
-        </button>
+        <button className="accordion">WHY SHOULD I BUY A KILLROY NFT?</button>
         <div className="panel">
           <p>
-            Your Council of Gyld NFT, or your Cryptid, is your access point into
-            the Legendao universe.
-          </p>
-          <p>
-            When you collect a Council of Gyld NFT, you initially receive a 2D
-            Cryptid avatar to use on the Legendao platform.
-          </p>
-          <p>
-            This will entitle you to a free 3D Cryptid avatar for use in Phase 2
-            of the Legendao Universe.
-          </p>
-          <p>
-            Your 2D Cryptid avatar also grants you Legendao OG status. OGs enjoy
-            amazing NFT and staking opportunities that will never be accessible
-            at any other time except during the initial Council of Gyld drop.
-          </p>
-        </div>
-        <button className="accordion">
-          IS THE 2D COUNCIL OF GYLD COLLECTION PART OF THE 3D LEGENDAO UNIVERSE?{" "}
-        </button>
-        <div className="panel">
-          <p>
-            Yes. The 2D Council of Gyld collection is the technical base for the
-            3D Cryptids collection and currently interacts with the Legendao
-            platform in most of the 3D capacities like collecting, staking and
-            earning XP.
-          </p>
-        </div>
-        <button className="accordion">
-          WHY SHOULD I BUY A COUNCIL OF GYLD NFT?{" "}
-        </button>
-        <div className="panel">
-          <p>
-            It looks awesome and the free 3D avatar dropped to you later will
-            look even more awesome.
-          </p>
-          <p>
-            A Council of Gyld NFT is the initial key entitling you to staking,
-            collecting and earning privileges that will never be available again
-            after the initial drop.
-          </p>
-          <p>
-            With your Council of Gyld NFT, you get a whitelist spot for
-            Legendao's first blue-chip NFT collection and a free digital
-            wearable - an exclusive pair of wings that will mark you forever as
-            a Legendao OG.
-          </p>
-          <p>
-            There will be no way to buy or transfer the perks provided by the
-            Council of Gyld drop ever again.
+            Read more about the benefits and perks of a KillRoy Was Here NFT
+            <a
+              target={"_blank"}
+              href="https://medium.com/legendao/make-a-killing-the-killroy-was-here-nft-for-creators-9fdc72ba5921"
+            >
+              here
+            </a>
+            .
           </p>
         </div>
       </div>

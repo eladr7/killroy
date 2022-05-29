@@ -15,7 +15,7 @@ const Header = (props) => {
             />
           </a>
         </div>
-        <nav>
+        <nav style={{ width: "100%", marginRight: "-27%" }}>
           <ul className="nav-list">
             <li>
               <Link to={"/"}>Homepage</Link>
@@ -35,29 +35,35 @@ const Header = (props) => {
             </li>
             {/*<li><Link smooth to="/#team-footer-background">Our Team</Link></li>*/}
             {/*<li><img src="./image/stashh.png" alt="" /></li>*/}
-            <li>
-              <a href={"https://stashh.io/"} rel="noreferrer" target={"_blank"}>
-                <img src="./image/ruby.svg" alt="" />
-              </a>
-            </li>
-            <li>
-              <a
-                href={"https://discord.gg/w84egv2Enb"}
-                rel="noreferrer"
-                target={"_blank"}
-              >
-                <img src="./image/DiscordRed.svg" alt="" />
-              </a>
-            </li>
-            <li>
-              <a
-                href={"https://twitter.com/LegendaoNFT"}
-                rel="noreferrer"
-                target={"_blank"}
-              >
-                <img src="./image/TwitterRed.svg" alt="" />
-              </a>
-            </li>
+            <div style={{ display: "flex" }}>
+              <li>
+                <a
+                  href={"https://stashh.io/"}
+                  rel="noreferrer"
+                  target={"_blank"}
+                >
+                  <img src="./image/ruby.svg" alt="" />
+                </a>
+              </li>
+              <li style={{ marginTop: "2%" }}>
+                <a
+                  href={"https://discord.gg/w84egv2Enb"}
+                  rel="noreferrer"
+                  target={"_blank"}
+                >
+                  <img src="./image/DiscordRed.svg" alt="" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href={"https://twitter.com/LegendaoNFT"}
+                  rel="noreferrer"
+                  target={"_blank"}
+                >
+                  <img src="./image/TwitterRed.svg" alt="" />
+                </a>
+              </li>
+            </div>
             {props.addressContainer}
             {/*<a className="ctn" href="#popup2" onClick={() => props.getBalance()}>Balance</a>*/}
           </ul>

@@ -11,15 +11,29 @@ const Services = (props) => {
             KILLROY
           </h3>
           <p>
-            I must explain to you how all this mistaken idea of denouncing
-            pleasure and praising pain was born and I will give you a complete
-            account of the system, and expound the actual teachings of the great
-            explorer of the truth, the master-builder of human happiness. No one
-            rejects, dislikes, or avoids pleasure itself, because it is
-            pleasure, but because those who do not know how to pursue pleasure
-            rationally encounter consequences that are extremely painful.{" "}
+            KillRoy Was Here isn't just an NFT film. It's a revolutionary NFT
+            drop connecting a creator who’s already made it — Kevin Smith — with
+            the creators of tomorrow. A KillRoy Was Here PFP provides the
+            following benefits to collectors:
           </p>
-          <a href="">Read more</a>
+
+          <p>&nbsp; &nbsp;• 1 KillRoy Was Here PFP</p>
+          <p>
+            &nbsp; &nbsp;• Access to the KillRoy Was Here full-length feature
+            film
+          </p>
+          <p style={{ paddingBotton: "35px" }}>
+            &nbsp; &nbsp;• 1 of 20 PDFs of different script chapters signed by
+            Kevin
+          </p>
+          <p>&nbsp; &nbsp;&nbsp;&nbsp;Smith</p>
+          <p style={{ marginBottom: "13%" }}>
+            &nbsp; &nbsp;• 1 of 20 different comic videos
+          </p>
+
+          <a href="https://scrt.network/blog/legendao-kevin-smith-killroy-secret-network">
+            Read more
+          </a>
         </div>
       </div>
     </section>

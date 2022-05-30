@@ -108,7 +108,8 @@ body {
     justify-content: space-between;
     align-content: center;
     max-width: 1232px;
-    margin: auto;
+    /* margin: auto; */
+    margin-left: 6.5%;
     padding: 30px 0;
 
 }
@@ -123,7 +124,7 @@ body {
 }
 
 .hero-section-text {
-    z-index: 20;
+    z-index: 1;
 }
 
 .hero-section-text h1 {
@@ -145,7 +146,7 @@ body {
     font-size: 42px;
     line-height: 65px;
     margin-bottom: 30px;
-    padding: 0 115px;
+    /* padding: 0 115px; */
     font-weight: bold;
     background: linear-gradient(180deg, #DE0000 0%, #4E0000 100%);
     -webkit-background-clip: text;
@@ -182,7 +183,8 @@ body {
 
 .hero-text-img {
     border-radius: 7.73376px;
-    width: 509px;
+    /* width: 509px; */
+    width: 60%;
     padding: 40px;
     text-align: center;
     margin-left: -5%;
@@ -190,9 +192,9 @@ body {
 }
 
 .kevin-smith-img-bg {
-    border-radius:500px;
+    /* border-radius:500px;
     filter: blur(150px);
-	background-color:rgba(0, 0, 0, 1);
+	background-color:rgba(0, 0, 0, 1); */
     width: 1400px;
     height: 1200px;
 
@@ -208,18 +210,12 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    mix-blend-mode: difference;
+    /* mix-blend-mode: difference; */
 
 }
 
 .kevin-smith-img-wrapper {
     z-index: 2;
-}
-
-.kevin-smith-img {
-border-radius: 50px;
-z-index:1;
-opacity: 0.7;
 }
 
 .hero-img-time {
@@ -864,7 +860,8 @@ button.accordion.active:after {
     font-size: 40px;
     line-height: 65px;
     margin-bottom: 30px;
-    background: linear-gradient(180deg, #DE0000 0%, #6B0000 100%);
+    /* background: linear-gradient(180deg, #DE0000 0%, #6B0000 100%); */
+    background: linear-gradient(180deg, #DE0000 0%, #6B0000 800%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: 'Montserrat';
@@ -1451,6 +1448,7 @@ p.paralast {
     transition: opacity 500ms;
     visibility: hidden;
     opacity: 0;
+    z-index: 1;
 }
 
 .overlay:target {
@@ -1537,7 +1535,7 @@ a.barkbehance {
     line-height: 120%;
     letter-spacing: 0.05em;
     color: #0b131f;
-    margin-left: 1rem;
+    margin-left: 2.5rem;
 }
 
 .innercontent {
@@ -1638,7 +1636,7 @@ header {
 #hamburger-icon div {
     width: 30px;
     height: 3px;
-    background-color: #2fa0cc;
+    background-color: #ffffff;
     margin: 6px 0;
     transition: 0.4s;
 }
@@ -1687,7 +1685,7 @@ header {
     position: absolute;
     top: 100px;
     left: 0;
-    height: calc(100vh - 50px);
+    height: calc(100vh - 350px);
     width: 100%;
 }
 
@@ -1698,11 +1696,15 @@ header {
     justify-content: flex-start;
     background: linear-gradient(
         180deg,
-        #011b48 92%,
+        #480101 92%,
         rgba(20, 20, 20, 0.39) 57.44%,
-        #011b48 7%
+        #480101 7%
     );
     padding: 60px 30px;
+    width: 100%;
+    top: 4%;
+    left: 12%;
+    z-index: -1;
 }
 
 .mobile-menu li {
@@ -1721,6 +1723,11 @@ header {
     display: block;
 }
 
+.mint-price {
+    font-size: 1.2em;
+    margin-right: 31%;
+}
+
 @media only screen and (max-width: 992px) {
     header nav {
         display: none;
@@ -1728,6 +1735,59 @@ header {
 
     #hamburger-icon {
         display: block;
+    }
+
+    #header-background {
+        /* position: relative; */
+        /* margin-right: 100%; */
+/* max-width: 100%; */
+        /* background-repeat: no-repeat; */
+        /* background-size: cover; */
+        /* position: absolute; */
+        left: 70%;
+        /* z-index: 10; */
+        top: -0.5%;
+    }
+
+    #brand {
+        margin-left: -262%;
+    }
+
+    .hero-background {
+        padding-top: 10%;
+    }
+
+    .hero-text-img {
+        margin-left: -2%;
+    }    
+
+    .mint-price {
+        font-size: 1.2em;
+        margin-right: 24%;
+    }
+
+    .kevin-smith-img {
+        width: 1400px;
+        height: 1400px;
+        margin-left: -40%;
+        margin-top: -20%;
+    }
+
+    #services-background {
+        margin-top: -60%;
+    }
+    #team-footer-background {
+        margin-bottom: -10%;
+    }
+
+    .passphrase-box {
+        margin-left: -22%;
+        margin-top: -2%;
+        margin-bottom: 8%;
+    }
+    .passphrase-lock{
+        margin-left: 7%;
+        margin-top: 12%;
     }
 }
 
@@ -1747,9 +1807,9 @@ header {
 .collection-item-background {
     background: linear-gradient(
         180deg,
-        #370707 -40%,
+        #370707 -700%,
         rgba(20, 20, 20, 0) 48.44%,
-        #2f0303 200%
+        #2f0303 400%
     ), url(./bgsword.jpeg);
 /* width: 100%; */
     /* background: linear-gradient(

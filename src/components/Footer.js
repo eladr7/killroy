@@ -8,7 +8,7 @@ const Footer = (props) => {
           <p>Bringing all legendary creators into the Cosmos.</p>
           <p>The immersive Mint Lab for all significant NFT projects.</p>
           <h5>Join our community</h5>
-          <ul>
+          <ul style={{ marginTop: "-13%" }}>
             <li>
               <a
                 href={"https://discord.gg/w84egv2Enb"}
@@ -30,7 +30,7 @@ const Footer = (props) => {
             </li>
           </ul>
         </div>
-        <div className="footer-input">
+        {/* <div className="footer-input">
           <p>Stay in the loop</p>
           <input
             type="text"
@@ -45,7 +45,7 @@ const Footer = (props) => {
             src="./image/footer-arrow.png"
             alt=""
           />{" "}
-        </div>
+        </div> */}
       </div>
       {/* FOOTER-LAST */}
       {/* <div className="empty-line"> </div> */}

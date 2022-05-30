@@ -37,7 +37,7 @@ const Hero = (props) => {
               style={{ display: "flex", marginBottom: "-12%" }}
               className="priceTitle"
             >
-              <div style={{ marginRight: "14%" }}>Mint Price:</div>
+              <div style={{ marginRight: "10%" }}>Mint Price: (WL price)</div>
               <div className="mint">
                 <a
                   href="#"
@@ -51,30 +51,23 @@ const Hero = (props) => {
             </div>
 
             <div style={{ display: "flex" }} className="hero-img-time">
-              <div style={{ fontSize: "1.2em", marginRight: "14%" }}>
-                75 $sSCRT
-              </div>
+              <div className="mint-price">75 $sSCRT</div>
               <div>Remaining : {props.totalMints}</div>
             </div>
           </div>
         </div>
-        <div
-          style={{
-            width: "850px",
-            height: "872px",
-            position: "relative",
-            marginTop: "9%",
-          }}
-        >
-          <div className="kevin-smith-img-bg"></div>
-          <div className="kevin-smith-img-wrapper">
-            <img
-              className="kevin-smith-img"
-              src="kevin_smith.png"
-              alt=""
-              style={{ width: "378px", height: "535px" }}
-            />
-          </div>
+        <div className="kevin-smith-img">
+          <img
+            src="kevin_smith.png"
+            alt=""
+            style={{
+              width: "1400px",
+              height: "1400px",
+              marginLeft: "-40%",
+              marginTop: "-20%",
+              zIndex: "-1",
+            }}
+          />
         </div>
       </div>
       <Services />
@@ -83,44 +76,3 @@ const Hero = (props) => {
 };
 
 export default Hero;
-/*<div className="hero-text-img">
-            <div className="mintPrice">
-              <div className="priceTitle" style={{ display: "flex" }}>
-                <div>
-                  <div
-                    style={{
-                      marginBottom: "-5%",
-                      fontSize: "1.2em",
-                      letterSpacing: "0.1em",
-                      marginBottom: "10%",
-                      marginTop: "22%",
-                    }}
-                  >
-                    Mint Price:
-                  </div>
-                  <br />
-                  <span style={{ fontSize: "1.5em" }}>75 $sSCRT</span>
-                </div>
-                <div className="mint">
-                  <a
-                    href="#"
-                    onClick={() => {
-                      props.handleMint();
-                    }}
-                  >
-                    MINT
-                  </a>
-                  <div className="hero-img-time">
-                    <p>
-                      <span style={{ fontSize: "18px" }}>
-                        Remaining : {props.totalMints}
-                      </span>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* <div className="mint">
-              <a>SOLD OUT</a>
-            </div> */
-//  </div>
-// </div>

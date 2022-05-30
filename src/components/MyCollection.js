@@ -14,7 +14,7 @@ const MyCollection = (props) => {
       {!hasNFTs && (
         <div className="no-nfts">
           Oh no. <br />
-          No NFTs were minted. Return to the home-page and mint
+          No NFTs were minted. Return to the home page and mint
           <br />
           one.
         </div>

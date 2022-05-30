@@ -15,7 +15,7 @@ const Header = (props) => {
             />
           </a>
         </div>
-        <nav style={{ width: "100%", marginRight: "-27%" }}>
+        <nav style={{ width: "100%", marginRight: "-12%", marginLeft: "25%" }}>
           <ul className="nav-list">
             <li>
               <Link to={"/"}>Homepage</Link>
@@ -98,10 +98,22 @@ const Header = (props) => {
             <div className="social-icons">
               {/*<li><img src="./image/stashh.png" alt="" /></li>*/}
               <li>
-                <img src="./image/discord.png" alt="" />
+                <a
+                  href={"https://discord.gg/w84egv2Enb"}
+                  rel="noreferrer"
+                  target={"_blank"}
+                >
+                  <img src="./image/DiscordRed.svg" alt="" />
+                </a>
               </li>
               <li>
-                <img src="./image/twitter.png" alt="" />
+                <a
+                  href={"https://twitter.com/LegendaoNFT"}
+                  rel="noreferrer"
+                  target={"_blank"}
+                >
+                  <img src="./image/TwitterRed.svg" alt="" />
+                </a>
               </li>
             </div>
             <div className="mobile-btn">

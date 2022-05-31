@@ -168,7 +168,7 @@ function App() {
     const connect = async () => {
       await handleConnect();
     };
-    connect();
+    // connect();
     window.addEventListener("keplr_keystorechange", async () => {
       await handleConnect();
     });

@@ -1308,6 +1308,10 @@ margin-top: 5%;
 height: 400px;
 }
 
+.nft-note {
+    margin-bottom: -15%;
+}
+
 .live-my-collection {
     display: flex;
     align-items: center;

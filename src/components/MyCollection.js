@@ -11,12 +11,17 @@ const MyCollection = (props) => {
           <h1 className="grim-title">MY COLLECTION</h1>
         </div>
       </div>
-      {!hasNFTs && (
+      {!hasNFTs ? (
         <div className="no-nfts">
           Oh no. <br />
           No NFTs were minted. Return to the home page and mint
           <br />
           one.
+        </div>
+      ) : (
+        <div className="no-nfts nft-note">
+          Note: Before the event, write down your three-word access key. <br />
+          This page is not supported on mobile.
         </div>
       )}
       {hasNFTs &&

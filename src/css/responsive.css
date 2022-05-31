@@ -666,7 +666,9 @@
 		height: 400px;
 		padding: 0 5%;
 	}
-
+	.nft-note {
+		margin-bottom: -60%;
+	}
 	.nft-image {
 		margin-left: auto;
 		margin-right: auto;

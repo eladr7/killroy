@@ -1,4 +1,5 @@
 import { HashLink as Link } from "react-router-hash-link";
+import MobileNavbar from "./MobileNav";
 
 const Header = (props) => {
   return (
@@ -76,52 +77,14 @@ const Header = (props) => {
           <div className="bar1" />
           <div className="bar2" />
           <div className="bar3" />
-          <ul className="mobile-menu">
-            <li>
-              <Link to="/">Homepage</Link>
-            </li>
-            <li>
-              <Link to="/mycollection">My Collection</Link>
-            </li>
-            <li>
-              <Link smooth to="/#roadmap-background">
-                {" "}
-                Roadmap
-              </Link>
-            </li>
-            <li>
-              <Link smooth to="/#accordian-background">
-                F.A.Q.
-              </Link>
-            </li>
-            {/*<li><Link smooth to="/#team-footer-background">Our Team</Link></li>*/}
-            <div className="social-icons">
-              {/*<li><img src="./image/stashh.png" alt="" /></li>*/}
-              <li>
-                <a
-                  href={"https://discord.gg/w84egv2Enb"}
-                  rel="noreferrer"
-                  target={"_blank"}
-                >
-                  <img src="./image/DiscordRed.svg" alt="" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href={"https://twitter.com/LegendaoNFT"}
-                  rel="noreferrer"
-                  target={"_blank"}
-                >
-                  <img src="./image/TwitterRed.svg" alt="" />
-                </a>
-              </li>
-            </div>
-            <div className="mobile-btn">
-              {props.addressContainer}
-              {/*<a className="ctn" href="#popup2" onClick={() => props.getBalance()}>Balance</a>*/}
-            </div>
-          </ul>
         </div>
+        {props.mobileMenuOpen && (
+          <div className="open">
+            <div className="mobile-menu">
+              <MobileNavbar toggleMobileMenu={props.toggleMobileMenu} />
+            </div>
+          </div>
+        )}
       </header>
       {/* nav bar end */}
     </section>

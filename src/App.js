@@ -744,18 +744,18 @@ function App() {
   //   }
 
   const checkWhitelist = async () => {
-    return true;
-    // let data = {
-    //   whitelist: false
-    // };
-    // try {
-    //   const url = `${chainInfo.backendService}/iswhitelisted?address=${chainInfo.clientAddress}`;
-    //   const response = await fetch(url);
-    //   data = await response.json();
-    // } catch (error) {
-    //   console.log(error);
-    // }
-    // return data.whitelist;
+    // return true;
+    let data = {
+      whitelist: false,
+    };
+    try {
+      const url = `${chainInfo.backendService}/iswhitelisted?address=${chainInfo.clientAddress}`;
+      const response = await fetch(url);
+      data = await response.json();
+    } catch (error) {
+      console.log(error);
+    }
+    return data.whitelist;
   };
 
   const toggleMintVisible = () => {
@@ -777,17 +777,16 @@ function App() {
     //use mintCount variable to query the contract for "mintCount" number of mints.
 
     hideMintSuccess();
-    // const whiteListCheck = await checkWhitelist();
-    // console.log(`is whitelisted: ${whiteListCheck}`);
-    // if (!whiteListCheck) {
-    //   Swal.fire({
-    //         icon: 'error',
-    //         title: 'Oops...',
-    //         text: 'You are not whitelisted!',
-    //       }
-    //   )
-    //   return false;
-    // }
+    const whiteListCheck = await checkWhitelist();
+    console.log(`is whitelisted: ${whiteListCheck}`);
+    if (!whiteListCheck) {
+      Swal.fire({
+        icon: "error",
+        title: "Oops...",
+        text: "You are not whitelisted!",
+      });
+      return false;
+    }
 
     if (!mintCount) {
       mintCount = 1;

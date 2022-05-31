@@ -6,13 +6,16 @@ function SecureValueToggler(props) {
   return (
     <div className="container">
       {!show && (
-        <div
-          className="abs-box stack-top"
-          onClick={() => {
-            setShow(!show);
-          }}
-        >
-          <img className="passphrase-lock" src="./image/lock.png" alt={""} />
+        <div>
+          <span class="tooltiptext">Click to reveal</span>
+          <div
+            className="abs-box stack-top"
+            onClick={() => {
+              setShow(!show);
+            }}
+          >
+            <img className="passphrase-lock" src="./image/lock.png" alt={""} />
+          </div>
         </div>
       )}
 

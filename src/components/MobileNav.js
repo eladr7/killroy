@@ -14,7 +14,7 @@ export default function MobileNavbar(props) {
             />
             {/* <p className="txt-438">x</p> */}
           </div>
-          <div className="button flex-col-hcenter-vcenter">
+          <div className="button" style={{ display: "flex" }}>
             <img
               src="https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/ilj0tijsqw-810%3A2108?alt=media&token=8a86807e-1327-48bb-81a0-653204274e14"
               alt="Not Found"

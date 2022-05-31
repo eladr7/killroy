@@ -159,6 +159,7 @@ body {
 .hero-section-text {
     margin-top: 35px;
     padding-right: 90px;
+    margin-left: -5.5%;
 }
 
 .hero-section-p {
@@ -1366,7 +1367,7 @@ height: 400px;
   .lgnd-logo-red-111 {
     width: 141px;
     height: 37px;
-    margin-right: 142px;
+    margin-right: 170px;
   }
   
   .txt-438 {
@@ -1381,7 +1382,7 @@ height: 400px;
   }
   
   .button {
-    padding: 7.08px 9.77px;
+    padding: 20.08px 0;
     margin-bottom: 41px;
     box-sizing: border-box;
     border-radius: 5.39px;
@@ -1391,18 +1392,21 @@ height: 400px;
   .wallet-41 {
     width: 22px;
     height: 22px;
+    margin-left: 26%;
   }
   
   .txt-469 {
     font-size: 20px;
     font-family: Average Sans, sans-serif;
     font-weight: 400;
-    line-height: 80%;
+    /* line-height: 80%; */
     color: rgba(255, 255, 255, 1);
-    text-align: center;
-    width: 54px;
+    /* text-align: center; */
+    width: 220px;
     height: 14px;
     word-wrap: break-word;
+    margin-left: 5%;
+    margin-top: 0.5%;
   }
   
   .line-49 {
@@ -1419,7 +1423,7 @@ height: 400px;
     line-height: 93%;
     color: rgba(250, 137, 137, 1);
     text-align: center;
-    width: 85px;
+    width: 150px;
     height: 20px;
     word-wrap: break-word;
     margin-bottom: 29px;
@@ -1882,6 +1886,10 @@ header {
     cursor: pointer;
 }
 
+#hamburger-icon.open {
+margin-right: -100%;
+}
+
 #hamburger-icon div {
     width: 30px;
     height: 3px;
@@ -2012,7 +2020,7 @@ header {
     }
 
     #brand {
-        margin-left: -262%;
+        margin-left: -300%;
         z-index: -1;
     }
 

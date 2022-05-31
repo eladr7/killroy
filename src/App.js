@@ -774,6 +774,15 @@ function App() {
   };
 
   const handleMint = async (mintCount) => {
+    if (!chainInfo.clientAddress) {
+      Swal.fire({
+        icon: "warning",
+        title: "Wallet not connected",
+        text: "Please connect your wallet!",
+      });
+      return;
+    }
+
     //use mintCount variable to query the contract for "mintCount" number of mints.
 
     hideMintSuccess();

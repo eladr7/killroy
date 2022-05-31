@@ -31,6 +31,7 @@ const MyCollection = (props) => {
                       nft.nft_dossier.private_metadata.extension.image
                     }
                     alt=""
+                    className="nft-image"
                   />
                   <SecureValueToggler secureValue={nft.entranceMnemonic} />
                 </div>

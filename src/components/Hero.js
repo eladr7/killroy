@@ -11,7 +11,7 @@ const Hero = (props) => {
           <h1>KEVIN SMITH</h1>
           <h3>KillROY WAS HERE</h3>
           <div style={{ width: "870px" }}></div>
-          <div style={{ width: "750px" }}>
+          <div className="hero-section-p">
             <p>
               Only 300 KillRoy PFPs are available as part of the KillRoy Was
               Here Premiere NFT bundle. Collectors can mint on June 2nd in time
@@ -37,7 +37,9 @@ const Hero = (props) => {
               style={{ display: "flex", marginBottom: "-12%" }}
               className="priceTitle"
             >
-              <div style={{ marginRight: "10%" }}>Mint Price: (WL price)</div>
+              <div style={{ marginRight: "10%" }} className="mint-price">
+                Mint Price: (WL price)
+              </div>
               <div className="mint">
                 <a
                   href="#"
@@ -56,18 +58,8 @@ const Hero = (props) => {
             </div>
           </div>
         </div>
-        <div className="kevin-smith-img">
-          <img
-            src="kevin_smith.png"
-            alt=""
-            style={{
-              width: "1400px",
-              height: "1400px",
-              marginLeft: "-40%",
-              marginTop: "-20%",
-              zIndex: "-1",
-            }}
-          />
+        <div className="kevin-smith-img-wrapper">
+          <img src="kevin_smith.png" alt="" className="kevin-smith-img" />
         </div>
       </div>
       <Services />

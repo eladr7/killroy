@@ -160,6 +160,18 @@ body {
     padding-right: 90px;
 }
 
+.hero-section-p {
+    width: 750px;
+}
+
+/* .hero-section-text div:nth-child(0) {
+    width: 870px;
+}
+
+.hero-section-text div:nth-child(1) {
+    width: 750px;
+} */
+
 .hero-section-text p {
     font-size: 20px;
     font-weight: 400;
@@ -204,19 +216,7 @@ body {
     left: -135%;
 }
 
-.kevin-smith-img-wrapper {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    /* mix-blend-mode: difference; */
 
-}
-
-.kevin-smith-img-wrapper {
-    z-index: 2;
-}
 
 .hero-img-time {
     text-align: center;
@@ -1154,21 +1154,32 @@ input.form-control {
 }
 
 .passphrase-box {
+    position: relative;
     height: 100px;
     margin-bottom: 4%;
 }
 
+.lock-image-wrapper {
+    position: absolute;
+    top: 64%;
+    left: -2%;
+    width: 100%;
+    height: 100%;
+}
+
 .passphrase-lock {
-    margin-left: -1.5%;
-    margin-top: 6.5%;
+    width: 35px !important;
+    height: 50px;
     z-index: 4;
     position: absolute;
 }
 
 .passphrase-text {
+    top: 25%;
+    left: 33%;
     z-index: 1;
-    margin-top: -3%;
-    margin-left: -16.5%;
+    /* margin-top: -3%;
+    margin-left: -16.5%; */
 
     width: 500px;
     height: 130px;
@@ -1703,7 +1714,8 @@ header {
     padding: 60px 30px;
     width: 100%;
     top: 4%;
-    left: 12%;
+    /* left: 12%; */
+    margin-left: -1%;
     z-index: -1;
 }
 
@@ -1728,6 +1740,16 @@ header {
     margin-right: 31%;
 }
 
+.kevin-smith-img {
+    width: 1400px;
+    height: 1400px;
+
+   margin-left: -40%;
+   margin-top: -20%;
+   z-index: -1;
+}
+
+
 @media only screen and (max-width: 992px) {
     header nav {
         display: none;
@@ -1735,6 +1757,7 @@ header {
 
     #hamburger-icon {
         display: block;
+        margin-right: 9%;
     }
 
     #header-background {
@@ -1766,11 +1789,20 @@ header {
         margin-right: 24%;
     }
 
-    .kevin-smith-img {
+    .kevin-smith-img-wrapper {
         width: 1400px;
         height: 1400px;
         margin-left: -40%;
         margin-top: -20%;
+    }
+
+    .kevin-smith-img {
+        width: 1400px;
+        height: 1400px;
+    
+       margin-left: -40%;
+       margin-top: -20%;
+       z-index: -1;
     }
 
     #services-background {
@@ -1786,10 +1818,22 @@ header {
         margin-bottom: 8%;
     }
     .passphrase-lock{
+        width: 35px !important;
+        height: 50px;
         margin-left: 7%;
         margin-top: 12%;
     }
+
+    /* .mobile-menu {
+		width: 100%;
+		margin-left: -50%;
+	} */
 }
+
+/* @media only screen and (max-width: 729px) {
+
+} */
+
 
 .collection-hero-background {
     background: linear-gradient(

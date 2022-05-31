@@ -5,10 +5,9 @@ function SecureValueToggler(props) {
 
   return (
     <div className="passphrase-box">
-      <div style={{ width: "100%", height: "100%" }}>
+      <div className="lock-image-wrapper">
         {!show && (
           <img
-            style={{ width: "35px", height: "50px" }}
             className="passphrase-lock"
             src="./image/lock.png"
             alt={""}

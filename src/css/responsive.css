@@ -231,6 +231,27 @@
 }
 
 @media(max-width: 479px) {
+	.open .mobile-menu {
+		width: 180%;
+		margin-left: -80%;
+		height: 400px;
+	}
+
+	.hero-section-text h1 {
+		font-size: 21px;
+		margin-bottom: unset;
+	}
+
+	.hero-section-text h3 {
+		font-size: 19px;
+		word-spacing: 0.7em;
+	}
+
+	.hero-section-p {
+		margin-top: -7%;
+		width: 100%;
+	}
+
 	.hero-section-main {
 		padding: 30px 15px;
 		flex-direction: column;
@@ -246,20 +267,51 @@
 	.hero-section-text h2 {
 		font-size: 36px;
 	}
+	.hero-section-text p:nth-child(1) {
+		padding: 0px 0px 15px;
+		font-size: 16px;
+	}
 
 	.hero-section-text p {
-		font-size: 16px;
+		text-align: left;
+		font-size: 9px;
 		line-height: 30px;
-		padding: 0px 0px 30px;
+	}
+
+	.mint-price {
+		margin-left: -6.1%;
+	}
+
+	.mint {
+		margin-right: 10%;
 	}
 
 	.hero-text-img {
+		margin-top: 8%;
+		width: 100%;
 		padding: 15px;
 		max-width: 100%;
 	}
 
 	.hero-text-img img {
 		width: 100%;
+	}
+
+	.kevin-smith-img-wrapper {
+		width: unset;
+		height: unset;
+        margin-left: -84%;
+        margin-top: -156%;
+    }
+
+	#services-background {
+        margin-top: -105%;
+    }
+
+	.kevin-smith-img {
+	   margin-left: -22%;
+	   margin-top: -73%;
+	   z-index: -1;
 	}
 
 	.hero-img-time p {
@@ -282,8 +334,10 @@
 	}
 
 	.services-text {
-		padding: 0px 0px 60px 0px;
+		padding: 0px 0px 20px 0px;
 		text-align: center;
+		margin-left: 8%;
+
 	}
 
 	.services-img img {
@@ -291,12 +345,36 @@
 		height: auto;
 	}
 
-	.services-text p {
-		margin-bottom: 50px;
+	/* .services-text p:nth-child(2) {
+		margin-bottom: 15px;
+	} */
+	
+	.main-services-text {
+		font-size: 16px !important;
+		text-align: left;
+	}
+
+	.services-text-bullets p {
+		text-align: left;
+		font-size: 11px !important;
 	}
 
 	.services-text h3 {
 		font-size: 36px;
+	}
+	.services-text a {
+		float: left;
+		margin-top: -2%;
+	}
+
+	.services-img img {
+		margin-left: auto;
+		margin-right: auto;
+		width: 100%;
+	}
+
+	#roadmap-background {
+		margin-top: -12%;
 	}
 
 	/* team */
@@ -305,15 +383,16 @@
 	}
 	/******roadmap ******/
 
-/* 
 	.background-zig-zag {
-		background-image: url(./roadmap-\ mobile-back.png);
-		height: 53em;
-		max-width: 250px;
+		background-image: url(./roadmap-side.png);
+		background-repeat: no-repeat;
+		position: relative;
+		height: 32em;
+		margin: auto;
+		max-width: 230px;
 		background-position: center;
 		background-size: contain;
-		margin: auto;
-	} */
+	}
 
 	.main-content {
 		width: 270px;
@@ -325,7 +404,7 @@
 		font-size: 14px;
 		line-height: 21px;
 		left: -36px;
-		top: 6px;
+		top: 2px;
 	}
 
 	.title::after {
@@ -336,7 +415,7 @@
 	.content-text {
 		margin: 0px 0 0 0;
 		position: absolute;
-		top: 54px;
+		top: 28px;
 		left: 6px;
 		width: 200px;
 	}
@@ -350,7 +429,7 @@
 	.content-text-two {
 		margin: 0px 0 0 0;
 		position: absolute;
-		top: 161px;
+		top: 145px;
 		left: 65px;
 		text-align: left;
 		width: 250px;
@@ -365,7 +444,7 @@
 		font-size: 14px;
 		line-height: 21px;
 		left: -42px;
-		top: 198px;
+		top: 178px;
 		width: 62px;
 	}
 
@@ -383,7 +462,7 @@
 	.content-text-three {
 		margin: 0px 0 0 0;
 		position: absolute;
-		top: 289px;
+		top: 274px;
 		left: -49px;
 		text-align: right;
 		width: 268px;
@@ -409,7 +488,7 @@
 		font-size: 14px;
 		line-height: 21px;
 		right: -33px;
-		top: 336px;
+		top: 296px;
 		width: 62px;
 	}
 
@@ -437,8 +516,8 @@
 	.title-four {
 		font-size: 14px;
 		line-height: 21px;
-		left: -41px;
-		top: 472px;
+		left: -61px;
+		top: 422px;
 		width: 62px;
 	}
 
@@ -450,7 +529,7 @@
 	.content-text-four {
 		margin: 0px 0 0 0;
 		position: absolute;
-		top: 438px;
+		top: 388px;
 		left: 61px;
 		text-align: left;
 		max-width: 270px;
@@ -465,6 +544,7 @@
 		font-size: 10px;
 		line-height: 15px;
 		padding-bottom: 2px;
+		min-width: 240px;
 	}
 
 	.main-content-five {
@@ -547,6 +627,77 @@
 	.content-text-six p {
 		font-size: 10px;
 		line-height: 15px;
+	}
+
+	#team-footer-background {
+		margin-bottom: -59%;
+		margin-top: -20%;
+	}
+
+	.footer-text-1 {
+		width: unset;
+	}
+
+	.collection-item-background .my-collection .grim-title {
+		font-size: 20px;
+		line-height: 65px;
+		/* margin-bottom: 30px; */
+		/* background: linear-gradient(180deg, #DE0000 0%, #6B0000 100%); */
+		/* background: linear-gradient(180deg, #DE0000 0%, #6B0000 800%); */
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		font-family: 'Montserrat';
+		font-weight: 1000;
+	}
+
+	.no-nfts {
+		font-family: 'Roboto';
+		font-style: normal;
+		font-weight: 400;
+		font-size: 20px;
+		line-height: 36px;
+		/* or 120% */
+		
+		text-align: center;
+		
+		color: #FFFFFF;
+		/* margin-bottom: 20%; */
+		margin-top: -5%;
+		height: 400px;
+		padding: 0 5%;
+	}
+
+	.nft-image {
+		margin-left: auto;
+		margin-right: auto;
+		width: 79% !important;
+	}
+
+	.passphrase-box {
+		position: relative;
+		height: 100px;
+		margin-bottom: 4%;
+	}
+
+	
+	.lock-image-wrapper {
+		position: absolute;
+		top: -9%;
+		left: -2%;
+		width: 100%;
+		height: 100%;
+	}
+
+	.passphrase-text {
+		top: 25%;
+		left: 29%;
+		width: 61%;
+		height:89%;
+		font-size: 22px;
+	}
+
+	header {
+		height: 83px;
 	}
 
 	.accordion {

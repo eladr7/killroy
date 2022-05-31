@@ -673,6 +673,21 @@
 		width: 79% !important;
 	}
 
+	.container{
+		width: 70%;
+		margin-left: 15.5%;
+		margin-bottom: -24%;
+		height: 163px;
+	}
+
+	.stack-top{
+		z-index: 9;
+		z-index: 4;
+		/* position: absolute; */
+		margin-top: -7%;
+		left: -6%;
+	}
+
 	.passphrase-box {
 		position: relative;
 		height: 100px;
@@ -688,11 +703,14 @@
 		height: 100%;
 	}
 
-	.passphrase-text {
+	/* .passphrase-text {
 		top: 25%;
 		left: 29%;
 		width: 61%;
 		height:89%;
+	} */
+
+	.passphrase-text2 {
 		font-size: 22px;
 	}
 

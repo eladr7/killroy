@@ -16,7 +16,7 @@ const Header = (props) => {
             />
           </a>
         </div>
-        <nav style={{ width: "100%", marginRight: "-12%", marginLeft: "25%" }}>
+        <nav style={{ width: "100%", marginRight: "-17%", marginLeft: "25%" }}>
           <ul className="nav-list">
             <li>
               <Link to={"/"}>Homepage</Link>
@@ -37,7 +37,7 @@ const Header = (props) => {
             {/*<li><Link smooth to="/#team-footer-background">Our Team</Link></li>*/}
             {/*<li><img src="./image/stashh.png" alt="" /></li>*/}
             <div style={{ display: "flex" }}>
-              <li>
+              {/* <li>
                 <a
                   href={"https://stashh.io/"}
                   rel="noreferrer"
@@ -45,7 +45,7 @@ const Header = (props) => {
                 >
                   <img src="./image/ruby.svg" alt="" />
                 </a>
-              </li>
+              </li> */}
               <li style={{ marginTop: "2%" }}>
                 <a
                   href={"https://discord.gg/w84egv2Enb"}

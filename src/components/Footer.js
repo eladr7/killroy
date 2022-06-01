@@ -24,9 +24,9 @@ const Footer = (props) => {
               >
                 <img src="./image/twitter.png" alt="" />
               </a>
-              <a href={"https://stashh.io/"} rel="noreferrer" target={"_blank"}>
+              {/* <a href={"https://stashh.io/"} rel="noreferrer" target={"_blank"}>
                 <img src="./image/stashh.png" alt="" />
-              </a>
+              </a> */}
             </li>
           </ul>
         </div>

@@ -18,15 +18,14 @@ const Hero = (props) => {
               for the Austin crypto events. A KWH Premiere NFT gets you one pass
               to the following events at Austin's The Venue:
             </p>
-            <p>
-              &nbsp; &nbsp;• A live screening of KillRoy Was Here with Kevin
-              Smith
-            </p>
-            <p>&nbsp; &nbsp;• An intimate Q&A with Kevin</p>
-            <p style={{ paddingBotton: "35px" }}>
-              &nbsp; &nbsp;• Entrance to a killer afterparty with Kevin and the
-              Secret Labs team
-            </p>
+            <ul>
+              <li>A live screening of KillRoy Was Here with Kevin Smith</li>
+              <li>An intimate Q&A with Kevin</li>
+              <li style={{ paddingBotton: "35px" }}>
+                Entrance to a killer afterparty with Kevin and the Secret Labs
+                team
+              </li>
+            </ul>
           </div>
 
           <div

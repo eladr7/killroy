@@ -5,7 +5,7 @@ export default function MobileNavbar(props) {
   return (
     <div className="group-776">
       <div className="group-666 flex-col-hcenter">
-        <div className="group-965 flex-col-hcenter">
+        <nav className="group-965 flex-col-hcenter">
           <div className="group-079 flex-row">
             <img
               src="https://firebasestorage.googleapis.com/v0/b/unify-bc2ad.appspot.com/o/ilj0tijsqw-810%3A2190?alt=media&token=378bf47d-74d5-400f-a461-00940e7df126"
@@ -47,7 +47,7 @@ export default function MobileNavbar(props) {
             <p className="txt-418 flex-hcenter">F.A.Q.</p>
           </Link>
           <div className="line-46" />
-        </div>
+        </nav>
         <div className="line-47" />
       </div>
     </div>

@@ -18,19 +18,16 @@ const Services = (props) => {
           </p>
 
           <div className="services-text-bullets">
-            <p>&nbsp; &nbsp;• 1 KillRoy Was Here PFP</p>
-            <p>
-              &nbsp; &nbsp;• Access to the KillRoy Was Here full-length feature
-              film
-            </p>
-            <p style={{ paddingBotton: "35px" }}>
-              &nbsp; &nbsp;• 1 of 20 PDFs of different script chapters signed by
-              Kevin
-            </p>
-            <p>&nbsp; &nbsp;&nbsp;&nbsp;Smith</p>
-            <p style={{ marginBottom: "13%" }}>
-              &nbsp; &nbsp;• 1 of 20 different comic videos
-            </p>
+            <ul>
+              <li>1 KillRoy Was Here PFP</li>
+              <li>Access to the KillRoy Was Here full-length feature film</li>
+              <li>
+                1 of 20 PDFs of different script chapters signed by Kevin Smith
+              </li>
+              <li style={{ marginBottom: "13%" }}>
+                1 of 20 different comic videos
+              </li>
+            </ul>
           </div>
 
           <a href="https://scrt.network/blog/legendao-kevin-smith-killroy-secret-network">

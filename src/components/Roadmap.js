@@ -30,7 +30,7 @@ const Roadmap = () => {
             <p>
               Collectors in Austin enjoy an in-person screening of KillRoy Was
               Here with Kevin Smith, as well as an intimate Q&A with him
-              afterwards and a wild afterparty with Kevin and the Secret Labs
+              afterwards and a wild afterparty with Kevin and the SCRT Labs
               team.
             </p>
           </div>

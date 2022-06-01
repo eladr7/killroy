@@ -258,7 +258,7 @@
 
 	.hero-section-text h3 {
 		/* font-size: 19px; */
-		word-spacing: 0.7em;
+		word-spacing: 10px;
 
 			font-family: 'Sedan SC';
 	font-style: normal;
@@ -267,6 +267,7 @@
 	/* line-height: 44px; */
 	text-transform: uppercase;
 	margin-bottom: 10%;
+
 	}
 
 	.hero-section-p {

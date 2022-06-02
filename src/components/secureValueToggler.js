@@ -5,7 +5,7 @@ function SecureValueToggler(props) {
 
   return (
     <div className="container">
-      <span class="tooltiptext">Click to {!show ? "reveal" : "conceal"}</span>
+      {/* <span class="tooltiptext">Click to {!show ? "reveal" : "conceal"}</span> */}
 
       {!show && (
         <div

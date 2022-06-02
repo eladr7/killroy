@@ -14,9 +14,16 @@ const Hero = (props) => {
           <div className="hero-section-p">
             <p>
               Only 300 KillRoy PFPs are available as part of the{" "}
-              <span className="italicise">KillRoy Was Here</span> Premiere NFT
-              bundle. Collectors can mint NOW in time for the Austin crypto
-              events. Holders of the Premiere NFT will receive the
+              <span className="italicise">KillRoy Was Here</span>{" "}
+              <a
+                href={"https://scrt.network/dcentral-afterparty"}
+                rel="noreferrer"
+                target={"_blank"}
+              >
+                Premiere NFT bundle
+              </a>
+              . Collectors can mint NOW in time for the Austin crypto events.
+              Holders of the Premiere NFT will receive the
               <span className="italicise"> KillRoy Was Here</span> NFT for free.
               A KWH Premiere NFT gets you one pass to the following events at
               Austin’s{" "}
@@ -45,6 +52,13 @@ const Hero = (props) => {
                 team
               </li>
             </ul>
+            <p style={{ fontWeight: "600" }}>
+              The event will take place on June 8th at 7 p.m. CDT
+            </p>
+            <p style={{ fontWeight: "600" }}>
+              Each NFT holds a private and unique password that is used to
+              access the event
+            </p>
           </div>
 
           <div

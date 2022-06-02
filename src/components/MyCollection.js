@@ -20,7 +20,11 @@ const MyCollection = (props) => {
         </div>
       ) : (
         <div className="no-nfts nft-note">
-          Note: Before the event, write down your three-word access key. <br />
+          <p style={{ fontWeight: "300" }}>
+            To reveal the password, click on the lock icon.
+          </p>
+          <b style={{ fontWeight: "bold" }}>Note: </b>Before the event, write
+          down your three-word access key. <br />
           This page is not supported on mobile.
         </div>
       )}

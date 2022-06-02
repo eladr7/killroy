@@ -71,7 +71,7 @@ const Hero = (props) => {
             </div>
 
             <div style={{ display: "flex" }} className="hero-img-time">
-              <div className="mint-price">75 $sSCRT</div>
+              <div className="mint-price">125 sSCRT</div>
               <div>Remaining : {props.totalMints}</div>
             </div>
           </div>
